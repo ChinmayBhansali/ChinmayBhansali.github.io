@@ -12,6 +12,8 @@
     --title-color: var(--primary);
     --border-color: #eee;
     --shadow-color: rgba(0, 0, 0, 0.05);
+    --cursor-color: var(--secondary);
+    --cursor-outline: rgba(52, 152, 219, 0.3);
 }
 
 /* Dark theme */
@@ -28,12 +30,57 @@ body.dark-theme {
     --title-color: #ffffff; /* Pure white for maximum contrast */
     --border-color: #444; /* Lightened for better visibility */
     --shadow-color: rgba(0, 0, 0, 0.2);
+    --cursor-color: var(--accent);
+    --cursor-outline: rgba(231, 76, 60, 0.3);
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    cursor: none; /* Hide default cursor */
+}
+
+/* Custom Cursor Styles */
+.cursor-dot,
+.cursor-outline {
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 9999;
+    transition: opacity 0.3s ease;
+}
+
+.cursor-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--cursor-color);
+    transition: width 0.3s, height 0.3s, background-color 0.3s;
+}
+
+.cursor-outline {
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border: 2px solid var(--cursor-color);
+    transition: width 0.3s, height 0.3s, border-color 0.3s, transform 0.3s;
+}
+
+/* Cursor hover effect for links and interactive elements */
+.cursor-dot.hover {
+    width: 12px;
+    height: 12px;
+    background-color: var(--accent);
+}
+
+.cursor-outline.hover {
+    width: 30px;
+    height: 30px;
+    border-color: var(--accent);
+    transform: translate(-50%, -50%) scale(1.5);
 }
 
 body {

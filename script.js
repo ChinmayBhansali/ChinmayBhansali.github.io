@@ -5,6 +5,9 @@ document.getElementById('year').textContent = new Date().getFullYear();
 const toggleSwitch = document.querySelector('#checkbox');
 const currentTheme = localStorage.getItem('theme');
 
+// Check if the user's device prefers dark mode
+const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+
 // Check if a theme preference exists in localStorage
 if (currentTheme) {
     document.body.classList.add(currentTheme);
@@ -13,6 +16,11 @@ if (currentTheme) {
     if (currentTheme === 'dark-theme') {
         toggleSwitch.checked = true;
     }
+} else if (prefersDarkScheme.matches) {
+    // If no theme is saved but device prefers dark mode, apply dark theme
+    document.body.classList.add('dark-theme');
+    toggleSwitch.checked = true;
+    localStorage.setItem('theme', 'dark-theme');
 }
 
 // Function to switch theme

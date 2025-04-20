@@ -1,10 +1,33 @@
 :root {
+    /* Light theme (default) */
     --primary: #2d3e50;
     --secondary: #3498db;
     --accent: #e74c3c;
     --light: #ecf0f1;
     --dark: #2c3e50;
     --success: #2ecc71;
+    --bg-color: #f9f9f9;
+    --card-bg: white;
+    --text-color: #555;
+    --title-color: var(--primary);
+    --border-color: #eee;
+    --shadow-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Dark theme */
+body.dark-theme {
+    --primary: #1a2530;
+    --secondary: #3498db; /* Brightened for better contrast */
+    --accent: #e74c3c; /* Brightened for better contrast */
+    --light: #4a6583; /* Lightened for better contrast when used as background */
+    --dark: #ffffff; /* Pure white for maximum contrast */
+    --success: #2ecc71; /* Brightened for better contrast */
+    --bg-color: #121212;
+    --card-bg: #1e1e1e;
+    --text-color: #e0e0e0; /* Significantly brightened for better readability */
+    --title-color: #ffffff; /* Pure white for maximum contrast */
+    --border-color: #444; /* Lightened for better visibility */
+    --shadow-color: rgba(0, 0, 0, 0.2);
 }
 
 * {
@@ -16,8 +39,9 @@
 body {
     font-family: 'Poppins', sans-serif;
     color: var(--dark);
-    background-color: #f9f9f9;
+    background-color: var(--bg-color);
     line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Header Styles */
@@ -89,16 +113,17 @@ h1 {
 .social-links a:hover {
     background: var(--secondary);
     transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 15px var(--shadow-color);
 }
 
 /* Navigation */
 nav {
-    background-color: white;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: var(--card-bg);
+    box-shadow: 0 2px 10px var(--shadow-color);
     position: sticky;
     top: 0;
     z-index: 100;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .nav-container {
@@ -114,6 +139,10 @@ nav {
     font-weight: 700;
     font-size: 1.5rem;
     color: var(--primary);
+}
+
+body.dark-theme .logo {
+    color: white;
 }
 
 .nav-links {
@@ -164,7 +193,7 @@ nav {
     text-align: center;
     margin-bottom: 50px;
     font-size: 2.5rem;
-    color: var(--primary);
+    color: var(--title-color);
     position: relative;
     padding-bottom: 15px;
 }
@@ -201,7 +230,7 @@ nav {
 
 .about-text p {
     margin-bottom: 20px;
-    color: #555;
+    color: var(--text-color);
 }
 
 .stats {
@@ -213,12 +242,12 @@ nav {
 }
 
 .stat-box {
-    background: white;
+    background: var(--card-bg);
     border-radius: 8px;
     padding: 20px;
     text-align: center;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease;
+    box-shadow: 0 5px 15px var(--shadow-color);
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .stat-box:hover {
@@ -234,15 +263,16 @@ nav {
 
 .stat-title {
     font-size: 0.9rem;
-    color: #777;
+    color: var(--text-color);
 }
 
 /* Skills Section */
 .skills {
-    background-color: white;
+    background-color: var(--card-bg);
     border-radius: 10px;
     padding: 30px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 5px 15px var(--shadow-color);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .skills-container {
@@ -257,7 +287,7 @@ nav {
 
 .skill-category h3 {
     margin-bottom: 15px;
-    color: var(--primary);
+    color: var(--title-color);
     font-size: 1.2rem;
     position: relative;
     padding-left: 15px;
@@ -329,7 +359,7 @@ nav {
     width: 20px;
     height: 20px;
     right: -10px;
-    background-color: white;
+    background-color: var(--card-bg);
     border: 4px solid var(--secondary);
     top: 15px;
     border-radius: 50%;
@@ -350,16 +380,16 @@ nav {
 
 .timeline-content {
     padding: 20px 30px;
-    background-color: white;
+    background-color: var(--card-bg);
     position: relative;
     border-radius: 6px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px var(--shadow-color);
+    transition: all 0.3s ease, background-color 0.3s ease;
 }
 
 .timeline-content:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 20px var(--shadow-color);
 }
 
 .timeline-date {
@@ -372,17 +402,17 @@ nav {
 .timeline-title {
     font-size: 1.2rem;
     margin-bottom: 10px;
-    color: var(--primary);
+    color: var(--title-color);
 }
 
 .timeline-subtitle {
     font-size: 0.9rem;
-    color: #777;
+    color: var(--text-color);
     margin-bottom: 15px;
 }
 
 .timeline-description {
-    color: #555;
+    color: var(--text-color);
 }
 
 /* Projects Section */
@@ -393,11 +423,11 @@ nav {
 }
 
 .project-card {
-    background: white;
+    background: var(--card-bg);
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease;
+    box-shadow: 0 5px 15px var(--shadow-color);
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card:hover {
@@ -408,7 +438,7 @@ nav {
     width: 100%;
     height: 200px;
     object-fit: cover;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .project-content {
@@ -433,11 +463,11 @@ nav {
 .project-title {
     font-size: 1.3rem;
     margin-bottom: 10px;
-    color: var(--primary);
+    color: var(--title-color);
 }
 
 .project-description {
-    color: #555;
+    color: var(--text-color);
     margin-bottom: 20px;
     font-size: 0.95rem;
 }
@@ -470,15 +500,15 @@ nav {
 }
 
 .education-card {
-    background: white;
+    background: var(--card-bg);
     border-radius: 10px;
     padding: 30px;
     margin-bottom: 30px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 5px 15px var(--shadow-color);
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .education-card:hover {
@@ -498,30 +528,30 @@ nav {
 
 .education-degree {
     font-size: 1.3rem;
-    color: var(--primary);
+    color: var(--title-color);
     margin-bottom: 5px;
 }
 
 .education-school {
     font-size: 1.1rem;
-    color: #555;
+    color: var(--text-color);
     margin-bottom: 5px;
 }
 
 .education-date {
     font-size: 0.9rem;
-    color: #777;
+    color: var(--text-color);
     margin-bottom: 15px;
 }
 
 .education-description {
-    color: #555;
+    color: var(--text-color);
 }
 
 .courses-title {
     margin-top: 20px;
     margin-bottom: 10px;
-    color: var(--secondary);
+    color: var(--title-color);
     font-size: 1.1rem;
 }
 
@@ -582,7 +612,7 @@ nav {
 }
 
 .contact-text {
-    color: #555;
+    color: var(--text-color);
 }
 
 /* Footer */
@@ -662,6 +692,114 @@ footer {
     transform: translateY(0);
 }
 
+/* Theme Switch */
+.theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.theme-switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+}
+
+.theme-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to right, var(--secondary), var(--primary));
+    border-radius: 34px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2), 0 0 0 2px rgba(255, 255, 255, 0.3) inset;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 3px;
+    bottom: 2px;
+    background-color: white;
+    border-radius: 50%;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.slider .fa-sun {
+    position: absolute;
+    left: 8px;
+    top: 7px;
+    color: #fff;
+    font-size: 16px;
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s ease;
+    opacity: 1;
+    z-index: 1;
+}
+
+.slider .fa-moon {
+    position: absolute;
+    right: 8px;
+    top: 7px;
+    color: #fff;
+    font-size: 16px;
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s ease;
+    opacity: 0;
+    z-index: 1;
+}
+
+input:checked + .slider {
+    background: linear-gradient(to right, #2c3e50, #4a6583);
+}
+
+input:checked + .slider:before {
+    transform: translateX(29px);
+    background-color: #ecf0f1;
+}
+
+input:checked + .slider .fa-sun {
+    opacity: 0;
+    transform: rotate(90deg);
+}
+
+input:checked + .slider .fa-moon {
+    opacity: 1;
+    transform: rotate(0deg);
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.3), 0 0 0 3px var(--secondary, rgba(52, 152, 219, 0.3));
+}
+
+/* Hover effect */
+.slider:hover {
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3), 0 0 0 2px var(--light, rgba(255, 255, 255, 0.4)) inset;
+}
+
+.slider:hover:before {
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Active effect */
+.slider:active:before {
+    width: 28px;
+    height: 28px;
+}
+
 /* Responsive */
 @media (max-width: 900px) {
     .timeline::after {
@@ -708,6 +846,12 @@ footer {
 
     .nav-links li {
         margin: 0;
+    }
+
+    .theme-switch-wrapper {
+        margin: 10px 0 0;
+        justify-content: center;
+        width: 100%;
     }
 
     .section-title {

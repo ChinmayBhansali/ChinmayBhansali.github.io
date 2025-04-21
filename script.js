@@ -134,7 +134,7 @@ window.addEventListener('scroll', checkScroll);
     });
 
     // Add hover effect for interactive elements
-    const interactiveElements = document.querySelectorAll('a, button, .theme-switch, .project-card, .skill-tag, .social-links a, .social-footer a');
+    const interactiveElements = document.querySelectorAll('a, button, .theme-switch, .project-card, .skill-tag, .social-links a, .social-footer a, .experience-card');
 
     interactiveElements.forEach(element => {
         element.addEventListener('mouseenter', () => {

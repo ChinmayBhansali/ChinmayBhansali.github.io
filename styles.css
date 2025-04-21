@@ -2,7 +2,7 @@
     /* Light theme (default) */
     --primary: #2d3e50;
     --secondary: #3498db;
-    --accent: #e74c3c;
+    --accent: #3498db;
     --light: #ecf0f1;
     --dark: #2c3e50;
     --success: #2ecc71;
@@ -20,7 +20,7 @@
 body.dark-theme {
     --primary: #1a2530;
     --secondary: #3498db; /* Brightened for better contrast */
-    --accent: #e74c3c; /* Brightened for better contrast */
+    --accent: #3498db; /* Changed from red to blue */
     --light: #4a6583; /* Lightened for better contrast when used as background */
     --dark: #ffffff; /* Pure white for maximum contrast */
     --success: #2ecc71; /* Brightened for better contrast */
@@ -31,7 +31,7 @@ body.dark-theme {
     --border-color: #444; /* Lightened for better visibility */
     --shadow-color: rgba(0, 0, 0, 0.2);
     --cursor-color: var(--accent);
-    --cursor-outline: rgba(231, 76, 60, 0.3);
+    --cursor-outline: rgba(52, 152, 219, 0.3);
 }
 
 * {
@@ -267,7 +267,7 @@ body.dark-theme .logo {
     transform: translateX(-50%);
     width: 100px;
     height: 4px;
-    background: linear-gradient(to right, var(--secondary), var(--accent));
+    background: linear-gradient(to right, var(--secondary), var(--primary));
 }
 
 /* About Section */

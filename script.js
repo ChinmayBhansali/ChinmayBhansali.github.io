@@ -71,127 +71,28 @@ checkScroll();
 // Check on scroll
 window.addEventListener('scroll', checkScroll);
 
-// Custom Cursor Animation
-(function() {
-    const cursorDot = document.querySelector('.cursor-dot');
-    const cursorOutline = document.querySelector('.cursor-outline');
+// Mobile Menu Toggle
+const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+const navLinks = document.querySelector('.nav-links');
 
-    // Variables for cursor animation
-    let mouseX = 0;
-    let mouseY = 0;
-    let dotX = 0;
-    let dotY = 0;
-    let outlineX = 0;
-    let outlineY = 0;
+mobileMenuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
 
-    // Animation speed (lower = faster)
-    const dotSpeed = 0.2;  // Faster for the dot
-    const outlineSpeed = 0.1;  // Slower for the outline
-
-    // Update cursor position
-    function updateCursorPosition() {
-        // Calculate smooth movement
-        dotX += (mouseX - dotX) * dotSpeed;
-        dotY += (mouseY - dotY) * dotSpeed;
-        outlineX += (mouseX - outlineX) * outlineSpeed;
-        outlineY += (mouseY - outlineY) * outlineSpeed;
-
-        // Apply position
-        cursorDot.style.transform = `translate(${dotX}px, ${dotY}px) translate(-50%, -50%)`;
-        cursorOutline.style.transform = `translate(${outlineX}px, ${outlineY}px) translate(-50%, -50%)`;
-
-        // Continue animation
-        requestAnimationFrame(updateCursorPosition);
-    }
-
-    // Track mouse movement
-    document.addEventListener('mousemove', (e) => {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-    });
-
-    // Hide cursor when mouse leaves window
-    document.addEventListener('mouseout', () => {
-        cursorDot.style.opacity = '0';
-        cursorOutline.style.opacity = '0';
-    });
-
-    // Show cursor when mouse enters window
-    document.addEventListener('mouseover', () => {
-        cursorDot.style.opacity = '1';
-        cursorOutline.style.opacity = '1';
-    });
-
-    // Add pulse effect on click
-    document.addEventListener('mousedown', () => {
-        cursorDot.style.transform = `translate(${dotX}px, ${dotY}px) translate(-50%, -50%) scale(0.7)`;
-        cursorOutline.style.transform = `translate(${outlineX}px, ${outlineY}px) translate(-50%, -50%) scale(1.4)`;
-    });
-
-    document.addEventListener('mouseup', () => {
-        cursorDot.style.transform = `translate(${dotX}px, ${dotY}px) translate(-50%, -50%) scale(1)`;
-        cursorOutline.style.transform = `translate(${outlineX}px, ${outlineY}px) translate(-50%, -50%) scale(1)`;
-    });
-
-    // Add hover effect for interactive elements
-    const interactiveElements = document.querySelectorAll('a, button, .theme-switch, .project-card, .skill-tag, .social-links a, .social-footer a, .experience-card');
-
-    interactiveElements.forEach(element => {
-        element.addEventListener('mouseenter', () => {
-            cursorDot.classList.add('hover');
-            cursorOutline.classList.add('hover');
-        });
-
-        element.addEventListener('mouseleave', () => {
-            cursorDot.classList.remove('hover');
-            cursorOutline.classList.remove('hover');
-        });
-    });
-
-    // Start animation
-    updateCursorPosition();
-
-    // Add trailing effect for cursor outline
-    let trail = [];
-    const trailLength = 5;
-
-    function updateTrail() {
-        trail.push({ x: mouseX, y: mouseY });
-
-        if (trail.length > trailLength) {
-            trail.shift();
+// Close menu when clicking a link
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        if (window.innerWidth <= 768) {
+            navLinks.classList.remove('active');
         }
-
-        if (trail.length > 1) {
-            const lastPoint = trail[trail.length - 1];
-            const angle = Math.atan2(lastPoint.y - outlineY, lastPoint.x - outlineX);
-            const distance = Math.sqrt(Math.pow(lastPoint.x - outlineX, 2) + Math.pow(lastPoint.y - outlineY, 2));
-
-            // Only apply the trailing effect when the mouse is moving fast enough
-            if (distance > 5) {
-                // Store the base transform for the outline
-                const baseTransform = `translate(${outlineX}px, ${outlineY}px) translate(-50%, -50%)`;
-
-                // Add rotation and stretching for the trailing effect
-                cursorOutline.style.transform = `${baseTransform} rotate(${angle}rad) scaleX(${1 + distance * 0.01})`;
-            } else {
-                // Reset to base transform when not moving fast
-                cursorOutline.style.transform = `translate(${outlineX}px, ${outlineY}px) translate(-50%, -50%)`;
-            }
-        }
-
-        requestAnimationFrame(updateTrail);
-    }
-
-    updateTrail();
-
-    // Update cursor colors when theme changes
-    toggleSwitch.addEventListener('change', () => {
-        // The cursor colors are defined in CSS variables, so they will update automatically
-        // This is just to ensure any transition effects are applied
-        setTimeout(() => {
-            cursorDot.style.transition = 'background-color 0.3s ease, width 0.3s, height 0.3s';
-            cursorOutline.style.transition = 'border-color 0.3s ease, width 0.3s, height 0.3s, transform 0.3s';
-        }, 200);
     });
-})();
+});
+
+// Close menu when clicking outside
+document.addEventListener('click', (e) => {
+    if (window.innerWidth <= 768) {
+        if (!e.target.closest('.nav-links') && !e.target.closest('.mobile-menu-toggle')) {
+            navLinks.classList.remove('active');
+        }
+    }
+});

@@ -38,11 +38,9 @@ body.dark-theme {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    cursor: none; /* Hide default cursor */
 }
 
 /* Custom Cursor Styles */
-.cursor-dot,
 .cursor-outline {
     pointer-events: none;
     position: fixed;
@@ -54,26 +52,12 @@ body.dark-theme {
     transition: opacity 0.3s ease;
 }
 
-.cursor-dot {
-    width: 8px;
-    height: 8px;
-    background-color: var(--cursor-color);
-    transition: width 0.3s, height 0.3s, background-color 0.3s;
-}
-
 .cursor-outline {
     width: 40px;
     height: 40px;
     background-color: transparent;
     border: 2px solid var(--cursor-color);
     transition: width 0.3s, height 0.3s, border-color 0.3s, transform 0.3s;
-}
-
-/* Cursor hover effect for links and interactive elements */
-.cursor-dot.hover {
-    width: 12px;
-    height: 12px;
-    background-color: var(--accent);
 }
 
 .cursor-outline.hover {
@@ -575,6 +559,11 @@ body.dark-theme .logo {
     font-size: 0.75rem;
 }
 
+body.dark-theme .project-tag {
+    background: var(--primary);
+    color: var(--dark);
+}
+
 .project-title {
     font-size: 1.3rem;
     margin-bottom: 10px;
@@ -999,5 +988,58 @@ input:focus + .slider {
 
     .skill-list {
         gap: 8px;
+    }
+}
+
+/* Mobile Menu Toggle */
+.mobile-menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    color: var(--dark);
+    cursor: pointer;
+    padding: 20px;
+}
+
+body.dark-theme .mobile-menu-toggle {
+    color: white;
+}
+
+/* Media Queries for Navigation */
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: block;
+    }
+
+    .nav-container {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 15px 20px;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 65px;
+        left: -100%;
+        width: 100%;
+        height: auto;
+        background-color: var(--card-bg);
+        box-shadow: 0 5px 10px var(--shadow-color);
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        transition: left 0.3s ease;
+        z-index: 99;
+    }
+
+    .nav-links.active {
+        left: 0;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .theme-switch-wrapper {
+        margin: 15px 0;
     }
 }

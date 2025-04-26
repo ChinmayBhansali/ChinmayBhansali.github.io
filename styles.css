@@ -715,6 +715,11 @@ body.dark-theme .project-tag {
     font-size: 1.2rem;
 }
 
+body.dark-theme .contact-icon {
+    background: var(--primary);
+    color: var(--dark);
+}
+
 .contact-text {
     color: var(--text-color);
 }

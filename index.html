@@ -1,374 +1,524 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chinmay Bhansali - Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Chinmay Bhansali | HCI Researcher & UX Designer</title>
+    <meta name="description"
+          content="Portfolio of Chinmay Bhansali - Human-Computer Interaction researcher and UX designer focused on creating intuitive, accessible digital experiences.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+            rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-<!-- Header Section -->
-<header>
-    <div class="header-bg">
-        <img src="data/profile.png" alt="Chinmay Bhansali">
-    </div>
-    <div class="header-content">
-        <img src="data/1x1%20pic.jpg" alt="Chinmay Bhansali" class="profile-pic animate__animated animate__fadeIn">
-        <h1 class="animate__animated animate__fadeInUp">Chinmay Bhansali</h1>
-        <p class="tagline animate__animated animate__fadeInUp animate__delay-1s">Undergraduate Researcher | HCI</p>
-        <div class="social-links animate__animated animate__fadeInUp animate__delay-2s">
-            <a href="https://github.com/ChinmayBhansali" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://linkedin.com/in/chinmay-bhansali-4aa384210" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-            <a href="mailto:chinmaybhansali29@gmail.com"><i class="fas fa-envelope"></i></a>
-        </div>
-    </div>
-</header>
+<!-- Custom Cursor -->
+<div class="cursor"></div>
+<div class="cursor-follower"></div>
 
 <!-- Navigation -->
-<nav>
+<nav class="nav" id="nav">
     <div class="nav-container">
-        <div class="logo">CB</div>
-        <div class="mobile-menu-toggle">
-            <i class="fas fa-bars"></i>
+        <a href="#hero" class="nav-logo">
+            <span class="logo-text">CB</span>
+        </a>
+        <div class="nav-links">
+            <a href="#about" class="nav-link" data-text="About">About</a>
+            <a href="#projects" class="nav-link" data-text="Projects">Projects</a>
+            <a href="#skills" class="nav-link" data-text="Skills">Focus</a>
+            <a href="#contact" class="nav-link" data-text="Contact">Contact</a>
         </div>
-        <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#experience">Research & Experience</a></li>
-            <li><a href="#projects"> Selected Projects</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#leadership">Leadership</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li class="theme-switch-wrapper">
-                <label class="theme-switch" for="checkbox">
-                    <input type="checkbox" id="checkbox" />
-                    <div class="slider">
-                        <i class="fas fa-sun"></i>
-                        <i class="fas fa-moon"></i>
-                    </div>
-                </label>
-            </li>
-        </ul>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+            <div class="theme-toggle-thumb">
+                <svg class="theme-toggle-icon moon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                </svg>
+                <svg class="theme-toggle-icon sun" viewBox="0 0 24 24" fill="currentColor">
+                    <circle cx="12" cy="12" r="5" />
+                    <path
+                            d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+                </svg>
+            </div>
+        </button>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </div>
 </nav>
 
+<!-- Accessibility Mode Panel -->
+<div class="a11y-panel" id="a11yPanel">
+    <span class="a11y-label">Accessibility Mode</span>
+    <button class="a11y-toggle" id="a11yToggle" aria-label="Toggle accessibility mode">
+        <span class="a11y-status">Off</span>
+    </button>
+</div>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-content">
+        <a href="#about" class="mobile-link">About</a>
+        <a href="#projects" class="mobile-link">Projects</a>
+        <a href="#skills" class="mobile-link">Focus</a>
+        <a href="#contact" class="mobile-link">Contact</a>
+    </div>
+</div>
+
+<!-- Hero Section -->
+<section class="hero" id="hero">
+    <div class="hero-bg">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+    </div>
+    <div class="hero-content">
+        <div class="hero-tag">
+            <span class="tag-dot"></span>
+            <span>Human-Computer Interaction</span>
+        </div>
+        <h1 class="hero-title">
+            <span class="title-line">Designing</span>
+            <span class="title-line highlight">Intuitive</span>
+            <span class="title-line">Experiences</span>
+        </h1>
+        <p class="hero-description">
+            I'm <strong>Chinmay Bhansali</strong>, an Integrated Sciences student at UBC, exploring inclusive
+            competitive sports in virtual environments (metaverse) and embodied interaction.
+        </p>
+        <div class="hero-cta">
+            <a href="#projects" class="btn btn-primary">
+                <span>View My Work</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+            </a>
+            <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+            <a href="data/CV_Chinmay_Bhansali.pdf" download class="btn btn-secondary btn-download">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="7 10 12 15 17 10" />
+                    <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
+                <span>Download CV</span>
+            </a>
+        </div>
+    </div>
+    <!-- <div class="scroll-indicator">
+        <div class="mouse">
+            <div class="wheel"></div>
+        </div>
+        <span>Scroll to explore</span>
+    </div> -->
+</section>
+
 <!-- About Section -->
-<section id="about" class="container">
-    <h2 class="section-title animated-element">About Me</h2>
-    <div class="about-content">
-        <div class="about-text animated-element">
-            <h3>Hello! I'm Chinmay</h3>
-            <p>I’m an Integrated Sciences student at the University of British Columbia, where I blend Computer Science, Psychology, and Mathematics to research the conversation between system capabilities and human needs. My vision is to democratize the psychological benefits of competitive sports by creating physically and socially grounded experiences within the Metaverse. By leveraging Self-Determination Theory, I aim to design virtual environments that satisfy core human needs for autonomy, competence, and relatedness.</p>
-            <p>I specialize in building intuitive systems that bridge the gap between digital and physical worlds. My current research at the UBC SPIN Lab involves developing Unity-based multiplayer prototypes that use robot swarms to facilitate remote social touch. My technical experience ranges from engineering ECS-based game engines in C++ and OpenGL to implementing real-time gesture recognition with TensorFlow and building multi-modal AI models for medical treatment prediction.</p>
-            <p>Outside of coding, I’m deeply involved in music and leadership roles at UBC. As a pianist and vocalist with Sargam-UBC, I've helped organize successful cultural events and performances. I also co-founded VHMUN, an inclusive Model United Nations conference aimed at empowering students through diplomacy and public speaking.</p>
-            <p>I am driven by a user-centered design process, iterating from formative fieldwork and affinity diagramming to high-fidelity prototyping and data-driven evaluation. I’m always eager to collaborate on technology that enhances human connection and solves meaningful challenges. Feel free to connect! I’m always open to new ideas and opportunities!</p>
+<section class="about" id="about">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">About Me</span>
+            <h2 class="section-title">Crafting Human-Centered Solutions</h2>
         </div>
-        <div class="stats animated-element">
-            <div class="stat-box">
-                <div class="stat-count">2</div>
-                <div class="stat-title">Research Roles</div>
-            </div>
-            <div class="stat-box">
-                <div class="stat-count">3+</div>
-                <div class="stat-title">Years Coding</div>
-            </div>
-            <div class="stat-box">
-                <div class="stat-count">5+</div>
-                <div class="stat-title">HCI & Dev Projects</div>
-            </div>
-            <div class="stat-box">
-                <div class="stat-count">2</div>
-                <div class="stat-title">Internships</div>
-            </div>
-            <div class="stat-box">
-                <div class="stat-count">3</div>
-                <div class="stat-title">Years at UBC</div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Skills Section -->
-<section id="skills" class="container">
-    <h2 class="section-title animated-element">Skills</h2>
-    <div class="skills animated-element">
-        <div class="skills-container">
-            <div class="skill-category">
-                <h3>Programming Languages</h3>
-                <div class="skill-list">
-                    <span class="skill-tag">C/C++</span>
-                    <span class="skill-tag">Java</span>
-                    <span class="skill-tag">JavaScript</span>
-                    <span class="skill-tag">OpenGL</span>
-                    <span class="skill-tag">Python</span>
-                    <span class="skill-tag">HTML</span>
+        <div class="about-grid">
+            <div class="about-image">
+                <div class="image-frame">
+                    <div class="image-placeholder">
+                        <img src="data/aboutimage2.jpg" alt="Chinmay Bhansali" class="profile-photo">
+                    </div>
+                </div>
+                <div class="floating-badge badge-1">
+                    <span class="badge-icon">🎓</span>
+                    <span>CS & Psychology</span>
+                </div>
+                <div class="floating-badge badge-2">
+                    <span class="badge-icon">🔬</span>
+                    <span>HCI Research</span>
                 </div>
             </div>
-            <div class="skill-category">
-                <h3>Developer Tools</h3>
-                <div class="skill-list">
-                    <span class="skill-tag">Git</span>
-                    <span class="skill-tag">GitHub</span>
-                    <span class="skill-tag">Unity</span>
-                    <span class="skill-tag">Figma</span>
-                    <span class="skill-tag">JetBrains IDEs</span>
-                    <span class="skill-tag">VS Code</span>
-                    <span class="skill-tag">Visual Studio</span>
-                    <span class="skill-tag">Eclipse IDE</span>
-                </div>
-            </div>
-            <div class="skill-category">
-                <h3>Web Development</h3>
-                <div class="skill-list">
-                    <span class="skill-tag">Flask</span>
-                    <span class="skill-tag">Struts</span>
-                    <span class="skill-tag">Tomcat</span>
-                    <span class="skill-tag">HTML</span>
-                    <span class="skill-tag">JavaScript</span>
+            <div class="about-content">
+                <p class="about-lead">
+                    I believe technology should adapt to humans, not the other way around.
+                </p>
+                <p class="about-text">
+                    HCI is a conversation between system capabilities and human needs. I speak both languages.
+                </p>
+                <p class="about-text">
+                    My background is a deliberate strategic choice to build a disciplinary "trio." I combine
+                    <strong>Computer Science</strong> to build systems, <strong>Psychology</strong> to understand
+                    the cognitive drivers of users, and <strong>Mathematics</strong> to rigorously analyze
+                    behavioral data.
+                </p>
+                <p class="about-text">
+                    Currently, I am leveraging this to research embodied interaction and social computing. My goal
+                    is to democratize the psychological benefits of competitive sports—autonomy, competence, and
+                    relatedness—within the Metaverse.
+                </p>
+                <p class="about-text">
+                    When I'm not conducting usability studies or prototyping interfaces, you'll find me exploring
+                    emerging technologies, reading cognitive psychology papers, or sketching new interaction
+                    paradigms.
+                </p>
+                <div class="about-stats">
+                    <div class="stat">
+                        <span class="stat-number" data-count="5">0</span>
+                        <span class="stat-label">Major Projects</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" data-count="3">0</span>
+                        <span class="stat-label">Years Experience</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" data-count="2">0</span>
+                        <span class="stat-label">Internships</span>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</section>
-
-<!-- Professional Experience Section -->
-<section id="experience" class="container">
-    <h2 class="section-title animated-element">Research & Experience</h2>
-
-    <div class="single-experience-container">
-        <div class="single-experience-card animated-element">
-            <div class="experience-image">
-                <img src="data/spin.png" alt="UBC SPIN Lab" class="experience-img">
-            </div>
-            <div class="experience-content">
-                <div class="experience-date">Oct 2025 – Present</div>
-                <h3 class="experience-title">Play Together, Feel Together</h3>
-                <div class="experience-subtitle">Research Assistant @ UBC Sensory Perception & Interaction (SPIN) Lab</div>
-                <p class="experience-description">Working with Rocco Ruan on the "Play Together, Feel Together" project. Prototyping Unity-based multiplayer games integrated with robot swarm technology to facilitate remote social touch. Contributing to user study design and analyzing physiological and trajectory data.</p>
-            </div>
-        </div>
-    </div>
-    <br>
-    <div class="single-experience-container">
-        <div class="single-experience-card animated-element">
-            <div class="experience-image">
-                <img src="data/nmc.png" alt="NMC" class="experience-img">
-            </div>
-            <div class="experience-content">
-                <div class="experience-date">Jul 2025 – Present</div>
-                <h3 class="experience-title">Multimodal Medical AI Research Project</h3>
-                <div class="experience-subtitle">Research Assistant @ NMC Specialty Hospital, Al Ain & the University of Edinburgh</div>
-                <p class="experience-description">Collaborating with Dr. Nilkamal Joshi and Dr. Manish Bhansali on a multi-modal AI model for personalized treatment prediction. Developing 2D and 3D Convolutional Neural Networks (CNNs) to extract features from radiological imaging and clinical data.</p>
-            </div>
-        </div>
-    </div>
-    <br>
-    <div class="single-experience-container">
-        <div class="single-experience-card animated-element">
-            <div class="experience-image">
-                <img src="data/pulse.png" alt="Pulse J2EE Application" class="experience-img">
-            </div>
-            <div class="experience-content">
-                <div class="experience-date">Jun 2023 – Aug 2023</div>
-                <h3 class="experience-title">Pulse J2EE Application Management</h3>
-                <div class="experience-subtitle">Internship @ Datamatics Global Services Limited</div>
-                <p class="experience-description">Developed an enterprise-level web application for managing bulk employee data. Modeled dynamic web pages using Struts and JavaScript, designed MySQL queries and stored procedures, and deployed application modules on Tomcat server.</p>
-            </div>
-        </div>
-    </div>
-
 </section>
 
 <!-- Projects Section -->
-<section id="projects" class="container">
-    <h2 class="section-title animated-element"> Selected Projects</h2>
-    <div class="projects-grid">
-        <div class="project-card animated-element">
-            <img src="data/foodmanager.png" alt="Food Manager" class="project-img">
-            <div class="project-content">
-                <div class="project-tags">
-                    <span class="project-tag">HCI Methods</span>
-                    <span class="project-tag">UX Research</span>
-                    <span class="project-tag">Figma</span>
-                </div>
-                <h3 class="project-title">Food Manager</h3>
-                <p class="project-description">Followed a rigorous iterative design process to address household food waste. Conducted formative research (N=11) using semi-structured interviews and affinity diagramming, followed by mixed-methods summative evaluations of medium-fidelity prototypes.</p>
-                <div class="project-links">
-                    <a href="https://www.figma.com/proto/eK8l3Sku1jEgBMSwGVlH7b/CPSC-344-T1H?page-id=571%3A9088&node-id=574-8408&p=f&viewport=-13705%2C-1308%2C0.46&t=5dKkqrwS2HZ2q2Ku-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=574%3A8408&show-proto-sidebar=1" class="project-link"><i class="fab fa-figma"></i> Figma</a>
-                </div>
-            </div>
+<section class="projects" id="projects">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">Featured Work</span>
+            <h2 class="section-title">Case Studies & Projects</h2>
         </div>
-        <div class="project-card animated-element">
-            <img src="data/bnuuy.png" alt="Bnuuy's Ship" class="project-img">
-            <div class="project-content">
-                <div class="project-tags">
-                    <span class="project-tag">C++</span>
-                    <span class="project-tag">OpenGL</span>
-                    <span class="project-tag">Game Dev</span>
-                </div>
-                <h3 class="project-title">Bnuuy's Ship</h3>
-                <p class="project-description">A 2D naval combat game developed with C++ and OpenGL. Features real-time ship-to-ship combat with realistic physics, sound design, and enemy AI pathfinding algorithms.</p>
-                <div class="project-links">
-                    <a href="https://github.com/ChinmayBhansali/BnuuySavers" class="project-link"><i class="fab fa-github"></i> GitHub</a>
-                    <a href="https://bnuuysavers.itch.io/bnuuys-ship" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="project-card animated-element">
-            <img src="data/ASLingo.png" alt="ASLingo" class="project-img">
-            <div class="project-content">
-                <div class="project-tags">
-                    <span class="project-tag">Python</span>
-                    <span class="project-tag">Flask</span>
-                    <span class="project-tag">AI/ML</span>
-                </div>
-                <h3 class="project-title">ASLingo</h3>
-                <p class="project-description">An interactive web platform for real-time sign language translation and learning, built with HTML, CSS, JavaScript, Python, TensorFlow, and Mediapipe. Features real-time gesture recognition, scalable Flask backend APIs for model prediction, and an intuitive Bootstrap-based frontend for seamless user interaction.</p>
-                <div class="project-links">
-                    <a href="https://github.com/Jordan-SFU/ASLingo" class="project-link"><i class="fab fa-github"></i> GitHub</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="project-card animated-element">
-            <img src="data/PokeMasters.jpeg" alt="PokeMasters" class="project-img">
-            <div class="project-content">
-                <span class="project-tag">Java</span>
-                <span class="project-tag">Java Swing</span>
-                <span class="project-tag">JSON</span>
-                <span class="project-tag">JUnit</span>
-                <span class="project-tag">Object-Oriented Design</span>
-                <h3 class="project-title">PokeMasters</h3>
-                <p class="project-description">An interactive role-playing game built with Java and Java Swing, emphasizing object-oriented design principles and scalable architecture. Features design pattern implementation for maintainability, JSON-based game state persistence, and comprehensive JUnit test suites achieving 100% code coverage.</p>
-                <div class="project-links">
-                    <a href="https://github.com/ChinmayBhansali/PokeMasters" class="project-link"><i class="fab fa-github"></i> GitHub</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="project-card animated-element">
-            <img src="data/DSCI.png" alt="UBC Course Navigator" class="project-img">
-            <div class="project-content">
-                <div class="project-tags">
-                    <span class="project-tag">R</span>
-                    <span class="project-tag">KNN Classification</span>
-                    <span class="project-tag">ggplot2</span>
-                    <span class="project-tag">Cross-Validation</span>
-                </div>
-                <h3 class="project-title">Heart Disease Risk Prediction</h3>
-                <p class="project-description">A data science group project analyzing heart disease risk factors using Python, Jupyter Notebook, and libraries such as Pandas, Scikit-learn, and Matplotlib. Features data cleaning, exploratory data analysis, and predictive modeling to assess whether individuals with middle age and high cholesterol levels are likely to have heart disease.</p>
-                <div class="project-links">
-                    <a href="https://github.com/ChinmayBhansali/DSCI-100-Group-Project" class="project-link"><i class="fab fa-github"></i> GitHub</a>
-                </div>
-            </div>
-        </div>
-            </div>
-        </section>
-
-        <!-- Education Section -->
-        <section id="education" class="container">
-            <h2 class="section-title animated-element">Education</h2>
-            <div class="education-container">
-        <div class="education-card animated-element">
-            <img src="data/UBC.jpeg" alt="University of British Columbia" class="education-logo">
-            <div class="education-details">
-                <h3 class="education-degree">Bachelor of Science, Integrated Sciences</h3>
-                <div class="education-school">University of British Columbia</div>
-                <div class="education-date"> Sept 2022 - Present</div>
-                <p class="education-description">Focusing on HCI using Computer Science, Psychology, and Mathematics. Actively participating in extracurricular activities and seeking research projects.</p>
-                <h4 class="courses-title">Relevant Coursework:</h4>
-                <ul class="courses-list">
-                    <li><b>Human-Computer Interaction & Graphics:</b> CPSC 344: Introduction to HCI Methods, CPSC 444: Advanced Methods in HCI (Next Term), CPSC 314: Computer Graphics, CPSC 424: Geometric Modelling, CPSC 425: Computer Vision, CPSC 426: Computer Animation (Next Term), CPSC 427: Video Game Programming (Next Term) </li>
-                    <li><b>Psychology & Cognition:</b> PSYC 309: Cognitive Processes, PSYC 311: Psychology of Sport, PSYC 335: Gambling and Decision Making, PSYC 367: Sensory Systems, ISCI 351: Evolution of Human Cognition (Next Term)</li>
-                    <li><b>Math & Stats:</b> STAT 302: Probability, MATH 340: Linear Programming, MATH 442: Graphs and Networks (Next Term)</li>
-                </ul>
-            </div>
-        </div>
-            </div>
-        </section>
-
-        <!-- Leadership & Extracurricular Section -->
-        <section id="leadership" class="container">
-            <h2 class="section-title animated-element">Leadership & Extracurricular</h2>
-            <div class="experience-cards">
-                <div class="experience-card animated-element">
-                    <div class="experience-icon">
-                        <i class="fas fa-music"></i>
-                    </div>
-                    <div class="experience-content">
-                        <div class="experience-date">Sep 2023 – Present</div>
-                        <h3 class="experience-title">Pianist & Vocalist</h3>
-                        <div class="experience-subtitle">Sargam-UBC (South Asian Fusion Music Club)</div>
-                        <p class="experience-description">Working as part of the Raagini planning committee to manage club's weekly jam sessions, performances, and gigs. Managed instrumentals and logistics for Raagini concert with 200+ attendees.</p>
+        <div class="projects-grid">
+            <!-- Project 1: Featured - Active HCI Research -->
+            <article class="project-card featured">
+                <div class="project-image">
+                    <img src="data/spin.png" alt="UBC SPIN Lab" class="project-img">
+                    <div class="project-overlay">
+                        <a href="https://www.cs.ubc.ca/labs/spin/" target="_blank">
+                            <span class="view-project">Visit Lab Website</span>
+                        </a>
                     </div>
                 </div>
-
-                <div class="experience-card animated-element">
-                    <div class="experience-icon">
-                        <i class="fas fa-users"></i>
+                <div class="project-content">
+                    <div class="project-tags">
+                        <span class="project-tag">Robot Swarms</span>
+                        <span class="project-tag">Social Computing</span>
                     </div>
-                    <div class="experience-content">
-                        <div class="experience-date">2020</div>
-                        <h3 class="experience-title">Co-founder & Organizer</h3>
-                        <div class="experience-subtitle">VHMUN 2020</div>
-                        <p class="experience-description">Pioneered an inclusive intra-school Model United Nations conference for 75+ students, administered operations across 6 committees, and developed training materials for first-time participants.</p>
+                    <h3 class="project-title">Play Together, Feel Together</h3>
+                    <p class="project-description">
+                        Working with Rocco Ruan in the UBC Sensory Perception & Interaction (SPIN) Lab. We are
+                        exploring how robot swarms and haptic feedback can foster meaningful social connections in
+                        multiplayer gaming environments.
+                    </p>
+                </div>
+            </article>
+
+            <!-- Project 2: UX Research with User Studies -->
+            <article class="project-card">
+                <div class="project-image">
+                    <img src="data/foodmanager.png" alt="Food Manager" class="project-img">
+                    <div class="project-overlay">
+                        <a href="https://www.figma.com/proto/eK8l3Sku1jEgBMSwGVlH7b/CPSC-344-T1H?page-id=571%3A9088&node-id=574-8408&p=f&viewport=-13705%2C-1308%2C0.46&t=5dKkqrwS2HZ2q2Ku-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=574%3A8408&show-proto-sidebar=1"
+                           target="_blank">
+                            <span class="view-project">View Project</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <div class="project-tags">
+                        <span class="project-tag">HCI Methods</span>
+                        <span class="project-tag">UX Research</span>
+                        <span class="project-tag">Figma</span>
+                    </div>
+                    <h3 class="project-title">Food Manager (HCI Project!)</h3>
+                    <p class="project-description">
+                        Followed a rigorous iterative design process to address household food waste. Conducted
+                        formative research (N=11) using semi-structured interviews and affinity diagramming,
+                        followed by mixed-methods summative evaluations of medium-fidelity prototypes.
+                    </p>
+                </div>
+            </article>
+
+            <!-- Project 3: Accessibility & Real-time Interaction -->
+            <article class="project-card">
+                <div class="project-image">
+                    <img src="data/ASLingo.png" alt="ASLingo - ASL Learning Platform" class="project-img">
+                    <div class="project-overlay">
+                        <a href="https://github.com/Jordan-SFU/ASLingo" target="_blank">
+                            <span class="view-project">View on GitHub</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <div class="project-tags">
+                        <span class="project-tag">Accessibility</span>
+                        <span class="project-tag">Gesture Recognition</span>
+                    </div>
+                    <h3 class="project-title">ASL Learning Platform</h3>
+                    <p class="project-description">
+                        Built an accessible web platform for real-time American Sign Language translation and
+                        learning. Integrated TensorFlow and Mediapipe for accurate gesture recognition with a
+                        Flask backend and responsive frontend.
+                    </p>
+                </div>
+            </article>
+
+            <!-- Project 4: Applied ML for Health -->
+            <article class="project-card">
+                <div class="project-image">
+                    <div class="project-placeholder gradient-white">
+                        <img src="data/nmc.png" alt="NMC - Multimodal Treatment Prediction" class="project-img">
+                    </div>
+                </div>
+                <div class="project-content">
+                    <div class="project-tags">
+                        <span class="project-tag">Computer Vision</span>
+                        <span class="project-tag">Deep Learning</span>
+                    </div>
+                    <h3 class="project-title">Multimodal Treatment Prediction</h3>
+                    <p class="project-description">
+                        Developing CNNs to extract volumetric features from radiological imaging to predict
+                        treatment outcomes for acute ureteric colic.
+                    </p>
+                </div>
+            </article>
+
+            <!-- Project 5: Game Development / Technical -->
+            <article class="project-card">
+                <div class="project-image">
+                    <img src="data/bnuuy.png" alt="Bnuuy's Ship Game" class="project-img">
+                    <div class="project-overlay">
+                        <a href="https://bnuuysavers.itch.io/bnuuys-ship" target="_blank">
+                            <span class="view-project">Play Demo</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <div class="project-tags">
+                        <span class="project-tag">C++ / OpenGL</span>
+                        <span class="project-tag">Game Engine</span>
+                    </div>
+                    <h3 class="project-title">2D Top-Down Action-Adventure Base Building Game</h3>
+                    <p class="project-description">
+                        Implemented an ECS-based game engine architecture, polygon-polygon collision detection, and
+                        A* pathfinding algorithms for advanced
+                        enemy AI decision-making.
+                    </p>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- Focus Section -->
+<section class="focus" id="skills">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">Focus</span>
+            <h2 class="section-title">Research Interests</h2>
+        </div>
+
+        <!-- Research Interest Cards -->
+        <div class="research-grid">
+            <div class="research-card">
+                <div class="research-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                        <circle cx="9" cy="7" r="4" />
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                    </svg>
+                </div>
+                <h3 class="research-title">Collaborative Social Computing</h3>
+                <p class="research-desc">Designing systems that foster meaningful social connections and
+                    collaborative experiences in digital environments.</p>
+            </div>
+
+            <div class="research-card">
+                <div class="research-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
+                        <circle cx="12" cy="12" r="3" />
+                    </svg>
+                </div>
+                <h3 class="research-title">VR/AR & Spatial Computing</h3>
+                <p class="research-desc">Exploring immersive interfaces that blend physical and digital realities
+                    for intuitive spatial interactions.</p>
+            </div>
+
+            <div class="research-card">
+                <div class="research-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
+                        <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+                        <path d="M12 2v2" />
+                    </svg>
+                </div>
+                <h3 class="research-title">Haptic Interaction</h3>
+                <p class="research-desc">Leveraging tactile feedback to create richer, more engaging human-computer
+                    communication channels.</p>
+            </div>
+
+            <div class="research-card">
+                <div class="research-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <circle cx="12" cy="12" r="10" />
+                        <path d="M12 16v-4" />
+                        <path d="M12 8h.01" />
+                        <path d="M8 12h8" />
+                    </svg>
+                </div>
+                <h3 class="research-title">Embodied Interaction</h3>
+                <p class="research-desc">Understanding how physical movement and bodily awareness shape our
+                    experience with interactive systems.</p>
+            </div>
+        </div>
+
+        <!-- Technical Toolkit -->
+        <div class="toolkit-section">
+            <h3 class="toolkit-title">Technical Toolkit</h3>
+            <div class="toolkit-grid">
+                <div class="toolkit-category">
+                    <span class="toolkit-label">Languages</span>
+                    <div class="toolkit-tags">
+                        <span class="toolkit-tag">C/C++</span>
+                        <span class="toolkit-tag">Java</span>
+                        <span class="toolkit-tag">C#</span>
+                        <span class="toolkit-tag">Python</span>
+                        <span class="toolkit-tag">R</span>
+                        <span class="toolkit-tag">SQL</span>
+                        <span class="toolkit-tag">HTML</span>
+                        <span class="toolkit-tag">CSS</span>
+                        <span class="toolkit-tag">JavaScript</span>
+                    </div>
+                </div>
+                <div class="toolkit-category">
+                    <span class="toolkit-label">Tools & Environments</span>
+                    <div class="toolkit-tags">
+                        <span class="toolkit-tag">Git</span>
+                        <span class="toolkit-tag">GitHub</span>
+                        <span class="toolkit-tag">JetBrains IDEs</span>
+                        <span class="toolkit-tag">VS Code</span>
+                        <span class="toolkit-tag">Visual Studio</span>
+                        <span class="toolkit-tag">Unity</span>
+                        <span class="toolkit-tag">Google Colab</span>
+                        <span class="toolkit-tag">Jupyter Notebook</span>
+                    </div>
+                </div>
+                <div class="toolkit-category">
+                    <span class="toolkit-label">Frameworks</span>
+                    <div class="toolkit-tags">
+                        <span class="toolkit-tag">TensorFlow</span>
+                        <span class="toolkit-tag">Flask</span>
+                        <span class="toolkit-tag">Struts</span>
+                        <span class="toolkit-tag">Tomcat</span>
+                        <span class="toolkit-tag">Bootstrap</span>
+                        <span class="toolkit-tag">MediaPipe</span>
+                        <span class="toolkit-tag">Firebase</span>
+                        <span class="toolkit-tag">ECS</span>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="container">
-            <h2 class="section-title animated-element">Get In Touch</h2>
-            <div class="contact-container">
-        <div class="contact-info animated-element">
-            <ul class="contact-list">
-                <li>
-                    <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
-                    <div class="contact-text">Vancouver, British Columbia, Canada</div>
-                </li>
-                <li>
-                    <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-                    <div class="contact-text">chinmaybhansali29@gmail.com</div>
-                </li>
-                <li>
-                    <div class="contact-icon"><i class="fab fa-linkedin-in"></i></div>
-                    <div class="contact-text">linkedin.com/in/chinmay-bhansali</div>
-                </li>
-            </ul>
         </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section class="contact" id="contact">
+    <div class="container">
+        <div class="contact-wrapper contact-wrapper--centered">
+            <div class="contact-header">
+                <span class="section-tag">Get In Touch</span>
+                <h2 class="contact-title">Let's Create Something<br><span class="highlight">Amazing Together</span>
+                </h2>
+                <p class="contact-description">
+                    I'm always excited to discuss new projects, research opportunities, or just chat about the
+                    future of human-computer interaction.
+                </p>
             </div>
-        </section>
 
-        <!-- Footer -->
-        <footer>
-            <div class="footer-content">
-        <div class="footer-logo">CB</div>
-        <div class="footer-links">
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#experience">Experience</a>
-            <a href="#projects">Projects</a>
-            <a href="#education">Education</a>
-            <a href="#leadership">Leadership</a>
-            <a href="#contact">Contact</a>
-        </div>
-        <div class="social-footer">
-            <a href="https://github.com/ChinmayBhansali" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://linkedin.com/in/chinmay-bhansali" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-            <a href="mailto:chinmaybhansali29@gmail.com"><i class="fas fa-envelope"></i></a>
-        </div>
-        <div class="copyright">
-            &copy; <span id="year"></span> Chinmay Bhansali. All Rights Reserved.
-        </div>
+            <!-- Accessible Contact Links (shown only in a11y mode) -->
+            <div class="a11y-contact-links">
+                <a href="mailto:chinmaybhansali29@gmail.com" class="a11y-contact-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                        <polyline points="22,6 12,13 2,6" />
+                    </svg>
+                    <span>chinmaybhansali29@gmail.com</span>
+                </a>
+                <a href="https://linkedin.com/in/chinmay-bhansali" target="_blank" class="a11y-contact-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                        <rect x="2" y="9" width="4" height="12" />
+                        <circle cx="4" cy="4" r="2" />
+                    </svg>
+                    <span>linkedin.com/in/chinmay-bhansali</span>
+                </a>
+                <a href="https://github.com/ChinmayBhansali" target="_blank" class="a11y-contact-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path
+                                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                    </svg>
+                    <span>github.com/ChinmayBhansali</span>
+                </a>
             </div>
-        </footer>
 
-        <!-- JavaScript -->
-        <script src="script.js"></script>
+            <!-- Interactive Blob (hidden in a11y mode) -->
+            <div class="contact-visual" id="contactBlob">
+                <div class="blob-container">
+                    <div class="visual-shape"></div>
+                    <div class="blob-icons">
+                        <a href="mailto:chinmaybhansali29@gmail.com" class="blob-icon icon-email"
+                           aria-label="Email">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path
+                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                <polyline points="22,6 12,13 2,6" />
+                            </svg>
+                            <span class="icon-label">Email</span>
+                        </a>
+                        <a href="https://linkedin.com/in/chinmay-bhansali" target="_blank"
+                           class="blob-icon icon-linkedin" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path
+                                        d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                                <rect x="2" y="9" width="4" height="12" />
+                                <circle cx="4" cy="4" r="2" />
+                            </svg>
+                            <span class="icon-label">LinkedIn</span>
+                        </a>
+                        <a href="https://github.com/ChinmayBhansali" target="_blank" class="blob-icon icon-github"
+                           aria-label="GitHub">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path
+                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                            </svg>
+                            <span class="icon-label">GitHub</span>
+                        </a>
+                    </div>
+                    <div class="blob-hint">
+                        <span class="hint-desktop">Hover to connect</span>
+                        <span class="hint-mobile">Tap to connect</span>
+                    </div>
+                </div>
+                <div class="visual-dots"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <p class="footer-text">Designed & Built by Chinmay Bhansali © 2025</p>
+            <p class="footer-tagline">Crafted with 💜 for better human experiences</p>
+        </div>
+    </div>
+</footer>
+
+<script src="script.js"></script>
 </body>
+
 </html>

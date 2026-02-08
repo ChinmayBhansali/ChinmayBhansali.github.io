@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokeMasters | Chinmay Bhansali</title>
+    <meta name="description" content="PokeMasters - A Java game demonstrating object-oriented design principles.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-content">
+            <a href="index.html" class="nav-logo">Chinmay Bhansali</a>
+            <ul class="nav-links">
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="#contact">Contact Me</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Project Header -->
+    <main class="container">
+        <header class="project-header">
+            <a href="index.html#projects" class="back-link">← Back to Projects</a>
+            <p class="project-card-type">Software Engineering</p>
+            <h1>PokeMasters</h1>
+            <p class="hero-tagline">
+                A Java-based game demonstrating object-oriented design principles,
+                built with Swing and rigorously tested using JSON.
+            </p>
+            <div class="project-meta">
+                <p class="project-meta-item">Role: <span>Solo Developer</span></p>
+                <p class="project-meta-item">Tech Stack: <span>Java, Swing, JSON, JUnit</span></p>
+                <p class="project-meta-item">Focus: <span>OOP Design & MVC Architecture</span></p>
+            </div>
+
+            <div class="project-links">
+                <a href="https://github.com/ChinmayBhansali/PokeMasters" class="project-link" target="_blank"
+                    rel="noopener">
+                    <svg class="link-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                    </svg>
+                    GitHub
+                </a>
+            </div>
+        </header>
+
+        <!-- Overview -->
+        <section class="project-stage">
+            <h2>Overview</h2>
+            <p>
+                PokeMasters is a single-player Role-Playing Game where you explore the Pokemon universe,
+                catch and train Pokemon, battle wild creatures, and work toward becoming a PokeMaster.
+                Originally created as a physical notebook-based multiplayer game during my grade 9 boarding
+                school days (when electronics were prohibited), this project represents the digitization of
+                that cherished childhood creation.
+            </p>
+            <p>
+                The game features turn-based combat, a progression system where Pokemon gain experience and
+                level up, resource management with PokeDollars, and a full save/load system. Built using
+                Java with a clean Model-View-Controller architecture, it demonstrates core object-oriented
+                design principles including encapsulation, inheritance, polymorphism, and design patterns
+                like Singleton.
+            </p>
+        </section>
+
+        <!-- Development Phases -->
+        <section class="project-stage">
+            <h2>Development Phases</h2>
+
+            <ul class="milestone-list">
+                <li class="milestone-item">
+                    <p class="milestone-number">Phase 0</p>
+                    <h3>Project Planning</h3>
+                    <p>
+                        Defined the project concept and documented user stories. Selected PokeMasters as my term
+                        project - a digital conversion of a physical notebook-based Pokemon game I created in
+                        grade 9 during boarding school when electronics were prohibited.
+                    </p>
+                    <h4>User Stories Defined</h4>
+                    <ul>
+                        <li>Load previous game or start new</li>
+                        <li>Choose starter Pokemon (Squirtle, Charmander, Bulbasaur)</li>
+                        <li>Battle wild Pokemon with attack, switch, bag, and escape options</li>
+                        <li>Catch Pokemon using PokeBalls (higher catch rate when HP < 20%)</li>
+                        <li>Earn PokeDollars, level up, and learn new attacks</li>
+                        <li>Heal Pokemon and buy items at PokeCenter</li>
+                    </ul>
+                </li>
+
+                <li class="milestone-item">
+                    <p class="milestone-number">Phase 1</p>
+                    <h3>Domain Model & Console UI</h3>
+                    <p>
+                        Implemented the core domain model with clean separation between model and UI packages.
+                        Built a working console-based application with all user stories executable.
+                    </p>
+                    <h4>Model Classes</h4>
+                    <ul>
+                        <li><strong>Player</strong> - Inventory, PokeDollars, Pokemon collection management</li>
+                        <li><strong>Pokemon</strong> - Base class with HP, level, experience, attacks, stats</li>
+                        <li><strong>Starter Classes</strong> - Squirtle, Charmander, Bulbasaur with unique stats</li>
+                        <li><strong>Attack</strong> - Attack objects with damage and effects</li>
+                    </ul>
+                    <p>
+                        <em>Design principle: No System.out.println in model code - clean separation of concerns.</em>
+                    </p>
+                    <figure class="phase-screenshot">
+                        <img src="data/pokemasters_console.png" alt="PokeMasters console interface">
+                        <figcaption>Console-based game interface</figcaption>
+                    </figure>
+                </li>
+
+                <li class="milestone-item">
+                    <p class="milestone-number">Phase 2</p>
+                    <h3>Data Persistence</h3>
+                    <p>
+                        Implemented JSON-based save/load system for persistent game state across sessions.
+                    </p>
+                    <h4>Features</h4>
+                    <ul>
+                        <li><strong>Save Game State</strong> - Serialize player data, Pokemon, inventory to JSON</li>
+                        <li><strong>Load Game State</strong> - Restore previous session from file</li>
+                        <li><strong>Data Saved</strong> - PokeDollars, all Pokemon stats, PokeBall count, progress</li>
+                        <li><strong>Error Handling</strong> - Graceful handling of missing/corrupted save files</li>
+                    </ul>
+                </li>
+
+                <li class="milestone-item">
+                    <p class="milestone-number">Phase 3</p>
+                    <h3>Graphical User Interface</h3>
+                    <p>
+                        Replaced console UI with a full Java Swing graphical interface featuring Pokemon sprites.
+                    </p>
+                    <h4>GUI Screens</h4>
+                    <ul>
+                        <li><strong>Main Menu</strong> - Load Game, New Game, Quit buttons</li>
+                        <li><strong>Starter Selection</strong> - Visual Pokemon selection with sprites</li>
+                        <li><strong>Battle Screen</strong> - Pokemon sprites, HP bars, action buttons</li>
+                        <li><strong>PokeCenter</strong> - Heal and Shop interfaces</li>
+                        <li><strong>Statistics Panel</strong> - Detailed Pokemon information display</li>
+                    </ul>
+                    <figure class="phase-screenshot">
+                        <img src="data/pokemasters_gui.png" alt="PokeMasters GUI interface">
+                        <figcaption>Java Swing graphical interface</figcaption>
+                    </figure>
+                </li>
+
+                <li class="milestone-item">
+                    <p class="milestone-number">Phase 4</p>
+                    <h3>Event Logging & Design Reflection</h3>
+                    <p>
+                        Implemented event logging system and conducted design analysis for future improvements.
+                    </p>
+                    <h4>Event Logging</h4>
+                    <ul>
+                        <li>Singleton pattern for EventLog - logs player creation, Pokemon catches, battles</li>
+                        <li>All events logged from model package only (clean architecture)</li>
+                        <li>Console output on quit displays full session history</li>
+                    </ul>
+                    <h4>Design Reflection</h4>
+                    <p>
+                        Identified improvements: consolidate Pokemon classes to data-driven design,
+                        use HashSets for flexible database storage, and decompose GameGraphics for
+                        better single-responsibility adherence.
+                    </p>
+                </li>
+            </ul>
+        </section>
+
+        <!-- OOP Principles -->
+        <section class="project-stage">
+            <h2>Object-Oriented Design</h2>
+            <ul class="tech-highlights-list">
+                <li>
+                    <strong>MVC Architecture</strong> - Clean separation of Model (domain logic),
+                    View (UI components), and Controller (user input handling).
+                </li>
+                <li>
+                    <strong>Inheritance & Polymorphism</strong> - Base Pokemon class with specialized
+                    starter and wild Pokemon subclasses sharing common behaviors.
+                </li>
+                <li>
+                    <strong>Encapsulation</strong> - Private fields with public methods for controlled
+                    access to player inventory, Pokemon stats, and game state.
+                </li>
+                <li>
+                    <strong>Singleton Pattern</strong> - EventLog maintains single instance for
+                    centralized event tracking across all game components.
+                </li>
+                <li>
+                    <strong>Package Organization</strong> - Separate packages for model, ui, and
+                    persistence with clear dependency boundaries.
+                </li>
+            </ul>
+        </section>
+
+        <!-- Testing -->
+        <section class="project-stage">
+            <h2>Testing & Quality</h2>
+            <ul class="tech-highlights-list">
+                <li>
+                    <strong>JUnit Testing</strong> - All model classes have corresponding test classes
+                    validating Pokemon stats, battle mechanics, and player actions.
+                </li>
+                <li>
+                    <strong>JSON Persistence Tests</strong> - Verified save/load integrity by comparing
+                    serialized and deserialized game states.
+                </li>
+                <li>
+                    <strong>Event Logging</strong> - Complete audit trail for debugging and validating
+                    game flow during development.
+                </li>
+                <li>
+                    <strong>Checkstyle Compliance</strong> - Enforced code quality standards throughout
+                    the codebase.
+                </li>
+            </ul>
+        </section>
+
+        <!-- View on GitHub -->
+        <section class="project-stage play-game-cta">
+            <h2>View the Code</h2>
+            <p>Explore the full source code, including domain model, GUI implementation, and test suites.</p>
+            <a href="https://github.com/ChinmayBhansali/PokeMasters" class="project-link cta-button" target="_blank"
+                rel="noopener">
+                <svg class="link-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                </svg>
+                View on GitHub
+            </a>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <h2 class="footer-heading">Let's Connect!</h2>
+            <ul class="footer-links">
+                <li>
+                    <a href="https://github.com/ChinmayBhansali" target="_blank" rel="noopener">
+                        <svg class="footer-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                        </svg>
+                        GitHub
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/chinmay-bhansali" target="_blank" rel="noopener">
+                        <svg class="footer-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                        </svg>
+                        LinkedIn
+                    </a>
+                </li>
+                <li>
+                    <a href="mailto:chinmaybhansali29@gmail.com">
+                        <svg class="footer-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 010 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z" />
+                        </svg>
+                        Email
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

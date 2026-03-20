@@ -5,343 +5,248 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bnuuy's Ship | Chinmay Bhansali</title>
-    <meta name="description" content="Bnuuy's Ship - A 2D game built with a custom ECS engine using C++ and OpenGL.">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="styles.css">
+    <meta name="description"
+        content="Bnuuy's Ship: a top-down action/strategy game built with a custom C++/OpenGL engine. Captain a modular ship, rescue bunnies, and battle pirate chickens.">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/project.css">
 </head>
 
-<body>
-    <!-- Navigation -->
-    <nav class="nav">
-        <div class="nav-content">
-            <a href="index.html" class="nav-logo">Chinmay Bhansali</a>
-            <ul class="nav-links">
-                <li><a href="about.html">About Me</a></li>
-                <li><a href="#contact">Contact Me</a></li>
-            </ul>
+<body class="theme-bs">
+
+    <!-- ===== Navigation ===== -->
+    <nav class="nav" id="mainNav">
+        <div class="nav__inner">
+            <a href="index.html" class="nav__logo">
+                <span class="nav__logo-icon"></span>
+                Chinmay B.
+            </a>
+            <div class="nav__links" id="navLinks">
+                <a href="about.html" class="nav__link">About</a>
+                <a href="index.html#projects" class="nav__link">Projects</a>
+                <a href="blog.html" class="nav__link">Computers & Society</a>
+                <a href="index.html#contact" class="nav__link">Contact</a>
+                <a href="data/CV.pdf" class="btn btn--primary btn--sm" target="_blank">CV</a>
+            </div>
+            <div class="nav__hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </nav>
 
-    <!-- Project Header -->
-    <main class="container">
-        <header class="project-header">
-            <a href="index.html#projects" class="back-link">← Back to Projects</a>
-            <p class="project-card-type">Video Game Programming</p>
-            <h1>Bnuuy's Ship</h1>
-            <p class="hero-tagline">
-                A 2D video game built from scratch with a custom Entity-Component-System (ECS)
-                game engine using C++ and OpenGL.
-            </p>
-            <div class="project-meta">
-                <p class="project-meta-item">Role: <span>Gameplay & UI/UX Developer</span></p>
-                <p class="project-meta-item">Tech Stack: <span>C++, OpenGL, ECS</span></p>
-                <p class="project-meta-item">Team: <span>5 members</span></p>
-            </div>
-
-            <div class="project-links">
-                <a href="https://bnuuysavers.itch.io/bnuuys-ship" class="project-link" target="_blank" rel="noopener">
-                    ▶ Play Demo
-                </a>
-                <a href="https://github.com/ChinmayBhansali/BnuuySavers" class="project-link" target="_blank"
-                    rel="noopener">
-                    <svg class="link-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
-                    </svg>
-                    GitHub
-                </a>
-            </div>
-        </header>
-
-        <!-- Overview -->
-        <section class="project-stage">
-            <h2>Overview</h2>
-            <p>
-                Bnuuy's Ship is a top-down action/strategy game where you captain a modular ship through a flooded
-                world,
-                rescuing bunnies from scattered islands while battling pirate chickens. Inspired by
-                <em>Lovers in a Dangerous Spacetime</em>, players manage multiple ship stations, steering, cannons,
-                lasers, and healing modules, while assigning rescued bunnies as AI-powered crew members.
-            </p>
-            <p>
-                Built from scratch using a custom Entity-Component-System (ECS) engine with C++ and OpenGL, the project
-                challenged us to implement everything from rendering pipelines to physics systems without relying on
-                existing game engines. The result is a polished, self-contained experience with intro cutscenes,
-                an in-game encyclopedia, save/load progression, and dynamic audio, playable start-to-finish with
-                no external instructions needed.
-            </p>
-        </section>
-
-        <!-- Milestones -->
-        <section class="project-stage">
-            <h2>Development Milestones</h2>
-
-            <ul class="milestone-list">
-                <li class="milestone-item">
-                    <p class="milestone-number">Milestone 0</p>
-                    <h3>Game Pitch</h3>
-                    <div class="milestone-content with-pdf">
-                        <div class="milestone-text">
-                            <p>
-                                <strong>Bnuuy's Ship</strong> is a top-down action/strategy game where you captain
-                                a fleet through a flooded world, rescuing bunnies from scattered islands while
-                                battling pirate ships.
-                            </p>
-                            <h4>Core Mechanics</h4>
-                            <ul>
-                                <li><strong>Multi-station gameplay</strong> - Switch between steering, turrets, and
-                                    cannons</li>
-                                <li><strong>Crew coordination</strong> - Rescued bunnies become crew members who help
-                                    operate weapons</li>
-                                <li><strong>Ship progression</strong> - Upgrade components and customize your ship
-                                    layout</li>
-                                <li><strong>Swarm AI</strong> - Enemies use cooperative group behavior for challenging
-                                    combat</li>
-                            </ul>
-                            <h4>Inspiration</h4>
-                            <p>
-                                Inspired by <em>Lovers in a Dangerous Spacetime</em>, players manage different
-                                ship stations simultaneously in a dynamic crew system.
-                            </p>
-                        </div>
-                        <div class="slides-embed">
-                            <iframe
-                                src="https://docs.google.com/presentation/d/e/2PACX-1vQoWFi4ebGudVjWj4vJcl2UbFenY75IDWDbZMkehRVF_brc9Qq3ExnEt4KIVBcjEGc1dE7_yyCXB68o/pubembed?start=false&loop=false&delayms=60000"
-                                allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
-                            <p class="pdf-caption">Game Pitch Presentation</p>
-                        </div>
-                    </div>
-                </li>
-
-                <li class="milestone-item">
-                    <p class="milestone-number">Milestone 1</p>
-                    <h3>Skeletal Game</h3>
-                    <div class="milestone-content with-pdf">
-                        <div class="milestone-text">
-                            <p>
-                                Core systems and basic gameplay loop implemented - player movement,
-                                ship navigation, combat, and foundational mechanics.
-                            </p>
-                            <h4>Key Features</h4>
-                            <ul>
-                                <li><strong>Station System</strong> - Toggle between player mode and controlling ship
-                                    stations</li>
-                                <li><strong>Ship Navigation</strong> - Physics-based movement with steering wheel</li>
-                                <li><strong>Combat</strong> - Cannon station with mouse aim and projectile firing</li>
-                                <li><strong>Module Rearrangement</strong> - Dynamic ship layout system</li>
-                                <li><strong>Bunny Rescue</strong> - Shoot cages to free and recruit bunnies</li>
-                            </ul>
-                            <h4>My Contributions</h4>
-                            <p>
-                                Island/ship/player collision detection and resolution using polygon-polygon
-                                collision with frame-consistent position data.
-                            </p>
-                        </div>
-                        <div class="slides-embed">
-                            <iframe
-                                src="https://docs.google.com/presentation/d/e/2PACX-1vSqKh4rR3Btndec49wG68U_TiZ61_jj7sgpXeP-UE3FY5PEg8XM_DcMwaXOSmQYgb9Z2F9gzyIa7JVV/pubembed?start=false&loop=false&delayms=60000"
-                                allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
-                            <p class="pdf-caption">Milestone 1 Presentation</p>
-                        </div>
-                    </div>
-                </li>
-
-                <li class="milestone-item">
-                    <p class="milestone-number">Milestone 2</p>
-                    <h3>Minimal Playability</h3>
-                    <div class="milestone-content with-pdf">
-                        <div class="milestone-text">
-                            <p>
-                                AI systems, audio integration, level progression, and gameplay polish
-                                to achieve minimal playability.
-                            </p>
-                            <h4>Key Features</h4>
-                            <ul>
-                                <li><strong>Decision Tree AI</strong> - Helper bunnies autonomously operate cannon
-                                    stations</li>
-                                <li><strong>A* Pathfinding</strong> - Enemy ships navigate around islands intelligently
-                                </li>
-                                <li><strong>Tutorial Level</strong> - Dedicated map to teach core mechanics</li>
-                                <li><strong>Audio Feedback</strong> - Background music and collision SFX</li>
-                                <li><strong>Level Progression</strong> - Death/restart, next level, and point system
-                                </li>
-                            </ul>
-                            <h4>My Contributions</h4>
-                            <p>
-                                Audio feedback integration and implementation of additional enemy ship types
-                                with different behaviors.
-                            </p>
-                        </div>
-                        <div class="slides-embed">
-                            <iframe
-                                src="https://docs.google.com/presentation/d/e/2PACX-1vSUl5TLsDO-26csmqdoyShG8Ehnx-pcy_Db0YNebgdEsKQku_UEMQ5Unk2RpVLwYSS8PukhY-9xprAR/pubembed?start=false&loop=false&delayms=60000"
-                                allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
-                            <p class="pdf-caption">Milestone 2 Presentation</p>
-                        </div>
-                    </div>
-                </li>
-
-                <li class="milestone-item">
-                    <p class="milestone-number">Milestone 3</p>
-                    <h3>Playability Complete</h3>
-                    <div class="milestone-content with-pdf">
-                        <div class="milestone-text">
-                            <p>
-                                Content expansion, progression systems, robustness, and advanced mechanics
-                                for complete playability.
-                            </p>
-                            <h4>Key Features</h4>
-                            <ul>
-                                <li><strong>New Modules</strong> - Laser weapon, healing station, bubble buff modifier
-                                </li>
-                                <li><strong>Build Mode</strong> - Pause and reconfigure ship layout mid-game</li>
-                                <li><strong>Advanced Enemies</strong> - Boat chickens, hot balloon chickens, cow
-                                    spitters</li>
-                                <li><strong>Save/Load System</strong> - Progress saved on level completion with continue
-                                    feature</li>
-                                <li><strong>Randomized Rewards</strong> - Upgrades after completing objectives</li>
-                            </ul>
-                            <h4>My Contributions</h4>
-                            <p>
-                                Healing module implementation and window scaling for consistent
-                                UI across different screen resolutions.
-                            </p>
-                        </div>
-                        <div class="slides-embed">
-                            <iframe
-                                src="https://docs.google.com/presentation/d/e/2PACX-1vTt5V6pieqNlErQ11u4AhIeztXbvSXlkBsHqK9VwCe-qEchQMi0ohQduwI-k49BCGyvJ80O7vGV7KS-/pubembed?start=false&loop=false&delayms=60000"
-                                allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
-                            <p class="pdf-caption">Milestone 3 Presentation</p>
-                        </div>
-                    </div>
-                </li>
-
-                <li class="milestone-item">
-                    <p class="milestone-number">Milestone 4</p>
-                    <h3>Final Release</h3>
-                    <div class="milestone-content with-pdf">
-                        <div class="milestone-text">
-                            <p>
-                                User experience polish, narrative elements, production quality, and
-                                self-contained gameplay for final release.
-                            </p>
-                            <h4>Key Features</h4>
-                            <ul>
-                                <li><strong>Encyclopedia Book</strong> - In-game reference guide for all modules and
-                                    mechanics</li>
-                                <li><strong>Intro Cutscene & Credits</strong> - Full narrative arc from story setup to
-                                    end credits</li>
-                                <li><strong>Comprehensive Audio</strong> - Dynamic music and contextual SFX throughout
-                                </li>
-                                <li><strong>Visual Feedback</strong> - Module cooldowns, health gradients, station
-                                    indicators</li>
-                                <li><strong>Particle System</strong> - GPU-optimized instanced rendering for effects
-                                </li>
-                            </ul>
-                            <h4>My Contributions</h4>
-                            <p>
-                                Sound system architecture and comprehensive audio asset implementation
-                                for all game states and interactions.
-                            </p>
-                        </div>
-                        <div class="slides-embed">
-                            <iframe
-                                src="https://docs.google.com/presentation/d/e/2PACX-1vTiTamC6XZYuKiHmyyVjse8RnJK25GpVa7flt7Q5565OiU1dX_wZP3aZKCftUEC6vgC9k_A0oec8v11/pubembed?start=false&loop=false&delayms=60000"
-                                allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
-                            <p class="pdf-caption">Milestone 4 Final Presentation</p>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-        </section>
-
-        <!-- Technical Highlights -->
-        <section class="project-stage">
-            <h2>Technical Highlights</h2>
-            <ul class="tech-highlights-list">
-                <li>
-                    <strong>Custom ECS Architecture</strong> - Built from scratch for efficient entity management,
-                    enabling modular ship components and dynamic crew assignment.
-                </li>
-                <li>
-                    <strong>A* Pathfinding</strong> - Enemy ships intelligently navigate around island obstacles with
-                    dynamic path recalculation.
-                </li>
-                <li>
-                    <strong>Polygon Collision System</strong> - Frame-consistent polygon-polygon collision detection
-                    with sliding resolution for smooth ship navigation.
-                </li>
-                <li>
-                    <strong>Decision Tree AI</strong> - Helper bunnies autonomously operate stations using decision
-                    tree logic for automated defense.
-                </li>
-                <li>
-                    <strong>Instanced Particle Rendering</strong> - GPU-optimized particle system for visual effects
-                    while maintaining stable 60 FPS.
-                </li>
-                <li>
-                    <strong>Multi-Resolution Support</strong> - Responsive window scaling with consistent aspect ratio
-                    across different screen sizes.
-                </li>
-                <li>
-                    <strong>Tiled Map Integration</strong> - Tileson library for parsing complex maps with spawn points,
-                    collision polygons, and layered rendering.
-                </li>
-            </ul>
-        </section>
-
-        <!-- Play the Game -->
-        <section class="project-stage play-game-cta">
-            <h2>Play the Game!</h2>
-            <p>Experience Bnuuy's Ship for yourself - rescue bunnies, battle pirates, and captain your modular ship.</p>
-            <a href="https://bnuuysavers.itch.io/bnuuys-ship" class="project-link cta-button" target="_blank"
-                rel="noopener">
-                ▶ Play on itch.io
-            </a>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer id="contact" class="footer">
+    <!-- ===== Project Hero ===== -->
+    <section class="project-hero">
         <div class="container">
-            <h2 class="footer-heading">Let's Connect!</h2>
-            <ul class="footer-links">
-                <li>
-                    <a href="https://github.com/ChinmayBhansali" target="_blank" rel="noopener">
-                        <svg class="footer-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
-                        </svg>
-                        GitHub
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.linkedin.com/in/chinmay-bhansali" target="_blank" rel="noopener">
-                        <svg class="footer-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                        </svg>
-                        LinkedIn
-                    </a>
-                </li>
-                <li>
-                    <a href="mailto:chinmaybhansali29@gmail.com">
-                        <svg class="footer-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 010 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z" />
-                        </svg>
-                        Email
-                    </a>
-                </li>
-            </ul>
+            <a href="index.html#projects" class="project-hero__back reveal">← Back to Projects</a>
+            <p class="project-hero__label reveal">Video Game Programming</p>
+            <h1 class="project-hero__title reveal">Bnuuy's Ship</h1>
+            <p class="project-hero__subtitle reveal">A top-down action/strategy game built with a custom C++/OpenGL
+                engine. Captain a modular ship, rescue bunnies, and battle pirate chickens in a handcrafted 2D world.
+            </p>
+
+            <div class="project-hero__meta reveal">
+                <div class="project-hero__meta-item">
+                    <span class="project-hero__meta-label">Tech Stack</span>
+                    <span class="project-hero__meta-value">C++, OpenGL, Custom Engine</span>
+                </div>
+                <div class="project-hero__meta-item">
+                    <span class="project-hero__meta-label">Type</span>
+                    <span class="project-hero__meta-value">Action/Strategy Game</span>
+                </div>
+                <div class="project-hero__meta-item">
+                    <span class="project-hero__meta-label">Focus</span>
+                    <span class="project-hero__meta-value">Engine Architecture, Rendering, Gameplay</span>
+                </div>
+                <div class="project-hero__meta-item">
+                    <span class="project-hero__meta-label">Links</span>
+                    <span class="project-hero__meta-value" style="display: flex; gap: var(--space-3); flex-wrap: wrap;">
+                        <a href="https://github.com/ChinmayBhansali/BnuuySavers" target="_blank"
+                            class="btn btn--primary btn--sm">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 2A10 10 0 0 0 8.84 21.5c.5.08.66-.23.66-.5V19.31C6.73 19.91 6.14 18 6.14 18A2.69 2.69 0 0 0 5 16.5c-.91-.62.07-.6.07-.6a2.1 2.1 0 0 1 1.53 1 2.15 2.15 0 0 0 2.91.83 2.16 2.16 0 0 1 .63-1.34C8 16.17 5.62 15.31 5.62 11.5a3.87 3.87 0 0 1 1-2.71 3.58 3.58 0 0 1 .1-2.64s.84-.27 2.75 1a9.63 9.63 0 0 1 5 0c1.91-1.29 2.75-1 2.75-1a3.58 3.58 0 0 1 .1 2.64 3.87 3.87 0 0 1 1 2.71c0 3.82-2.34 4.66-4.57 4.91a2.39 2.39 0 0 1 .69 1.85V21c0 .27.16.59.67.5A10 10 0 0 0 12 2z">
+                                </path>
+                            </svg>
+                            GitHub Repo
+                        </a>
+                        <a href="https://bnuuysavers.itch.io/bnuuys-ship" target="_blank"
+                            class="btn btn--primary btn--sm">
+                            Play on itch.io
+                        </a>
+                    </span>
+                </div>
+            </div>
+
+            <!-- Game Screenshot -->
+            <div class="image-grid reveal">
+                <div class="image-grid__item" onclick="openLightbox(this)">
+                    <img src="data/BnnuysShip.png" alt="Bnuuy's Ship gameplay screenshot">
+                    <p class="image-grid__caption">Bnuuy's Ship (click to enlarge)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== M0: The Pitch & Architecture ===== -->
+    <section class="stage-section">
+        <div class="container">
+            <div class="stage-section__header reveal">
+                <h2 class="stage-section__title">M0: Concept & Architecture</h2>
+                <p class="stage-section__subtitle">Laying the groundwork for a custom 2D engine.</p>
+            </div>
+
+            <div class="content-block reveal">
+                <p>Our team, "Bnuuy Savers", set out to build a top-down action/strategy game completely from scratch in
+                    C++ and OpenGL. We conceptualized a flooded world where players captain a modular ship to rescue
+                    stranded bunnies from pirate chickens.</p>
+                <p>Before writing rendering code, we had to agree on a robust architecture. We chose an
+                    Entity-Component-System (ECS) using the EnTT library. This allowed us to decouple game object data
+                    from logic, making it much easier to scale our systems for rendering, physics, and AI.</p>
+
+                <h4 class="content-block__title mt-lg">Initial Pitch Deck</h4>
+                <object data="data/bnuuys_ship/M0 Game Pitch Slides.pdf" type="application/pdf" width="100%"
+                    height="600px"
+                    style="border-radius: var(--radius-md); border: 1px solid var(--border-light); margin-top: 1rem;">
+                    <p>Your browser doesn't support embedded PDFs. <a
+                            href="data/bnuuys_ship/M0 Game Pitch Slides.pdf">Download the M0 Pitch Deck</a>.</p>
+                </object>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== M1: The Skeleton ===== -->
+    <section class="stage-section stage-section--alt">
+        <div class="container">
+            <div class="stage-section__header reveal">
+                <h2 class="stage-section__title">M1: The Skeleton</h2>
+                <p class="stage-section__subtitle">Translating ideas into rendering code and core interactions.</p>
+            </div>
+
+            <div class="content-block reveal">
+                <p>The first programmatic milestone focused on getting pixels on the screen and objects moving. I
+                    implemented the core scene manager and worked heavily on the sprite rendering system.</p>
+                <p>Key technical achievements in this phase included:</p>
+                <ul>
+                    <li><strong>Map Integration:</strong> Parsing JSON map data via Tileson to render our tile-based
+                        world, establishing spawn points for the player, enemies, and islands.</li>
+                    <li><strong>Ship Modularity:</strong> Implementing the core logic that allows players to physically
+                        detach stations (like the steering wheel or simple cannon) and store them in an inventory, or
+                        place them dynamically on the grid-based deck of the ship.</li>
+                    <li><strong>Basic Physics:</strong> Writing simple spherical collision detection for projectiles and
+                        AABB collision for basic ship movement boundaries.</li>
+                </ul>
+
+                <h4 class="content-block__title mt-lg">M1 Update Deck</h4>
+                <object data="data/bnuuys_ship/M1 Slides.pdf" type="application/pdf" width="100%" height="600px"
+                    style="border-radius: var(--radius-md); border: 1px solid var(--border-light); margin-top: 1rem;">
+                    <p>Your browser doesn't support embedded PDFs. <a href="data/bnuuys_ship/M1 Slides.pdf">Download the
+                            M1 Slides</a>.</p>
+                </object>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== M2: Minimal Playability ===== -->
+    <section class="stage-section">
+        <div class="container">
+            <div class="stage-section__header reveal">
+                <h2 class="stage-section__title">M2: Artificial Intelligence</h2>
+                <p class="stage-section__subtitle">Adding the "brain" to the game world.</p>
+            </div>
+
+            <div class="content-block reveal">
+                <p>With rendering in place, the game needed conflict. I took on a major role in developing the enemy and
+                    companion AI systems.</p>
+                <p>We implemented <strong>A* Pathfinding</strong> so enemy "Boat Chickens" could intelligently navigate
+                    around complex island geometries to swarm the player ship. For our companion characters, I helped
+                    build a <strong>Decision Tree AI</strong> system. When players rescued a "Helper Bunny", they could
+                    place that bunny on a cannon. The decision tree evaluated the nearest enemy threat and automated the
+                    aiming and firing logic seamlessly, effectively turning a manual station into an auto-turret.</p>
+                <p>Additionally, we upgraded our physics engine to handle precise polygon-polygon continuous collision
+                    detection, ensuring the ship couldn't clip into the newly complex island shapes.</p>
+
+                <h4 class="content-block__title mt-lg">M2 Update Deck</h4>
+                <object data="data/bnuuys_ship/M2 Slides.pdf" type="application/pdf" width="100%" height="600px"
+                    style="border-radius: var(--radius-md); border: 1px solid var(--border-light); margin-top: 1rem;">
+                    <p>Your browser doesn't support embedded PDFs. <a href="data/bnuuys_ship/M2 Slides.pdf">Download the
+                            M2 Slides</a>.</p>
+                </object>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== M3: Playability ===== -->
+    <section class="stage-section stage-section--alt">
+        <div class="container">
+            <div class="stage-section__header reveal">
+                <h2 class="stage-section__title">M3: The Fun Factor</h2>
+                <p class="stage-section__subtitle">Expanding mechanics, content, and game feel.</p>
+            </div>
+
+            <div class="content-block reveal">
+                <p>Milestone 3 was all about variety. We transformed the basic gameplay loop into an engaging experience
+                    by introducing a wealth of new content. We expanded the ship module system to include Laser Beams,
+                    Healing stations, and "Bubble Buffs" that slowed down enemies.</p>
+                <p>I focused on creating dynamic environmental obstacles, like Tornadoes and Whirlpools, giving the
+                    player more threats to manage beyond just angry birds. We also implemented a dynamic Radar System
+                    pointing toward stranded bunnies, and a robust Save/Load system utilizing JSON serialization so
+                    players could keep their ship configurations across different play sessions.</p>
+
+                <h4 class="content-block__title mt-lg">M3 Update Deck</h4>
+                <object data="data/bnuuys_ship/M3 Slides.pdf" type="application/pdf" width="100%" height="600px"
+                    style="border-radius: var(--radius-md); border: 1px solid var(--border-light); margin-top: 1rem;">
+                    <p>Your browser doesn't support embedded PDFs. <a href="data/bnuuys_ship/M3 Slides.pdf">Download the
+                            M3 Slides</a>.</p>
+                </object>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== M4: Polish ===== -->
+    <section class="stage-section">
+        <div class="container">
+            <div class="stage-section__header reveal">
+                <h2 class="stage-section__title">M4: Final Polish</h2>
+                <p class="stage-section__subtitle">Finalizing the engine architecture and user experience.</p>
+            </div>
+
+            <div class="content-block reveal">
+                <p>The final push was about ensuring our custom C++ engine ran flawlessly. This meant extensive memory
+                    management checks to guarantee zero memory leaks or hoarding during prolonged gameplay. We optimized
+                    our render calls using instanced rendering to maintain a rock-solid 60 FPS.</p>
+                <p>To improve the user experience, I worked on module stationing feedback and cooldown UI indicators. We
+                    integrated a visual Particle System for explosions, added an in-game Encyclopedia book to document
+                    the complex systems we built, and wrapped everything with a cinematic intro cutscene and original
+                    music.</p>
+
+                <h4 class="content-block__title mt-lg">M4 Final Deck</h4>
+                <object data="data/bnuuys_ship/M4 Slides.pdf" type="application/pdf" width="100%" height="600px"
+                    style="border-radius: var(--radius-md); border: 1px solid var(--border-light); margin-top: 1rem;">
+                    <p>Your browser doesn't support embedded PDFs. <a href="data/bnuuys_ship/M4 Slides.pdf">Download the
+                            M4 Slides</a>.</p>
+                </object>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Lightbox ===== -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <button class="lightbox__close" onclick="closeLightbox()">✕</button>
+        <img class="lightbox__img" id="lightboxImg" src="" alt="">
+    </div>
+
+    <!-- ===== Footer ===== -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer__text">© 2026 Chinmay Bhansali. Designed & built with care.</p>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/lightbox.js"></script>
 </body>
 
 </html>

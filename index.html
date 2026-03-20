@@ -2,152 +2,349 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chinmay Bhansali | HCI Researcher & Developer</title>
-    <meta name="description"
-        content="Portfolio of Chinmay Bhansali - HCI student at UBC, researching how to design technology for human needs.">
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chinmay Bhansali | HCI Researcher & UX Strategist</title>
+  <meta name="description"
+    content="Chinmay Bhansali — HCI Researcher & UX Strategist. Understanding people to build technology that truly helps. Explore UX research projects, case studies, and human-centered design work.">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/home.css">
 </head>
 
 <body>
-    <!-- Navigation -->
-    <nav class="nav">
-        <div class="nav-content">
-            <a href="index.html" class="nav-logo">Chinmay Bhansali</a>
-            <ul class="nav-links">
-                <li><a href="about.html">About Me</a></li>
-                <li><a href="#contact">Contact Me</a></li>
-            </ul>
-        </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <main class="container">
-        <section class="hero">
-            <h1 class="hero-title">Chinmay Bhansali</h1>
-            <p class="hero-tagline">Designing technology for human needs</p>
-            <div class="hero-buttons">
-                <a href="#projects" class="btn btn-primary">Projects</a>
-                <a href="data/CV.pdf" target="_blank" class="btn btn-secondary">CV</a>
+  <!-- ===== Navigation ===== -->
+  <nav class="nav" id="mainNav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <span class="nav__logo-icon"></span>
+        Chinmay B.
+      </a>
+      <div class="nav__links" id="navLinks">
+        <a href="about.html" class="nav__link">About</a>
+        <a href="#projects" class="nav__link">Projects</a>
+        <a href="blog.html" class="nav__link">Computers & Society</a>
+        <a href="#contact" class="nav__link">Contact</a>
+        <a href="data/CV.pdf" class="btn btn--primary btn--sm" target="_blank">CV</a>
+      </div>
+      <div class="nav__hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== Hero Section ===== -->
+  <section class="hero" id="hero">
+    <!-- Empathy ripple canvas -->
+    <canvas class="hero__canvas" id="rippleCanvas"></canvas>
+
+    <!-- Decorative circles -->
+    <div class="hero__circles">
+      <div class="hero__circle"></div>
+      <div class="hero__circle"></div>
+      <div class="hero__circle"></div>
+      <div class="hero__circle"></div>
+    </div>
+
+    <div class="hero__content">
+      <p class="hero__label">HCI Researcher & UX Strategist</p>
+      <h1 class="hero__title">
+        <span class="highlight">Understanding</span> people to build technology that truly <span
+          class="highlight">helps</span>
+      </h1>
+      <p class="hero__subtitle">
+        I bridge the gap between people and technology through empathetic research,
+        inclusive design, and a belief that every interaction is an opportunity
+        to make someone's life a little better.
+      </p>
+      <div class="hero__cta">
+        <a href="#projects" class="btn btn--primary">Explore My Work</a>
+        <a href="#contact" class="btn btn--secondary">Let's Connect</a>
+      </div>
+      <p class="hero__hint">Click anywhere to create empathy ripples</p>
+    </div>
+
+    <div class="hero__scroll-indicator">
+      <div class="mouse"></div>
+    </div>
+  </section>
+
+  <!-- ===== Approach Section ===== -->
+  <section class="approach" id="approach">
+    <div class="container">
+      <div class="approach__header reveal">
+        <p class="section-label">My Approach</p>
+        <h2 class="approach__subtitle">The Double Diamond</h2>
+      </div>
+
+      <div class="approach__diagram reveal">
+        <img src="data/revamped_double_diamond.jpg" alt="Revamped Double Diamond — Discover, Define, Develop, Deliver"
+          class="approach__diagram-img" onclick="document.getElementById('diagramLightbox').classList.add('active')">
+        <p class="approach__diagram-cite">
+          Taken from <a
+            href="https://uxdesign.cc/how-to-solve-problems-applying-a-uxdesign-designthinking-hcd-or-any-design-process-from-scratch-v2-aa16e2dd550b"
+            target="_blank" rel="noopener">Dan Nessler's Revamped Double Diamond</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox for approach diagram -->
+  <div class="lightbox-overlay" id="diagramLightbox" onclick="this.classList.remove('active')">
+    <img src="data/revamped_double_diamond.jpg" alt="Revamped Double Diamond — Full Size">
+  </div>
+
+  <!-- ===== Projects Section ===== -->
+  <section class="projects" id="projects">
+    <div class="container">
+      <div class="projects__header reveal">
+        <p class="section-label">Selected Projects</p>
+        <h2 class="projects__subtitle">Research that centers people</h2>
+      </div>
+
+      <div class="projects__list">
+        <!-- Food Manager -->
+        <div class="project-accordion reveal reveal-delay-1" data-project="fm">
+          <div class="project-accordion__header" onclick="toggleAccordion(this)">
+            <div class="project-accordion__left">
+              <div class="project-accordion__icon project-accordion__icon--fm">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+                  <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+                  <line x1="6" y1="1" x2="6" y2="4"></line>
+                  <line x1="10" y1="1" x2="10" y2="4"></line>
+                  <line x1="14" y1="1" x2="14" y2="4"></line>
+                </svg>
+              </div>
+              <div class="project-accordion__info">
+                <h3>Food Manager</h3>
+                <p>HCI Research · User-centered food waste reduction app</p>
+              </div>
             </div>
-        </section>
-
-        <!-- Bio Section -->
-        <section class="bio">
-            <p>
-                I'm a fourth-year Integrated Sciences student at the University of British Columbia,
-                specializing in Human-Computer Interaction. I explore the intersection of technology
-                and human behavior to create meaningful, user-centered experiences.
-            </p>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects">
-            <h2> Some Projects</h2>
-            <div class="projects-grid">
-                <!-- Food Manager - HCI Project -->
-                <a href="project-food-manager.html" class="project-card">
-                    <div class="project-card-content">
-                        <p class="project-card-type">HCI Research</p>
-                        <h3 class="project-card-title">Food Manager</h3>
-                        <p class="project-card-description">
-                            Led user research and usability testing for a mobile food management app.
-                            Conducted interviews, created affinity diagrams, and evaluated a Figma prototype.
-                        </p>
-                        <span class="project-card-cta">View Project</span>
-                    </div>
-                    <div class="project-card-image">
-                        <img src="data/Food_Manager.png"
-                            alt="Food Manager app prototype showing grocery list and pantry screens">
-                    </div>
-                </a>
-
-                <!-- Bnuuy's Ship - 2D Game -->
-                <a href="project-bnuuys-ship.html" class="project-card">
-                    <div class="project-card-content">
-                        <p class="project-card-type">Video Game Programming</p>
-                        <h3 class="project-card-title">Bnuuy's Ship</h3>
-                        <p class="project-card-description">
-                            A top-down action/strategy game built with a custom C++/OpenGL engine.
-                            Captain a modular ship, rescue bunnies, and battle pirate chickens.
-                        </p>
-                        <span class="project-card-cta">View Project</span>
-                    </div>
-                    <div class="project-card-image">
-                        <img src="data/BnnuysShip.png" alt="Bnuuy's Ship gameplay screenshot">
-                    </div>
-                </a>
-
-                <!-- PokeMasters - OOP Game -->
-                <a href="project-pokemasters.html" class="project-card">
-                    <div class="project-card-content">
-                        <p class="project-card-type">Software Development</p>
-                        <h3 class="project-card-title">PokeMasters</h3>
-                        <p class="project-card-description">
-                            A Pokemon RPG built with Java Swing, demonstrating MVC architecture and
-                            OOP principles. Digitizing a childhood notebook game from boarding school.
-                        </p>
-                        <span class="project-card-cta">View Project</span>
-                    </div>
-                    <div class="project-card-image">
-                        <img src="data/PokeMasterReturns.png" alt="PokeMasters hand-drawn cover art">
-                    </div>
-                </a>
-
-                <!-- More Projects Coming Soon -->
-                <a class="project-card">
-                    <div class="project-card-content">
-                        <p class="project-card-type">More Projects Coming Soon</p>
-                    </div>
-                </a>
+            <div class="project-accordion__right">
+              <span class="project-accordion__metric">11 participants · 3 design stages</span>
+              <div class="project-accordion__chevron">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </div>
             </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer id="contact" class="footer">
-        <div class="container">
-            <h2 class="footer-heading">Let's Connect!</h2>
-            <ul class="footer-links">
-                <li>
-                    <a href="https://github.com/ChinmayBhansali" target="_blank" rel="noopener">
-                        <svg class="footer-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
-                        </svg>
-                        GitHub
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.linkedin.com/in/chinmay-bhansali" target="_blank" rel="noopener">
-                        <svg class="footer-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                        </svg>
-                        LinkedIn
-                    </a>
-                </li>
-                <li>
-                    <a href="mailto:chinmaybhansali29@gmail.com">
-                        <svg class="footer-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 010 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z" />
-                        </svg>
-                        Email
-                    </a>
-                </li>
-            </ul>
+          </div>
+          <div class="project-accordion__body">
+            <div class="project-accordion__content">
+              <p>A human-centered design project exploring household food management solutions through iterative design
+                stages:
+                from user research to mid-fidelity prototyping.</p>
+              <p><strong>Role:</strong> Lead Researcher & Qualitative Data Analyst &nbsp;·&nbsp;
+                <strong>Duration:</strong> 3 months &nbsp;·&nbsp; <strong>Team:</strong> 5 members
+              </p>
+              <a href="project-food-manager.html" class="btn btn--primary btn--sm">View Case Study →</a>
+            </div>
+          </div>
         </div>
-    </footer>
 
-    <script src="script.js"></script>
+        <!-- Bnuuy's Ship -->
+        <div class="project-accordion reveal reveal-delay-2" data-project="bs">
+          <div class="project-accordion__header" onclick="toggleAccordion(this)">
+            <div class="project-accordion__left">
+              <div class="project-accordion__icon project-accordion__icon--bs">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                </svg>
+              </div>
+              <div class="project-accordion__info">
+                <h3>Bnuuy's Ship</h3>
+                <p>Video Game Programming · Custom C++/OpenGL engine</p>
+              </div>
+            </div>
+            <div class="project-accordion__right">
+              <span class="project-accordion__metric">Custom game engine</span>
+              <div class="project-accordion__chevron">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="project-accordion__body">
+            <div class="project-accordion__content">
+              <p>A top-down action/strategy game built with a custom C++/OpenGL engine. Captain a modular ship, rescue
+                bunnies, and battle pirate chickens in a handcrafted 2D world.</p>
+              <a href="project-bnuuys-ship.html" class="btn btn--primary btn--sm">View Project →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- PokeMasters -->
+        <div class="project-accordion reveal reveal-delay-3" data-project="pm">
+          <div class="project-accordion__header" onclick="toggleAccordion(this)">
+            <div class="project-accordion__left">
+              <div class="project-accordion__icon project-accordion__icon--pm">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                  <line x1="8" y1="21" x2="16" y2="21"></line>
+                  <line x1="12" y1="17" x2="12" y2="21"></line>
+                </svg>
+              </div>
+              <div class="project-accordion__info">
+                <h3>PokeMasters</h3>
+                <p>Software Development · Java Swing RPG with MVC architecture</p>
+              </div>
+            </div>
+            <div class="project-accordion__right">
+              <span class="project-accordion__metric">OOP design patterns</span>
+              <div class="project-accordion__chevron">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="project-accordion__body">
+            <div class="project-accordion__content">
+              <p>A Pokemon RPG built with Java Swing, demonstrating MVC architecture and OOP design patterns. Digitizing
+                a childhood notebook game from boarding school into a full desktop application.</p>
+              <a href="project-pokemasters.html" class="btn btn--primary btn--sm">View Project →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ASLingo -->
+        <div class="project-accordion reveal reveal-delay-4" data-project="asl">
+          <div class="project-accordion__header" onclick="toggleAccordion(this)">
+            <div class="project-accordion__left">
+              <div class="project-accordion__icon project-accordion__icon--asl"
+                style="color: var(--asl-primary); background-color: var(--asl-bg);">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"></path>
+                  <path d="M8.5 8.5v.01"></path>
+                  <path d="M16 15.5v.01"></path>
+                  <path d="M12 12v.01"></path>
+                  <path d="M11 17a2.5 2.5 0 0 1-2-2"></path>
+                  <path d="M7 11a2.5 2.5 0 0 1 2-2"></path>
+                </svg>
+              </div>
+              <div class="project-accordion__info">
+                <h3>ASLingo</h3>
+                <p>Machine Learning · Real-time webcam ASL validation</p>
+              </div>
+            </div>
+            <div class="project-accordion__right">
+              <span class="project-accordion__metric">Hackathon Project</span>
+              <div class="project-accordion__chevron">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="project-accordion__body">
+            <div class="project-accordion__content">
+              <p>A highly structured, interactive educational tool bridging web development and computer vision built in
+                36 hours. Uses MediaPipe and Keras to provide real-time webcam feedback for learning American Sign
+                Language.</p>
+              <a href="project-aslingo.html" class="btn btn--primary btn--sm"
+                style="background-color: var(--asl-primary);">View Project →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Contact Section ===== -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact__header reveal">
+        <p class="section-label">Let's Connect</p>
+        <h2 class="contact__subtitle">Start a conversation</h2>
+      </div>
+
+      <div class="contact__grid">
+        <!-- Left: Quote + Status -->
+        <div class="contact__quote-card reveal reveal-delay-1">
+          <div class="contact__quote-mark">"</div>
+          <p class="contact__quote-text">
+            …creativity is the habit of continually doing things in new ways to make a positive difference to our life.
+          </p>
+          <p class="contact__quote-author">(Hyper Island, 2016)</p>
+
+          <div class="contact__status">
+            <span class="contact__status-badge">Open to new opportunities</span>
+            <span class="contact__location">📍 Vancouver, BC</span>
+          </div>
+        </div>
+
+        <!-- Right: Interactive Contact Links -->
+        <div class="contact__links-area reveal reveal-delay-2">
+          <a href="https://github.com/ChinmayBhansali" target="_blank" class="contact__link-card">
+            <div class="contact__link-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+              </svg>
+            </div>
+            <div class="contact__link-text">
+              <h4>GitHub</h4>
+              <p>Check out my code and projects</p>
+            </div>
+            <span class="contact__link-arrow">→</span>
+          </a>
+
+          <a href="https://www.linkedin.com/in/chinmay-bhansali" target="_blank" class="contact__link-card">
+            <div class="contact__link-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+              </svg>
+            </div>
+            <div class="contact__link-text">
+              <h4>LinkedIn</h4>
+              <p>Let's connect professionally</p>
+            </div>
+            <span class="contact__link-arrow">→</span>
+          </a>
+
+          <a href="mailto:chinmaybhansali29@gmail.com" class="contact__link-card">
+            <div class="contact__link-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+            </div>
+            <div class="contact__link-text">
+              <h4>Email</h4>
+              <p>Drop me a line. I'd love to hear from you</p>
+            </div>
+            <span class="contact__link-arrow">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer__text">© 2026 Chinmay Bhansali. Designed & built with care.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/hero.js"></script>
 </body>
 
 </html>

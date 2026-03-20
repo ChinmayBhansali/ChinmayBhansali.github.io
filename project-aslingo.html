@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASLingo | Chinmay Bhansali</title>
+    <meta name="description"
+        content="ASLingo: A full-stack web application that uses computer vision and machine learning for real-time American Sign Language recognition.">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/project.css">
+</head>
+
+<body class="theme-asl">
+
+    <!-- ===== Navigation ===== -->
+    <nav class="nav" id="mainNav">
+        <div class="nav__inner">
+            <a href="index.html" class="nav__logo">
+                <span class="nav__logo-icon"></span>
+                Chinmay B.
+            </a>
+            <div class="nav__links" id="navLinks">
+                <a href="about.html" class="nav__link">About</a>
+                <a href="index.html#projects" class="nav__link">Projects</a>
+                <a href="blog.html" class="nav__link">Computers & Society</a>
+                <a href="index.html#contact" class="nav__link">Contact</a>
+                <a href="data/CV.pdf" class="btn btn--primary btn--sm" target="_blank">CV</a>
+            </div>
+            <div class="nav__hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== Project Hero ===== -->
+    <section class="project-hero">
+        <div class="container">
+            <a href="index.html#projects" class="project-hero__back reveal">← Back to Projects</a>
+            <p class="project-hero__label reveal">Machine Learning & Computer Vision</p>
+            <h1 class="project-hero__title reveal">ASLingo</h1>
+            <p class="project-hero__subtitle reveal">A highly structured, interactive educational tool bridging web
+                development and computer vision built in 36 hours. ASLingo provides real-time webcam feedback for
+                learning American Sign Language.</p>
+
+            <div class="project-hero__meta reveal">
+                <div class="project-hero__meta-item">
+                    <span class="project-hero__meta-label">Frontend</span>
+                    <span class="project-hero__meta-value">HTML, CSS, JavaScript (Webcam Streams)</span>
+                </div>
+                <div class="project-hero__meta-item">
+                    <span class="project-hero__meta-label">Backend</span>
+                    <span class="project-hero__meta-value">Python, Flask</span>
+                </div>
+                <div class="project-hero__meta-item">
+                    <span class="project-hero__meta-label">ML & CV</span>
+                    <span class="project-hero__meta-value">TensorFlow/Keras, MediaPipe, OpenCV, NumPy</span>
+                </div>
+                <div class="project-hero__meta-item">
+                    <span class="project-hero__meta-label">Context</span>
+                    <span class="project-hero__meta-value">Hackathon (1.5 Days)</span>
+                </div>
+            </div>
+
+            <div class="reveal" style="margin-top: 2rem;">
+                <a href="https://github.com/Jordan-SFU/ASLingo" class="btn btn--primary" target="_blank"
+                    rel="noopener noreferrer">
+                    <svg style="width: 20px; height: 20px; margin-right: 8px; fill: currentColor;" viewBox="0 0 24 24">
+                        <path
+                            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                    </svg>
+                    View Source Code
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Overview ===== -->
+    <section class="stage-section" style="padding-top: var(--space-8);">
+        <div class="container">
+            <div class="content-block reveal">
+                <p class="project-hero__subtitle" style="color: var(--charcoal); font-weight: 500; max-width: 800px;">
+                    ASLingo goes beyond static tutorials by incorporating a real-time computer vision feedback loop,
+                    allowing users to practice signs in front of their webcam and receive immediate translation and
+                    validation.</p>
+                <div class="conceptual-model" style="margin-top: 3rem;">
+                    <div class="conceptual-model__flow">
+                        <div class="conceptual-model__node">
+                            <div class="conceptual-model__node-name">Webcam Input</div>
+                            <div class="conceptual-model__node-desc">JavaScript extraction</div>
+                        </div>
+                        <div class="conceptual-model__arrow">→</div>
+                        <div class="conceptual-model__node">
+                            <div class="conceptual-model__node-name">Feature Extraction</div>
+                            <div class="conceptual-model__node-desc">MediaPipe Landmarks</div>
+                        </div>
+                        <div class="conceptual-model__arrow">→</div>
+                        <div class="conceptual-model__node">
+                            <div class="conceptual-model__node-name">Inference</div>
+                            <div class="conceptual-model__node-desc">Keras MLP Network</div>
+                        </div>
+                        <div class="conceptual-model__arrow">→</div>
+                        <div class="conceptual-model__node">
+                            <div class="conceptual-model__node-name">Feedback Loop</div>
+                            <div class="conceptual-model__node-desc">Real-time validation</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Architecture: ML Pipeline ===== -->
+    <section class="stage-section stage-section--alt">
+        <div class="container">
+            <div class="stage-section__header reveal">
+                <span class="tag tag--accent">Component 1</span>
+                <h2 class="stage-section__title">The Machine Learning Pipeline</h2>
+                <p class="stage-section__subtitle">A custom end-to-end pipeline built to act as the intelligence behind
+                    the gesture recognition.</p>
+            </div>
+
+            <div class="content-block reveal">
+                <div class="findings-grid">
+                    <div class="finding-card">
+                        <div class="finding-card__icon"></div>
+                        <h4 class="finding-card__title">Data Collection</h4>
+                        <p class="finding-card__desc">An automated script prompts users to perform specific signs (e.g.,
+                            alphabet, "hello"). It utilizes OpenCV to capture 20 rapid frames per sign directly from the
+                            webcam, generating a structured visual dataset.</p>
+                    </div>
+                    <div class="finding-card">
+                        <div class="finding-card__icon"></div>
+                        <h4 class="finding-card__title">Feature Extraction</h4>
+                        <p class="finding-card__desc">Instead of raw pixels, Google's MediaPipe Holistic model extracts
+                            exact 3D spatial coordinates (landmarks) for the user's pose (33 points) and hands (21
+                            points each). We isolated only hand landmarks to reduce noise and optimize accuracy.</p>
+                    </div>
+                    <div class="finding-card">
+                        <div class="finding-card__icon"></div>
+                        <h4 class="finding-card__title">Model Architecture</h4>
+                        <p class="finding-card__desc">The arrays are fed into a Keras Sequential neural network. We used
+                            an MLP architecture (Flatten layer -> two Dense layers with 128 ReLU neurons -> Dense
+                            Softmax output layer), trained over 100 epochs using the Adam optimizer.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Architecture: Web App ===== -->
+    <section class="stage-section">
+        <div class="container">
+            <div class="stage-section__header reveal">
+                <span class="tag tag--accent">Component 2</span>
+                <h2 class="stage-section__title">Web Application & Real-Time Inference</h2>
+                <p class="stage-section__subtitle">Bridging the frontend user interface with the computationally
+                    intensive ML model.</p>
+            </div>
+
+            <div class="content-block reveal"
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 4rem; align-items: start;">
+                <div>
+                    <h3 class="content-block__title">Routing & State</h3>
+                    <p>A Flask server manages the entire application state. It serves various pages (Home, Learning,
+                        Translator, Lessons) and handles basic user authentication (Login/Register) utilizing a
+                        lightweight JSON-based data store.</p>
+
+                    <h3 class="content-block__title" style="margin-top: 2rem;">The Translation Endpoint</h3>
+                    <p>The core interactive feature lives at <code>/process_frame</code>. The frontend JavaScript
+                        captures individual frames from the user's active webcam and transmits them to this endpoint as
+                        base64-encoded strings via rapid POST requests.</p>
+                </div>
+                <div>
+                    <div class="finding-card"
+                        style="margin-top: 0; background-color: var(--white); border-color: var(--border-light); border-left-color: var(--asl-primary);">
+                        <h4 class="finding-card__title" style="display:flex; align-items:center; gap:0.5rem;"><span
+                                style="font-size: 1.5rem;"></span> Live Inference Process</h4>
+                        <ul style="margin-left: 1.5rem; margin-top: 1rem;">
+                            <li>Base64 string is decoded and converted back into an OpenCV image array.</li>
+                            <li>MediaPipe processes the live image to extract pose and hand landmarks, mirroring the
+                                extraction methodology used during training.</li>
+                            <li>The pre-trained <code>model.h5</code> evaluates this array, makes a prediction, and maps
+                                the highest probability index to the corresponding character.</li>
+                            <li>The translated text is returned directly to the user's screen in real-time.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Key Strengths & Next Steps ===== -->
+    <section class="stage-section stage-section--alt">
+        <div class="container">
+            <div class="stage-section__header reveal">
+                <span class="tag tag--accent">Reflection</span>
+                <h2 class="stage-section__title">Project Strengths & Future Expansion</h2>
+                <p class="stage-section__subtitle">Analyzing architectural decisions and identifying areas for growth
+                    beyond the hackathon environment.</p>
+            </div>
+
+            <div class="content-block reveal data-findings-row">
+                <div class="data-column">
+                    <h3 class="content-block__title">Engineering Strengths</h3>
+                    <div class="findings-grid" style="grid-template-columns: 1fr;">
+                        <div class="finding-card">
+                            <h4 class="finding-card__title">Low-Latency Processing</h4>
+                            <p class="finding-card__desc">By utilizing MediaPipe for landmark extraction rather than
+                                passing raw high-resolution pixel data through an expensive Convolutional Neural Network
+                                (CNN), we drastically reduced the computational load. This allows for smooth, real-time
+                                inference in a standard web browser.</p>
+                        </div>
+                        <div class="finding-card">
+                            <h4 class="finding-card__title">Modular ML Pipeline</h4>
+                            <p class="finding-card__desc">Building a complete end-to-end pipeline—from scripting
+                                automated webcam data collection to feature extraction and model training—demonstrates a
+                                strong structural understanding of bridging raw, messy real-world data with predictive
+                                models.</p>
+                        </div>
+                        <div class="finding-card">
+                            <h4 class="finding-card__title">Interactive Tooling</h4>
+                            <p class="finding-card__desc">The project successfully applies complex backend processing to
+                                a tangible accessibility and educational problem, creating a highly interactive feedback
+                                loop that genuinely enhances the learning experience.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="findings-column">
+                    <h3 class="content-block__title">Future Expansion (Next Steps)</h3>
+                    <div class="recommendations">
+                        <div class="recommendation-item">
+                            <div class="recommendation-item__number">1</div>
+                            <div>
+                                <strong>Temporal Dynamics (LSTM/RNN)</strong>
+                                <p style="margin-top: 0.5rem;">The current Multi-Layer Perceptron evaluates static
+                                    individual frames. Transitioning to a Recurrent Neural Network (RNN) or Long
+                                    Short-Term Memory (LSTM) architecture would empower the system to recognize complex,
+                                    multi-stage ASL signs that rely on continuous fluid movement over time, rather than
+                                    just isolated hand shapes.</p>
+                            </div>
+                        </div>
+                        <div class="recommendation-item">
+                            <div class="recommendation-item__number">2</div>
+                            <div>
+                                <strong>Robust Security</strong>
+                                <p style="margin-top: 0.5rem;">Upgrading the hackathon-friendly plaintext JSON
+                                    authentication to a secure, scalable database (such as PostgreSQL) utilizing hashed
+                                    passwords (e.g., bcrypt) to protect user accounts and progress tracking securely and
+                                    efficiently.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Lightbox (for images if added later) ===== -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <button class="lightbox__close" onclick="closeLightbox()">✕</button>
+        <img class="lightbox__img" id="lightboxImg" src="" alt="">
+    </div>
+
+    <!-- ===== Footer ===== -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer__text">© 2026 Chinmay Bhansali. Designed &amp; built with care.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/lightbox.js"></script>
+</body>
+
+</html>

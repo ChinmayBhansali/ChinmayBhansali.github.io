@@ -1,0 +1,143 @@
+/* ============================================
+   HCI Portfolio — Who Am I (Story Page)
+   ============================================ */
+
+/* --- Story Hero --- */
+.story-hero {
+    padding: calc(var(--nav-height) + var(--space-16)) 0 var(--space-12);
+    border-bottom: 1px solid var(--border-light);
+}
+
+.story-hero__back {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+    margin-bottom: var(--space-8);
+    transition: color var(--duration-fast) var(--ease-smooth);
+}
+
+.story-hero__back:hover {
+    color: var(--terracotta);
+}
+
+.story-hero__label {
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    letter-spacing: var(--tracking-wide);
+    text-transform: uppercase;
+    color: var(--terracotta);
+    margin-bottom: var(--space-4);
+}
+
+.story-hero__title {
+    font-family: var(--font-display);
+    font-size: var(--text-5xl);
+    margin-bottom: var(--space-4);
+}
+
+/* --- Epigraph --- */
+.story-epigraph {
+    padding: var(--space-16) 0 var(--space-12);
+    text-align: center;
+}
+
+.story-epigraph__text {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: var(--text-2xl);
+    color: var(--charcoal);
+    line-height: var(--leading-normal);
+    max-width: 640px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.story-epigraph__text::before {
+    content: '"';
+    font-family: var(--font-display);
+    font-size: 4rem;
+    color: var(--terracotta-light);
+    position: absolute;
+    top: -2rem;
+    left: -0.5rem;
+    line-height: 1;
+    opacity: 0.6;
+}
+
+/* --- Story Body --- */
+.story-body {
+    padding: 0 0 var(--space-20);
+}
+
+.story-body__content {
+    max-width: var(--max-width-narrow);
+    margin: 0 auto;
+    font-size: var(--text-lg);
+    line-height: var(--leading-loose);
+    color: var(--charcoal);
+}
+
+.story-body__content p {
+    margin-bottom: var(--space-8);
+    color: var(--charcoal-light);
+}
+
+.story-body__content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Subtle separator between thematic groups */
+.story-body__separator {
+    width: 40px;
+    border: none;
+    border-top: 2px solid var(--terracotta-light);
+    margin: var(--space-12) auto;
+    opacity: 0.4;
+}
+
+/* --- Subtle link on About page --- */
+.story-whisper {
+    margin-top: var(--space-8);
+    padding-top: var(--space-6);
+    border-top: 1px solid var(--border-light);
+}
+
+.story-whisper__link {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+    transition: color var(--duration-normal) var(--ease-smooth);
+}
+
+.story-whisper__link:hover {
+    color: var(--terracotta);
+}
+
+.story-whisper__link span {
+    transition: transform var(--duration-normal) var(--ease-smooth);
+    display: inline-block;
+    margin-left: var(--space-1);
+}
+
+.story-whisper__link:hover span {
+    transform: translateX(4px);
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    .story-hero__title {
+        font-size: var(--text-3xl);
+    }
+
+    .story-epigraph__text {
+        font-size: var(--text-xl);
+    }
+
+    .story-body__content {
+        font-size: var(--text-base);
+    }
+}

@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computers & Society | Chinmay Bhansali</title>
+    <meta name="description"
+        content="Thoughts on ethics and technology — exploring ethical frameworks, responsible design, and the impact of computing on society.">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/blog.css">
+</head>
+
+<body>
+
+    <!-- ===== Navigation ===== -->
+    <nav class="nav" id="mainNav">
+        <div class="nav__inner">
+            <a href="index.html" class="nav__logo">
+                <span class="nav__logo-icon"></span>
+                Chinmay B.
+            </a>
+            <div class="nav__links" id="navLinks">
+                <a href="about.html" class="nav__link">About</a>
+                <a href="index.html#projects" class="nav__link">Projects</a>
+                <a href="blog.html" class="nav__link active">Computers & Society</a>
+                <a href="index.html#contact" class="nav__link">Contact</a>
+                <a href="data/CV.pdf" class="btn btn--primary btn--sm" target="_blank">CV</a>
+            </div>
+            <div class="nav__hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== Blog Hero ===== -->
+    <section class="blog-hero">
+        <div class="container">
+            <a href="index.html" class="blog-hero__back">← Back to Home</a>
+            <p class="blog-hero__label">Computers & Society</p>
+            <h1 class="blog-hero__title">Ethics & Technology</h1>
+            <p class="blog-hero__subtitle">
+                A space for thinking critically about the intersection of computing, ethics, and society.
+                How do the tools we build shape the world, and how should they?
+            </p>
+        </div>
+    </section>
+
+    <!-- ===== Ethical Frameworks ===== -->
+    <section class="frameworks-section" id="frameworks">
+        <div class="container">
+            <div class="frameworks-section__header reveal">
+                <h2 class="frameworks-section__title">Ethical Frameworks</h2>
+            </div>
+
+            <p class="frameworks-intro reveal">
+                An ethical theory is considered "workable" if it can produce explanations that aim to persuade
+                a skeptical but open-minded audience using good, rational arguments.
+            </p>
+
+            <!-- Unworkable Frameworks -->
+            <div class="frameworks-group frameworks-group--unworkable">
+                <h3 class="frameworks-group__title reveal">
+                    <span class="frameworks-group__title-icon">✕</span>
+                    Unworkable Ethical Frameworks
+                </h3>
+                <p class="frameworks-group__subtitle reveal">These theories are generally considered unworkable because
+                    they fail to provide universal or logical grounds for persuading others in a rigorous ethical
+                    debate.</p>
+
+                <div class="framework-detail reveal">
+                    <div class="framework-detail__header">
+                        <h4 class="framework-detail__name">Subjective Relativism</h4>
+                    </div>
+                    <p class="framework-detail__desc">This framework asserts that there is no universal standard of
+                        right or wrong. Instead, every individual must decide for themselves what is moral. Its core
+                        defense is "Who are you to criticize my values?". While it contains a kernel of truth regarding
+                        the virtue of tolerance, it universalizes this tolerance to the point of absurdity.</p>
+                    <p class="framework-detail__kernel"><strong>Kernel of truth:</strong> Tolerance is a virtue, and
+                        individuals should not be dismissed for having different perspectives.</p>
+                </div>
+
+                <div class="framework-detail reveal">
+                    <div class="framework-detail__header">
+                        <h4 class="framework-detail__name">Cultural Relativism</h4>
+                    </div>
+                    <p class="framework-detail__desc">This theory claims that moral actions are based entirely on a
+                        specific culture's actual moral guidelines. Because different cultures hold different moral
+                        standards, it is viewed as presumptuous to judge another culture's values.</p>
+                    <p class="framework-detail__kernel"><strong>Kernel of truth:</strong> Understanding other cultures
+                        can be difficult, and superficial judgments have historically been wrong.</p>
+                </div>
+
+                <div class="framework-detail reveal">
+                    <div class="framework-detail__header">
+                        <h4 class="framework-detail__name">Divine Command Theory</h4>
+                    </div>
+                    <p class="framework-detail__desc">This framework dictates that good actions are those that God has
+                        willed. Therefore, moral decision-making should be guided by holy books (e.g., "Stealing is
+                        wrong, because the Bible says so").</p>
+                    <p class="framework-detail__kernel"><strong>Kernel of truth:</strong> Religious traditions contain
+                        much moral wisdom accumulated over centuries.</p>
+                </div>
+
+                <div class="framework-detail reveal">
+                    <div class="framework-detail__header">
+                        <h4 class="framework-detail__name">Ethical Egoism</h4>
+                    </div>
+                    <p class="framework-detail__desc">This theory argues that an individual's only ethical obligation is
+                        their own self-interest. Actions are considered morally right if they advance one's own
+                        long-term interests, and helping others is only moral if it aligns with those personal
+                        interests.</p>
+                    <p class="framework-detail__kernel"><strong>Kernel of truth:</strong> Allowing people to follow
+                        their self-interest can sometimes yield better social outcomes than central planning.</p>
+                </div>
+            </div>
+
+            <hr class="frameworks-divider">
+
+            <!-- Workable Frameworks -->
+            <div class="frameworks-group frameworks-group--workable">
+                <h3 class="frameworks-group__title reveal">
+                    <span class="frameworks-group__title-icon">✓</span>
+                    Workable Ethical Frameworks
+                </h3>
+                <p class="frameworks-group__subtitle reveal">These frameworks provide a more systematic, logical basis
+                    for determining right from wrong.</p>
+
+                <!-- 1. Kantianism -->
+                <div class="framework-detail reveal">
+                    <div class="framework-detail__header">
+                        <span class="framework-detail__number">1.</span>
+                        <h4 class="framework-detail__name">Kantianism</h4>
+                    </div>
+                    <p class="framework-detail__origin">Rooted in the philosophy of Immanuel Kant</p>
+                    <p class="framework-detail__desc">The key goal of Kantianism is to derive morality from basic,
+                        rational principles. It proposes that the only thing in the world that is good without
+                        qualification is a "good will," or the desire to do the right thing.</p>
+                    <ul class="framework-detail__points">
+                        <li><strong>First Formulation of the Categorical Imperative:</strong> You should act only from
+                            moral rules that you can simultaneously will to become universal moral laws without creating
+                            a logical contradiction.</li>
+                        <li><strong>Second Formulation of the Categorical Imperative:</strong> You should act in a way
+                            that treats both yourself and other people as ends in themselves, and never <em>only</em> as
+                            a means to an end.</li>
+                        <li>It defines "perfect duties" (duties you are obliged to fulfill without exception, like
+                            telling the truth) and "imperfect duties" (duties like helping others, which are cause for
+                            praise but never fully "done").</li>
+                    </ul>
+                </div>
+
+                <!-- 2. Utilitarianism -->
+                <div class="framework-detail reveal">
+                    <div class="framework-detail__header">
+                        <span class="framework-detail__number">2.</span>
+                        <h4 class="framework-detail__name">Utilitarianism</h4>
+                    </div>
+                    <p class="framework-detail__origin">Conceived by Jeremy Bentham and John Stuart Mill</p>
+                    <p class="framework-detail__desc">A consequentialist theory where the morality of an action is based
+                        solely on its consequences, rather than the actor's intent. It evaluates the "utility" of an
+                        outcome, which is its tendency to produce happiness or prevent unhappiness.</p>
+                    <ul class="framework-detail__points">
+                        <li><strong>Act Utilitarianism:</strong> An action is right or wrong to the extent that it
+                            increases or decreases the total happiness of the affected parties. You simply add up the
+                            change in happiness of all affected beings; if the sum is greater than zero, the action is
+                            good.</li>
+                        <li><strong>Rule Utilitarianism:</strong> Instead of looking at individual actions, this applies
+                            the Principle of Utility to moral rules. Society ought to adopt moral rules which, if
+                            followed by everyone, would lead to the greatest increase in total happiness.</li>
+                    </ul>
+                </div>
+
+                <!-- 3. Social Contract Theory -->
+                <div class="framework-detail reveal">
+                    <div class="framework-detail__header">
+                        <span class="framework-detail__number">3.</span>
+                        <h4 class="framework-detail__name">Social Contract Theory</h4>
+                    </div>
+                    <p class="framework-detail__origin">Developed by Thomas Hobbes, Jean-Jacques Rousseau, and John
+                        Rawls</p>
+                    <p class="framework-detail__desc">This theory posits that morality consists of the set of rules
+                        governing how people treat each other. Rational people will agree to accept these rules for
+                        their mutual benefit, provided that others follow them as well.</p>
+                    <ul class="framework-detail__points">
+                        <li>It operates heavily on the concepts of <strong>negative rights</strong> (rights guaranteed
+                            by others leaving you alone) and <strong>positive rights</strong> (rights obliging others to
+                            do something on your behalf).</li>
+                        <li><strong>Rawls's Principles of Justice:</strong> Everyone should have a fully adequate number
+                            of basic rights and liberties. Any social or economic inequalities must be to the greatest
+                            benefit of the least-advantaged members of society.</li>
+                    </ul>
+                </div>
+
+                <!-- 4. Virtue Ethics -->
+                <div class="framework-detail reveal">
+                    <div class="framework-detail__header">
+                        <span class="framework-detail__number">4.</span>
+                        <h4 class="framework-detail__name">Virtue Ethics</h4>
+                    </div>
+                    <p class="framework-detail__origin">Tracing back to Aristotle</p>
+                    <p class="framework-detail__desc">Virtue Ethics argues that true happiness and human flourishing lie
+                        in living a life of virtue. A right action is simply an action that a virtuous person, acting in
+                        character, would do in the same circumstances.</p>
+                    <ul class="framework-detail__points">
+                        <li>Virtues are character traits needed to flourish, and they are developed by habitually
+                            repeating virtuous actions (e.g., developing honesty by telling the truth).</li>
+                        <li>A virtue typically lies right in the middle of two extreme vices (one of excess, and one of
+                            abstinence). For example, <strong>courage</strong> is the virtue that sits perfectly between
+                            the vice of cowardice (being too afraid to act) and the vice of rashness (acting without
+                            thinking).</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Blog Posts Listing ===== -->
+    <section class="blog-listing" id="posts">
+        <div class="container">
+            <div class="blog-listing__header reveal">
+                <h2 class="blog-listing__title">Blog Posts</h2>
+                <span class="blog-listing__count"></span>
+            </div>
+
+            <ul class="blog-posts">
+                <li class="blog-post-item reveal reveal-delay-1">
+                    <a href="blog-ai-training-data.html">
+                        <div class="blog-post-item__info">
+                            <h3 class="blog-post-item__title">Training AI on Pirated Data: A Kantian Analysis</h3>
+                            <p class="blog-post-item__excerpt">Is it ethical to train language models on datasets
+                                containing pirated copyrighted material?</p>
+                        </div>
+
+                        <span class="blog-post-item__arrow">→</span>
+                    </a>
+                </li>
+
+                <li class="blog-post-item reveal reveal-delay-2">
+                    <a href="blog-software-piracy.html">
+                        <div class="blog-post-item__info">
+                            <h3 class="blog-post-item__title">Software Piracy and Intellectual Property</h3>
+                            <p class="blog-post-item__excerpt">Should a company keep using unlicensed software when
+                                finances are tight? A Rule Utilitarian perspective.</p>
+                        </div>
+
+                        <span class="blog-post-item__arrow">→</span>
+                    </a>
+                </li>
+
+                <li class="blog-post-item reveal reveal-delay-3">
+                    <a href="blog-wifi-ethics.html">
+                        <div class="blog-post-item__info">
+                            <h3 class="blog-post-item__title">Is Using Your Neighbor's Wi-Fi Ethical?</h3>
+                            <p class="blog-post-item__excerpt">Even if it causes no harm, does using an unsecured
+                                network reflect poor character?</p>
+                        </div>
+
+                        <span class="blog-post-item__arrow">→</span>
+                    </a>
+                </li>
+
+                <li class="blog-post-item reveal reveal-delay-1">
+                    <a href="blog-police-phones.html">
+                        <div class="blog-post-item__info">
+                            <h3 class="blog-post-item__title">Police, Phones, and the Social Contract</h3>
+                            <p class="blog-post-item__excerpt">Should police be allowed to ask you to unlock your phone?
+                                A Social Contract Theory analysis.</p>
+                        </div>
+
+                        <span class="blog-post-item__arrow">→</span>
+                    </a>
+                </li>
+
+
+
+                <li class="blog-post-item reveal reveal-delay-3">
+                    <a href="blog-loyalty-cards.html">
+                        <div class="blog-post-item__info">
+                            <h3 class="blog-post-item__title">Loyalty Cards: Fair Pricing or Data Coercion?</h3>
+                            <p class="blog-post-item__excerpt">Is it fair for stores to charge more if you don't use
+                                their loyalty card? A Kantian perspective.</p>
+                        </div>
+
+                        <span class="blog-post-item__arrow">→</span>
+                    </a>
+                </li>
+
+                <li class="blog-post-item reveal reveal-delay-1">
+                    <a href="blog-open-source-ethics.html">
+                        <div class="blog-post-item__info">
+                            <h3 class="blog-post-item__title">Open Source and Commercial Ethics</h3>
+                            <p class="blog-post-item__excerpt">Is it ethical to commercialize academic open-source
+                                software? A Kantian analysis.</p>
+                        </div>
+
+                        <span class="blog-post-item__arrow">→</span>
+                    </a>
+                </li>
+
+                <li class="blog-post-item reveal reveal-delay-2">
+                    <a href="blog-apple-censorship.html">
+                        <div class="blog-post-item__info">
+                            <h3 class="blog-post-item__title">Apple, Censorship, and the Ethics of Compliance</h3>
+                            <p class="blog-post-item__excerpt">Is it ethical for Apple to remove apps at the request of
+                                authoritarian governments?</p>
+                        </div>
+
+                        <span class="blog-post-item__arrow">→</span>
+                    </a>
+                </li>
+
+                <li class="blog-post-item reveal reveal-delay-3">
+                    <a href="blog-nurse-dilemma.html">
+                        <div class="blog-post-item__info">
+                            <h3 class="blog-post-item__title">Virtue Ethics and the Nurse's Dilemma</h3>
+                            <p class="blog-post-item__excerpt">Is it morally justifiable to falsify medical documents to
+                                help a friend in desperate need?</p>
+                        </div>
+
+                        <span class="blog-post-item__arrow">→</span>
+                    </a>
+                </li>
+
+                <li class="blog-post-item reveal reveal-delay-1">
+                    <a href="blog-categorical-imperative.html">
+                        <div class="blog-post-item__info">
+                            <h3 class="blog-post-item__title">Categorical Imperative vs. The Golden Rule</h3>
+                            <p class="blog-post-item__excerpt">Why Kant's moral framework is fundamentally different
+                                from, and more robust than, the Golden Rule.</p>
+                        </div>
+
+                        <span class="blog-post-item__arrow">→</span>
+                    </a>
+                </li>
+
+                <li class="blog-post-item reveal reveal-delay-2">
+                    <a href="blog-ethical-egoism.html">
+                        <div class="blog-post-item__info">
+                            <h3 class="blog-post-item__title">Is Self-Interest Really Natural? Against Ethical Egoism
+                            </h3>
+                            <p class="blog-post-item__excerpt">Challenging the premise that self-interest is humanity's
+                                default with evolutionary evidence.</p>
+                        </div>
+
+                        <span class="blog-post-item__arrow">→</span>
+                    </a>
+                </li>
+
+                <li class="blog-post-item reveal reveal-delay-3">
+                    <a href="blog-ai-courtrooms.html">
+                        <div class="blog-post-item__info">
+                            <h3 class="blog-post-item__title">AI in the Courtroom: Justice or Bias Amplified?</h3>
+                            <p class="blog-post-item__excerpt">Arguing that AI worsens existing human biases in
+                                courtroom decision-making.</p>
+                        </div>
+
+                        <span class="blog-post-item__arrow">→</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ===== Footer ===== -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer__text">© 2026 Chinmay Bhansali. Designed & built with care.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

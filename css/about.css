@@ -1,0 +1,225 @@
+/* ============================================
+   HCI Portfolio — About Page Styles
+   ============================================ */
+
+.about-hero {
+    padding: calc(var(--nav-height) + var(--space-16)) 0 var(--space-16);
+    text-align: center;
+}
+
+.about-hero__label {
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    letter-spacing: var(--tracking-wide);
+    text-transform: uppercase;
+    color: var(--terracotta);
+    margin-bottom: var(--space-4);
+}
+
+.about-hero__title {
+    font-family: var(--font-display);
+    font-size: var(--text-5xl);
+    margin-bottom: var(--space-6);
+}
+
+.about-hero__subtitle {
+    font-size: var(--text-lg);
+    color: var(--charcoal-light);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* --- Story Sections --- */
+.story-section {
+    padding: var(--space-16) 0;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.story-section:last-of-type {
+    border-bottom: none;
+}
+
+.story-section__inner {
+    max-width: var(--max-width-narrow);
+    margin: 0 auto;
+}
+
+.story-section__label {
+    font-family: var(--font-body);
+    font-size: var(--text-xs);
+    font-weight: 600;
+    letter-spacing: var(--tracking-wide);
+    text-transform: uppercase;
+    color: var(--terracotta);
+    margin-bottom: var(--space-4);
+}
+
+.story-section__title {
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
+    margin-bottom: var(--space-6);
+}
+
+.story-section__content {
+    font-size: var(--text-base);
+    color: var(--charcoal-light);
+    line-height: var(--leading-loose);
+}
+
+.story-section__content p {
+    margin-bottom: var(--space-4);
+}
+
+/* Template placeholder */
+.template-placeholder {
+    background-color: var(--cream-dark);
+    border: 2px dashed rgba(209, 122, 99, 0.3);
+    border-radius: var(--radius-md);
+    padding: var(--space-6) var(--space-8);
+    margin: var(--space-4) 0;
+    color: var(--text-muted);
+    font-style: italic;
+    font-size: var(--text-sm);
+    line-height: var(--leading-normal);
+}
+
+.template-placeholder strong {
+    color: var(--terracotta);
+    font-style: normal;
+}
+
+/* --- Two-column layout for story + image --- */
+.story-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-10);
+    align-items: center;
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+.story-split--reverse {
+    direction: rtl;
+}
+
+.story-split--reverse>* {
+    direction: ltr;
+}
+
+.story-split__image {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    aspect-ratio: 4/3;
+    background-color: var(--cream-dark);
+}
+
+.story-split__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --- Why UX Research Section --- */
+.why-section {
+    background-color: var(--cream-dark);
+    padding: var(--space-20) 0;
+}
+
+.why-section__inner {
+    max-width: var(--max-width-narrow);
+    margin: 0 auto;
+}
+
+/* --- Skills / Methods --- */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-4);
+    margin-top: var(--space-6);
+}
+
+.skill-tag {
+    background-color: var(--white);
+    border-radius: var(--radius-md);
+    padding: var(--space-4) var(--space-5);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    color: var(--charcoal);
+    text-align: center;
+    border: 1px solid var(--border-light);
+    transition: all var(--duration-normal) var(--ease-smooth);
+}
+
+.skill-tag:hover {
+    border-color: var(--terracotta-light);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+}
+
+/* --- Human Side — Photo mosaic --- */
+.photo-mosaic {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-4);
+    margin-top: var(--space-8);
+}
+
+.photo-mosaic__item {
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    aspect-ratio: 1;
+    background-color: var(--cream-dark);
+    position: relative;
+}
+
+.photo-mosaic__item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--duration-slow) var(--ease-smooth);
+}
+
+.photo-mosaic__item:hover img {
+    transform: scale(1.05);
+}
+
+.photo-mosaic__item--wide {
+    grid-column: span 2;
+    aspect-ratio: 2/1;
+}
+
+.photo-mosaic__caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: var(--space-3) var(--space-4);
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.6));
+    color: var(--white);
+    font-size: var(--text-xs);
+    font-weight: 500;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    .about-hero__title {
+        font-size: var(--text-3xl);
+    }
+
+    .story-split {
+        grid-template-columns: 1fr;
+    }
+
+    .story-split--reverse {
+        direction: ltr;
+    }
+
+    .photo-mosaic {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .photo-mosaic__item--wide {
+        grid-column: span 2;
+    }
+}

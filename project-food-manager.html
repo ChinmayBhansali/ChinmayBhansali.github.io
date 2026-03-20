@@ -6,464 +6,501 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Food Manager | Chinmay Bhansali</title>
     <meta name="description"
-        content="Food Manager - An HCI research project exploring food management through human-centered design.">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="styles.css">
+        content="Food Manager case study: a human-centered design project exploring food waste reduction through iterative user research, prototyping, and usability testing.">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/project.css">
 </head>
 
-<body>
-    <!-- Navigation -->
-    <nav class="nav">
-        <div class="nav-content">
-            <a href="index.html" class="nav-logo">Chinmay Bhansali</a>
-            <ul class="nav-links">
-                <li><a href="about.html">About Me</a></li>
-                <li><a href="#contact">Contact Me</a></li>
-            </ul>
+<body class="theme-fm">
+
+    <!-- ===== Navigation ===== -->
+    <nav class="nav" id="mainNav">
+        <div class="nav__inner">
+            <a href="index.html" class="nav__logo">
+                <span class="nav__logo-icon"></span>
+                Chinmay B.
+            </a>
+            <div class="nav__links" id="navLinks">
+                <a href="about.html" class="nav__link">About</a>
+                <a href="index.html#projects" class="nav__link">Projects</a>
+                <a href="blog.html" class="nav__link">Computers & Society</a>
+                <a href="index.html#contact" class="nav__link">Contact</a>
+                <a href="data/CV.pdf" class="btn btn--primary btn--sm" target="_blank">CV</a>
+            </div>
+            <div class="nav__hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </nav>
 
-    <!-- Project Header -->
-    <main class="container">
-        <header class="project-header">
-            <a href="index.html#projects" class="back-link">← Back to Projects</a>
-            <p class="project-card-type">HCI Research • CPSC 344</p>
-            <h1>Food Manager</h1>
-            <p class="hero-tagline">
-                A human-centered design project exploring food management solutions through
-                iterative design stages: from user research to mid-fidelity prototyping.
-            </p>
-            <div class="project-meta">
-                <p class="project-meta-item">Role: <span>Lead Researcher & Qualitative Data Analyst</span></p>
-                <p class="project-meta-item">Duration: <span>3 months</span></p>
-                <p class="project-meta-item">Team: <span>5 members</span></p>
-            </div>
-        </header>
+    <!-- ===== Project Hero ===== -->
+    <section class="project-hero">
+        <div class="container">
+            <a href="index.html#projects" class="project-hero__back reveal">← Back to Projects</a>
+            <p class="project-hero__label reveal">HCI Research Case Study</p>
+            <h1 class="project-hero__title reveal">Food Manager</h1>
+            <p class="project-hero__subtitle reveal">A human-centered design project exploring food management solutions
+                through iterative design stages: from user research to mid-fidelity prototyping.</p>
 
-        <!-- Design Process Overview -->
-        <section class="project-stage">
-            <h2>Design Process</h2>
-            <p>
-                We followed the <strong>User Interface Design Process</strong> framework,
-                progressing through Pre-Design, Early Design, and Mid Design stages. Each stage
-                built upon the previous, evolving from understanding users to creating testable prototypes.
-            </p>
-            <figure class="project-figure">
-                <img src="data/User_Interface_Design_Process-Evolving_Iterations.jpg"
-                    alt="User Interface Design Process showing four iterative stages: Pre-Design, Early Design, Mid Design, and Late Design">
-                <figcaption>User Interface Design Process: Evolving Iterations (K. MacLean, derived from Saul Greenberg)
-                </figcaption>
-            </figure>
-        </section>
-
-        <!-- Pre-Design Stage -->
-        <section class="project-stage">
-            <h2>Pre-Design</h2>
-            <p class="stage-intro">
-                The Pre-Design stage focused on understanding our users: who they are and their key tasks.
-                I led the user research effort, conducting the majority of interviews and performing
-                qualitative data analysis to uncover design requirements.
-            </p>
-
-            <div class="stage-section">
-                <h3>Goals</h3>
-                <p>
-                    Our primary goal was to understand the problem space of household food waste.
-                    We aimed to answer three research questions:
-                </p>
-                <ul class="research-questions">
-                    <li><strong>RQ1:</strong> How often do people buy excess groceries that are ultimately wasted?</li>
-                    <li><strong>RQ2:</strong> What type of food is wasted most in households and why?</li>
-                    <li><strong>RQ3:</strong> What approaches do people take to reduce their food waste?</li>
-                </ul>
-            </div>
-
-            <div class="stage-section">
-                <h3>Methods</h3>
-                <p>
-                    We conducted <strong>semi-structured interviews</strong> with 11 participants from varied
-                    living situations (alone, with roommates, or with family). Participants ranged from ages
-                    17–30, all recruited from CPSC 344. We recorded responses on datasheets and asked follow-up
-                    questions to probe deeper into their food waste habits.
-                </p>
-                <p>
-                    After data collection, I performed <strong>thematic analysis</strong> using affinity
-                    diagramming to identify patterns across participant responses. This involved grouping
-                    related responses and synthesizing them into actionable themes.
-                </p>
-            </div>
-
-            <div class="stage-section">
-                <h3>Key Findings</h3>
-
-                <div class="finding">
-                    <h4>Finding 1: Most people waste food monthly or less</h4>
-                    <p>
-                        Out of 11 participants, 7 reported throwing out groceries once a month or less,
-                        while 3 reported waste every 1–2 weeks, and 1 said they never wasted food.
-                        This suggests food waste is a common but not daily occurrence for most.
-                    </p>
-                    <figure class="project-figure">
-                        <img src="data/design_requirement_report_fig1.png"
-                            alt="Horizontal bar graph showing frequency of food waste among participants">
-                        <figcaption>Figure 1: Number of people who said their food gets wasted "Never", "≤ 1 time /
-                            month" or "1-2 times / month" from the interviews</figcaption>
-                    </figure>
+            <div class="project-hero__meta reveal">
+                <div class="project-hero__meta-item">
+                    <span class="project-hero__meta-label">Role</span>
+                    <span class="project-hero__meta-value">Lead Researcher & Qualitative Data Analyst</span>
                 </div>
+                <div class="project-hero__meta-item">
+                    <span class="project-hero__meta-label">Duration</span>
+                    <span class="project-hero__meta-value">3 months</span>
+                </div>
+                <div class="project-hero__meta-item">
+                    <span class="project-hero__meta-label">Team</span>
+                    <span class="project-hero__meta-value">5 members</span>
+                </div>
+                <div class="project-hero__meta-item">
+                    <span class="project-hero__meta-label">My Contribution</span>
+                    <span class="project-hero__meta-value">5–6 of 11 data collection sessions, qualitative analysis,
+                        final prototyping</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                <div class="finding">
-                    <h4>Finding 2: Short shelf-life items are wasted most</h4>
-                    <p>
-                        8 out of 11 participants reported that items with short shelf-life (vegetables,
-                        fruits, and prepared meals) were wasted most frequently. The primary reasons
-                        included quick expiration, buying more than needed, and simply forgetting about the food.
+    <!-- ===== Process Overview: Evolving Iterations ===== -->
+    <section class="process-overview">
+        <div class="container">
+            <!-- Clickable diagram -->
+            <div class="process-overview__diagram reveal" onclick="openLightbox(this)">
+                <img src="data/User_Interface_Design_Process-Evolving_Iterations.jpg"
+                    alt="User Interface Design Process: Evolving Iterations, the framework guiding this project">
+                <p class="process-overview__diagram-caption">User Interface Design Process: Evolving Iterations (K.
+                    MacLean, derived from S. Greenberg). Click to enlarge.</p>
+            </div>
+
+            <h2 class="process-overview__title reveal">How this project followed the framework</h2>
+            <p class="process-overview__subtitle reveal">The Evolving Iterations framework guided our entire design
+                process. Here's what we did at each stage and what we produced.</p>
+
+            <div class="process-overview__grid reveal">
+                <!-- Pre-Design -->
+                <a href="#pre-design" class="process-overview__card active">
+                    <p class="process-overview__card-stage">01 · Pre-Design</p>
+                    <p class="process-overview__card-goal">Understand users: who they are &amp; their key tasks</p>
+                    <ul class="process-overview__card-list">
+                        <li>Semi-structured interviews (11 participants)</li>
+                        <li>Thematic analysis &amp; affinity diagramming</li>
+                        <li>Task analysis of food management habits</li>
+                    </ul>
+                    <div class="process-overview__card-product">
+                        <p class="process-overview__card-product-label">Product</p>
+                        <p class="process-overview__card-product-value"><span class="process-overview__card-link"
+                                onclick="event.stopPropagation(); event.preventDefault(); window.open('data/design_requirement_report.pdf', '_blank');">
+                                Design Requirements Report</span>, user &amp; task
+                            descriptions</p>
+                    </div>
+                </a>
+
+                <!-- Early Design -->
+                <a href="#early-design" class="process-overview__card active">
+                    <p class="process-overview__card-stage">02 · Early Design</p>
+                    <p class="process-overview__card-goal">Explore design space, assess risks, choose approach</p>
+                    <ul class="process-overview__card-list">
+                        <li>Conceptual models ("Conveyor" → "Factory")</li>
+                        <li>Low-fidelity paper prototypes</li>
+                        <li>Cognitive walkthroughs for evaluation</li>
+                    </ul>
+                    <div class="process-overview__card-product">
+                        <p class="process-overview__card-product-label">Product</p>
+                        <p class="process-overview__card-product-value">Throw-away prototypes, design direction, risk
+                            analysis</p>
+                    </div>
+                </a>
+
+                <!-- Mid Design -->
+                <a href="#mid-design" class="process-overview__card active">
+                    <p class="process-overview__card-stage">03 · Mid Design</p>
+                    <p class="process-overview__card-goal">Refine design by element, considering tasks &amp; contexts
                     </p>
-                    <div class="figure-grid figure-grid-2">
-                        <figure class="project-figure">
-                            <img src="data/design_requirement_report_fig2.png"
-                                alt="Affinity diagram showing types of food wasted">
-                            <figcaption>Figure 2: Types of food wasted in participants' households</figcaption>
-                        </figure>
-                        <figure class="project-figure">
-                            <img src="data/design_requirement_report_fig3.png"
-                                alt="Affinity diagram showing reasons for food waste">
-                            <figcaption>Figure 3: Reasons for food waste from the interviews</figcaption>
-                        </figure>
+                    <ul class="process-overview__card-list">
+                        <li>Mid-fidelity Figma prototype</li>
+                        <li>Usability testing (11 participants, think-aloud)</li>
+                        <li>Likert questionnaires &amp; click-count analysis</li>
+                    </ul>
+                    <div class="process-overview__card-product">
+                        <p class="process-overview__card-product-label">Product</p>
+                        <p class="process-overview__card-product-value">Testable mid-fi prototype, <span
+                                class="process-overview__card-link"
+                                onclick="event.stopPropagation(); event.preventDefault(); window.open('data/design_outcome_report.pdf', '_blank');">
+                                usability findings
+                                &amp; recommendations</span></p>
+                    </div>
+                </a>
+
+                <!-- Late Design (not reached) -->
+                <div class="process-overview__card dimmed">
+                    <p class="process-overview__card-stage">04 · Late Design</p>
+                    <p class="process-overview__card-goal">Confirm &amp; debug performance in real use</p>
+                    <ul class="process-overview__card-list">
+                        <li>Field testing with real users</li>
+                        <li>High-fidelity implementation</li>
+                        <li>Alpha/beta release cycle</li>
+                    </ul>
+                    <div class="process-overview__card-product">
+                        <p class="process-overview__card-product-label">Product</p>
+                        <p class="process-overview__card-product-value">Not reached. The project concluded at Mid
+                            Design.
+                        </p>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
 
-                <div class="finding">
-                    <h4>Finding 3: Four solution themes emerged</h4>
-                    <p>
-                        Participants' strategies for reducing food waste clustered into four themes:
-                        <strong>estimating food quantity</strong>, <strong>proper storage/preservation</strong>,
-                        <strong>conscious consumption</strong>, and <strong>tracking</strong>.
-                    </p>
-                    <figure class="project-figure">
-                        <img src="data/design_requirement_report_fig4.png"
-                            alt="Affinity diagram showing participant solutions to food waste">
-                        <figcaption>Figure 4: Instances of solutions to food waste given by participants based on the
-                            challenges they face, grouped and themed</figcaption>
-                    </figure>
+    <!-- ===== Pre-Design Stage ===== -->
+    <section class="stage-section" id="pre-design">
+        <div class="container">
+            <div class="stage-section__header reveal">
+                <p class="stage-section__number">01</p>
+                <h2 class="stage-section__title">Pre-Design</h2>
+                <p class="stage-section__subtitle">Understanding users: who they are and their key tasks. I led the user
+                    research effort, conducting the majority of interviews and performing qualitative data analysis.</p>
+            </div>
+
+            <div class="content-block reveal">
+                <h3 class="content-block__title">The Human Need: "I want to reduce my household food waste"</h3>
+                <p>We didn't start with screens; we started with a pervasive modern problem. People regularly buy
+                    groceries that end up spoiling. To understand why, we focused on the stories and struggles of real
+                    people managing their own food, often for the first time.</p>
+                <p>Through our fieldwork, we identified two primary personas that embody the challenges of household
+                    food management:</p>
+                <ul>
+                    <li><strong>Jimothy (The Budget-Conscious Parent):</strong> A single dad trying to stretch his
+                        budget. He buys in bulk because it's cheaper, but struggles to track when all those groceries
+                        expire. For him, unused food isn't just waste; it's lost money.</li>
+                    <li><strong>Ted & Andre (The Adventurous Roommates):</strong> University students who love trying
+                        new recipes. They often buy niche, uncommon ingredients for a single meal, but then have no idea
+                        what to do with the leftovers, leading inevitably to spoilage.</li>
+                </ul>
+            </div>
+            <div class="content-block reveal">
+                <h3 class="content-block__title">Discovering the "Why"</h3>
+                <p>We interviewed participants ranging from ages 17–30 across varied living situations (alone, with
+                    roommates, or with family). Our goal wasn't just to measure how much food was wasted, but to uncover
+                    the behavioral gaps that led to the bin.</p>
+            </div>
+
+            <!-- Data + Findings: Side-by-Side -->
+            <div class="data-findings-row reveal">
+                <div class="data-column">
+                    <div class="content-block">
+                        <h3 class="content-block__title">Key Data</h3>
+                        <div class="chart-container">
+                            <p class="chart-container__title">How often do participants waste food?</p>
+                            <svg id="chart-waste-frequency" viewBox="0 0 600 200"></svg>
+                        </div>
+                        <div class="chart-container">
+                            <p class="chart-container__title">Which food types are wasted most?</p>
+                            <svg id="chart-wasted-types" viewBox="0 0 600 160"></svg>
+                        </div>
+                        <div class="affinity-diagrams">
+                            <p class="affinity-diagrams__title">Affinity Diagrams</p>
+                            <div class="affinity-diagrams__grid">
+                                <div class="affinity-diagrams__item" onclick="openLightbox(this)">
+                                    <img src="data/design_requirement_report_fig2.png"
+                                        alt="Affinity diagram: Common food types wasted">
+                                    <p class="affinity-diagrams__caption">Food types wasted</p>
+                                </div>
+                                <div class="affinity-diagrams__item" onclick="openLightbox(this)">
+                                    <img src="data/design_requirement_report_fig3.png"
+                                        alt="Affinity diagram: Reasons for food waste">
+                                    <p class="affinity-diagrams__caption">Reasons for waste</p>
+                                </div>
+                                <div class="affinity-diagrams__item" onclick="openLightbox(this)">
+                                    <img src="data/design_requirement_report_fig4.png"
+                                        alt="Affinity diagram: Solutions for food waste">
+                                    <p class="affinity-diagrams__caption">Solutions for waste</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="findings-column">
+                    <div class="content-block">
+                        <h3 class="content-block__title">Key Findings</h3>
+                        <div class="findings-grid">
+                            <div class="finding-card">
+                                <p class="finding-card__number">Finding 1</p>
+                                <h4 class="finding-card__title">The Silent Killer: Short Shelf-Life</h4>
+                                <p>It wasn't the canned goods causing problems. The vast majority of waste (73%) came
+                                    from vegetables, fruits, and prepared meals that expired before users remembered to
+                                    eat them.</p>
+                            </div>
+                            <div class="finding-card">
+                                <p class="finding-card__number">Finding 2</p>
+                                <h4 class="finding-card__title">Out of Sight, Out of Mind</h4>
+                                <p>The most common reason for waste wasn't a deliberate choice to throw food away; it
+                                    was simply forgetting that the food existed in the back of the fridge.</p>
+                            </div>
+                            <div class="finding-card">
+                                <p class="finding-card__number">Finding 3</p>
+                                <h4 class="finding-card__title">The Need for Proactive Tracking</h4>
+                                <p>Users were desperate for solutions. Their coping mechanisms all pointed to a need for
+                                    better tracking, estimating, and conscious consumption before the expiration date
+                                    hits.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Early Design Stage ===== -->
+    <section class="stage-section" id="early-design">
+        <div class="container">
+            <div class="stage-section__header reveal">
+                <p class="stage-section__number">02</p>
+                <h2 class="stage-section__title">Early Design</h2>
+                <p class="stage-section__subtitle">Understanding the design space and choosing our approach through
+                    conceptual models, low-fidelity prototypes, and cognitive walkthroughs.</p>
+            </div>
+
+            <!-- Conceptual Model Evolution (reasoning) -->
+            <div class="content-block reveal">
+                <h3 class="content-block__title">The Pivot: From "Conveyor" to "Factory"</h3>
+                <p>We initially conceptualized the app as a <strong>"Conveyor Belt."</strong> We imagined groceries
+                    moving linearly toward their expiration date, with position representing time left. It made sense
+                    for tracking.</p>
+                <p>But when we ran cognitive walkthroughs on our first sketches, the model broke down. Users needed to
+                    do more than just watch food expire; they needed to find recipes, build shopping lists, and log
+                    meals. A conveyor belt only moves in one direction and serves one purpose.</p>
+                <p>We needed a model that accommodated distinct, interconnected tasks. This led to the
+                    <strong>"Factory"</strong> metaphor:
+                </p>
+                <ul>
+                    <li><strong>The Loading Zone (Pantry):</strong> Where items are requested and logged.</li>
+                    <li><strong>The Factory Floor (Recipes):</strong> Where raw materials (ingredients) are transformed
+                        into products (meals).</li>
+                </ul>
+
+                <div class="conceptual-model">
+                    <p class="conceptual-model__title">Evolution of Thought</p>
+                    <div class="conceptual-model__flow">
+                        <div class="conceptual-model__node" style="opacity: 0.5; text-decoration: line-through;">
+                            <p class="conceptual-model__node-name">Conveyor</p>
+                            <p class="conceptual-model__node-desc">Failed: Too linear, only solved one task.</p>
+                        </div>
+                        <span class="conceptual-model__arrow">→</span>
+                        <div class="conceptual-model__node">
+                            <p class="conceptual-model__node-name">Factory</p>
+                            <p class="conceptual-model__node-desc">Succeeded: Supported multiple task-specific
+                                "stations".</p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div class="stage-section">
-                <h3>Products</h3>
-                <p>
-                    The Pre-Design stage produced a comprehensive <strong>Design Requirements Report</strong>
-                    that included:
-                </p>
-                <ul>
-                    <li><strong>User scenarios</strong> representing different stakeholder needs</li>
-                    <li><strong>Task analyses</strong> breaking down how users currently manage food</li>
-                    <li><strong>Two central tasks</strong> our design needed to support:
-                        <ol>
-                            <li><em>Track Food Inventory</em> — keeping track of what food users have and when it
-                                expires</li>
-                            <li><em>Find Use Ideas</em> — helping users find ways to use ingredients before they expire
-                            </li>
-                        </ol>
-                    </li>
-                    <li><strong>Design requirements</strong> with measurable metrics for evaluation</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Early Design Stage -->
-        <section class="project-stage">
-            <h2>Early Design</h2>
-            <p class="stage-intro">
-                The Early Design stage focused on understanding the design space and choosing our approach.
-                We developed conceptual models, created low-fidelity prototypes, and conducted cognitive
-                walkthroughs to validate our direction.
-            </p>
-
-            <div class="stage-section">
-                <h3>Goals</h3>
-                <p>
-                    Our goals were to explore the design space, identify risks, and choose a design approach
-                    that would address the two central tasks: <strong>tracking food inventory</strong> and
-                    <strong>finding use ideas</strong> before food expires.
-                </p>
+            <!-- Design decision reasoning -->
+            <div class="content-block reveal">
+                <h3 class="content-block__title">Simplicity over Breadth</h3>
+                <p>Armed with the Factory model, we started sketching. Our first low-fidelity prototypes ambitious but
+                    cluttered, boasting <strong>five distinct screens</strong>. But cognitive walkthroughs proved what
+                    we suspected: users lost context when constantly switching screens.</p>
+                <p>We mercilessly cut the navigation down to just <strong>two main tabs</strong> (Grocery List and
+                    Pantry), integrating the recipe search and expiry tracking directly into these views. This
+                    horizontal scoping kept users grounded.</p>
             </div>
 
-            <div class="stage-section">
-                <h3>Conceptual Model: "Conveyor" → "Factory"</h3>
-                <p>
-                    Our initial <strong>"Conveyor" conceptual model</strong> imagined a conveyor belt where
-                    grocery items moved toward expiry. Items would be visible at all times, with their position
-                    representing time until expiration.
-                </p>
-                <figure class="project-figure">
-                    <img src="data/design_outcome_report_fig1.png"
-                        alt="Initial Conveyor conceptual model showing grocery items on a belt">
-                    <figcaption>Figure 1: Initial "Conveyor" conceptual model</figcaption>
-                </figure>
-                <p>
-                    However, cognitive walkthroughs revealed this model couldn't connect with recipe-finding
-                    features. We evolved it into the <strong>"Factory" model</strong>, adding task-specific
-                    "stations":
-                </p>
-                <ul>
-                    <li><strong>Groceries tab</strong> = "Bulletin board" - requests items to purchase</li>
-                    <li><strong>Pantry tab</strong> = "Loading zone" - tracks items and expiry dates</li>
-                    <li><strong>Find Recipes</strong> = "Factory floor" - uses items before expiry</li>
-                </ul>
+            <!-- Conceptual Model & Lo-fi Prototype side-by-side -->
+            <div class="content-block reveal">
+                <h3 class="content-block__title">Conceptual Model & Lo-fi Prototype</h3>
+                <div class="image-grid image-grid--two-col">
+                    <div class="image-grid__item" onclick="openLightbox(this)">
+                        <img src="data/design_outcome_report_fig1.png" alt="Conceptual model: Conveyor model sketch">
+                        <p class="image-grid__caption">Conceptual model sketch (click to enlarge)</p>
+                    </div>
+                    <div class="image-grid__item" onclick="openLightbox(this)">
+                        <img src="data/lofi_prototype.png" alt="Low-fidelity prototype sketches">
+                        <p class="image-grid__caption">Lo-fi prototype (click to enlarge)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Mid Design Stage ===== -->
+    <section class="stage-section" id="mid-design">
+        <div class="container">
+            <div class="stage-section__header reveal">
+                <p class="stage-section__number">03</p>
+                <h2 class="stage-section__title">Mid Design</h2>
+                <p class="stage-section__subtitle">I created the final Figma prototype for usability testing, conducted
+                    the majority of data collection sessions, and performed qualitative analysis on the results.</p>
             </div>
 
-            <div class="stage-section">
-                <h3>Methods</h3>
-                <p>
-                    We used <strong>low-fidelity prototyping</strong> to quickly explore ideas and
-                    <strong>cognitive walkthroughs</strong> to evaluate them internally. Initial designs
-                    had five screens for distinct tasks, but internal evaluations found this too cluttered.
-                    We simplified to two main tabs (Grocery List and Pantry) with integrated features.
+            <div class="content-block reveal">
+                <h3 class="content-block__title">Putting it to the Test</h3>
+                <p>With a medium-fidelity interactive Figma prototype built, it was time to put our assumptions to the
+                    test. We ran in-person usability studies with 11 people, using a think-aloud protocol paired with
+                    rigorous click-tracking and subjective surveys.</p>
+                <p>We were evaluating three core things: <strong>Efficiency</strong> (how fast can they do it?),
+                    <strong>Integration</strong> (would they actually use this daily?), and <strong>Visibility</strong>
+                    (can they find the features?).
                 </p>
             </div>
 
-            <div class="stage-section">
-                <h3>Products</h3>
-                <p>
-                    The Early Design stage produced throw-away prototypes, a refined design direction,
-                    and the "Factory" conceptual model that would guide our medium-fidelity work.
-                </p>
-                <figure class="project-figure">
-                    <img src="data/lofi_prototype.png" alt="Low-fidelity paper prototype screens">
-                    <figcaption>Low-fidelity prototype screens exploring the grocery list and pantry concepts
-                    </figcaption>
-                </figure>
-            </div>
-        </section>
-
-        <!-- Mid Design Stage -->
-        <section class="project-stage">
-            <h2>Mid Design</h2>
-            <p class="stage-intro">
-                In the Mid Design stage, I created the final linear Figma prototype for usability testing,
-                conducted the majority of data collection sessions, and performed qualitative analysis
-                on the results.
-            </p>
-
-            <div class="stage-section">
-                <h3>Goals</h3>
-                <p>
-                    We aimed to evaluate our medium-fidelity prototype against three research questions:
-                </p>
-                <ul class="research-questions">
-                    <li><strong>Efficiency:</strong> How efficient is the design for logging items, checking expiry
-                        dates, and finding recipes?</li>
-                    <li><strong>Integration:</strong> How well could the design integrate into users' food management
-                        routines?</li>
-                    <li><strong>Visibility:</strong> How visible are relevant information and intended actions?</li>
-                </ul>
-            </div>
-
-            <div class="stage-section">
-                <h3>Methods</h3>
-                <p>
-                    We conducted <strong>usability testing</strong> with 11 participants (ages 19+). Each session
-                    included think-aloud observation while completing tasks, followed by a questionnaire
-                    with Likert-scale and open-ended questions. Sessions were recorded on UBC Zoom when
-                    participants consented.
-                </p>
-                <p>
-                    I tracked objective metrics (click counts, task completion) using coding sheets and
-                    performed <strong>thematic analysis</strong> on questionnaire responses to identify
-                    patterns in user feedback.
-                </p>
-            </div>
-
-            <div class="stage-section">
-                <h3>Final Prototype</h3>
-                <p>
-                    Our final design is a mobile app combining a grocery list, inventory tracker, and
-                    recipe finder (tools most people are familiar with) to create positive transfer when
-                    adopting it into daily routines.
-                </p>
-                <div class="figma-embed">
-                    <iframe
-                        src="https://embed.figma.com/proto/eK8l3Sku1jEgBMSwGVlH7b/CPSC-344-T1H?page-id=571%3A9088&node-id=574-8408&p=f&viewport=-13705%2C-1308%2C0.46&scaling=scale-down&content-scaling=fixed&starting-point-node-id=574%3A8408&hotspot-hints=0&show-proto-sidebar=1&embed-host=share"
+            <!-- Figma Prototype Embed -->
+            <div class="content-block reveal">
+                <h3 class="content-block__title">The Prototype We Tested</h3>
+                <div class="prototype-embed"
+                    style="border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border-light); margin-top: var(--space-4);">
+                    <iframe style="border: none; width: 100%; height: 600px;"
+                        src="https://embed.figma.com/proto/VWUtOL3T8KMbVbh1pubzDv/CPSC-344-T1H--Copy-?page-id=571%3A9088&node-id=574-8408&p=f&viewport=-10919%2C-2608%2C0.79&scaling=scale-down&content-scaling=fixed&starting-point-node-id=574%3A8408&show-proto-sidebar=1&embed-host=share"
                         allowfullscreen></iframe>
                 </div>
             </div>
 
-            <div class="stage-section">
-                <h3>Key Findings</h3>
-
-                <div class="finding">
-                    <h4>Finding 1: Logging food items is efficient; recipe search is not</h4>
-                    <p>
-                        Logging food items fell within our 3-click buffer from optimal, but searching for
-                        recipes averaged ~8.9 clicks (well outside the buffer). Questionnaire responses
-                        showed &gt;80% non-negative ratings for efficiency on logging tasks.
-                    </p>
-                    <div class="figure-grid figure-grid-3">
-                        <figure class="project-figure">
-                            <img src="data/design_outcome_report_fig2.png" alt="Click count data for Task 1">
-                            <figcaption>Figure 2: Clicks for Task 1</figcaption>
-                        </figure>
-                        <figure class="project-figure">
-                            <img src="data/design_outcome_report_fig3.png" alt="Click count data for Task 2">
-                            <figcaption>Figure 3: Clicks for Task 2</figcaption>
-                        </figure>
-                        <figure class="project-figure">
-                            <img src="data/design_outcome_report_fig4.png" alt="Click count data for Task 3">
-                            <figcaption>Figure 4: Clicks for Task 3 (Recipe Search)</figcaption>
-                        </figure>
+            <!-- Data + Findings: Side-by-Side -->
+            <div class="data-findings-row reveal">
+                <div class="data-column">
+                    <div class="content-block">
+                        <h3 class="content-block__title">Data</h3>
+                        <div class="chart-container">
+                            <p class="chart-container__title">Click Count Comparison: Logging vs Recipe Search</p>
+                            <svg id="chart-click-count" viewBox="0 0 600 200"></svg>
+                        </div>
+                        <div class="chart-container">
+                            <p class="chart-container__title">Questionnaire Responses (Likert Scale)</p>
+                            <svg id="chart-likert" viewBox="0 0 600 220"></svg>
+                        </div>
+                        <div class="affinity-diagrams">
+                            <p class="affinity-diagrams__title">Thematic Analysis</p>
+                            <div class="affinity-diagrams__grid">
+                                <div class="affinity-diagrams__item" onclick="openLightbox(this)">
+                                    <img src="data/design_outcome_report_fig8.png"
+                                        alt="Affinity diagram: Efficiency thematic analysis">
+                                    <p class="affinity-diagrams__caption">Efficiency themes</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="figure-grid figure-grid-2">
-                        <figure class="project-figure">
-                            <img src="data/design_outcome_report_fig5.png" alt="Subjective difficulty Likert responses">
-                            <figcaption>Figure 5: Subjective Difficulty Analysis</figcaption>
-                        </figure>
-                        <figure class="project-figure">
-                            <img src="data/design_outcome_report_fig6.png"
-                                alt="Thematic analysis of difficulty feedback">
-                            <figcaption>Figure 6: Difficulty Themes</figcaption>
-                        </figure>
+                </div>
+                <div class="findings-column">
+                    <div class="content-block">
+                        <h3 class="content-block__title">The Twist: What the Data Revealed</h3>
+                        <div class="findings-grid">
+                            <div class="finding-card">
+                                <p class="finding-card__number">Finding 1</p>
+                                <h4 class="finding-card__title">The Novelty Effect</h4>
+                                <p>Our objective data showed that finding recipes was wildly inefficient, taking an
+                                    average of ~8.9 clicks. Yet, paradoxically, our subjective surveys showed users
+                                    <em>felt</em> the app was highly efficient. We realized we were seeing the "novelty
+                                    effect": users enjoyed playing with the new interface so much that they didn't mind
+                                    the friction. If they used this daily, that friction would become fatal.
+                                </p>
+                            </div>
+                            <div class="finding-card">
+                                <p class="finding-card__number">Finding 2</p>
+                                <h4 class="finding-card__title">The "Too Much Work" Threshold</h4>
+                                <p>While 55% of users said they'd integrate the app into their daily lives, a crucial
+                                    27% felt managing the inventory was simply "too much work." Our app was great for
+                                    people who already tracked their habits, but for general users, the manual entry
+                                    required to load the "Factory" asked for too much upfront effort.</p>
+                            </div>
+                            <div class="finding-card">
+                                <p class="finding-card__number">Finding 3</p>
+                                <h4 class="finding-card__title">Visual Clutter vs. Function</h4>
+                                <p>Overall visibility was strong, but the interface broke down around complex tasks like
+                                    filtering recipes. Users were confused by ambiguous icons (like a checkmark that
+                                    could mean either "select" or "completed").</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="finding">
-                    <h4>Finding 2: Users felt the design was efficient despite objective data</h4>
-                    <p>
-                        Interestingly, participants reported feeling the design was efficient even when
-                        click counts were high. This discrepancy may be due to the novelty effect: users
-                        weren't shown how to use the prototype beforehand.
-                    </p>
-                    <div class="figure-grid figure-grid-2">
-                        <figure class="project-figure">
-                            <img src="data/design_outcome_report_fig7.png" alt="Subjective efficiency Likert responses">
-                            <figcaption>Figure 7: Subjective Efficiency Analysis</figcaption>
-                        </figure>
-                        <figure class="project-figure">
-                            <img src="data/design_outcome_report_fig8.png"
-                                alt="Thematic analysis of efficiency feedback">
-                            <figcaption>Figure 8: Efficiency Themes</figcaption>
-                        </figure>
-                    </div>
-                </div>
-
-                <div class="finding">
-                    <h4>Finding 3: Good integration for list-makers, friction for others</h4>
-                    <p>
-                        6/11 participants agreed they would frequently use our design. However, 3 were
-                        undecided, citing the app as "too much work." The design integrates well for
-                        users who already track or itemize tasks but may introduce friction for general users.
-                    </p>
-                    <div class="figure-grid figure-grid-2">
-                        <figure class="project-figure">
-                            <img src="data/design_outcome_report_fig9.png"
-                                alt="Subjective integration Likert responses">
-                            <figcaption>Figure 9: Subjective Integration Analysis</figcaption>
-                        </figure>
-                        <figure class="project-figure">
-                            <img src="data/design_outcome_report_fig10.png"
-                                alt="Thematic analysis of integration feedback">
-                            <figcaption>Figure 10: Integration Themes</figcaption>
-                        </figure>
-                    </div>
-                </div>
-
-                <div class="finding">
-                    <h4>Finding 4: Good visibility for core features, confusion on recipe search</h4>
-                    <p>
-                        Questionnaire data showed only 2/44 negative responses for visibility on grocery/pantry
-                        features. However, thematic analysis revealed recurring confusion about recipe search
-                        filters and the "check" completion buttons.
-                    </p>
-                    <div class="figure-grid figure-grid-2">
-                        <figure class="project-figure">
-                            <img src="data/design_outcome_report_fig11.png"
-                                alt="Visibility Likert responses across features">
-                            <figcaption>Figure 11: Subjective Visibility Analysis</figcaption>
-                        </figure>
-                        <figure class="project-figure">
-                            <img src="data/design_outcome_report_fig12.png" alt="Affinity diagram of confusion points">
-                            <figcaption>Figure 12: Confusion with Design Elements</figcaption>
-                        </figure>
+                <!-- Recommendations -->
+                <div class="content-block reveal">
+                    <h3 class="content-block__title">Where We Need to go Next</h3>
+                    <p>Based on our findings, we identified three critical design iterations needed before a
+                        high-fidelity build:</p>
+                    <div class="recommendations">
+                        <div class="recommendation-item">
+                            <div class="recommendation-item__number">1</div>
+                            <p><strong>Fix the affordances:</strong> Differentiate the "mark as complete" button and add
+                                a clear "select" button so users know exactly what an action will trigger.</p>
+                        </div>
+                        <div class="recommendation-item">
+                            <div class="recommendation-item__number">2</div>
+                            <p><strong>Reduce recipe friction:</strong> Remove visual clutter on the "Find Recipes" page
+                                and color-code the filters to lower the cognitive load during the most complex
+                                interaction.</p>
+                        </div>
+                        <div class="recommendation-item">
+                            <div class="recommendation-item__number">3</div>
+                            <p><strong>Streamline integration:</strong> Highlight the "Edit" button as the primary
+                                method to push pantry items to the recipe search, bridging the gap between the two main
+                                areas of the factory.</p>
+                        </div>
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="stage-section">
-                <h3>Products & Recommendations</h3>
-                <p>
-                    The Mid Design stage produced a <strong>Design Outcome Report</strong> with validated
-                    findings and concrete recommendations for future iteration:
-                </p>
-                <ol>
-                    <li>Differentiate "mark as complete" button and add a "select" button</li>
-                    <li>Color the filters on "Find Recipes" and remove visual clutter</li>
-                    <li>Highlight the "Edit" button as the main method to select pantry items</li>
-                </ol>
-            </div>
-        </section>
-
-        <!-- Project Reflection -->
-        <section class="project-stage">
-            <h2>Reflection</h2>
-            <p>
-                This project concluded after the Mid Design stage. While we didn't proceed to high-fidelity
-                implementation, the work produced validated design requirements, a robust conceptual model,
-                and actionable recommendations backed by user research.
-            </p>
-            <p>
-                <strong>Key learnings:</strong> In hindsight, we should have allowed users to explore the
-                prototype before testing to avoid measuring learnability instead of efficiency. We also
-                learned the importance of more low-fidelity iteration before progressing to medium-fidelity
-                prototyping.
-            </p>
-            <figure class="project-figure">
-                <img src="data/CPSC344_prof_ta_team.jpg"
-                    alt="CPSC 344 team photo with professor and teaching assistant">
-                <figcaption>Our team with our Professor, Dr. Laura Cang, and our TA, Tommy Nguyen, on LDOC</figcaption>
-            </figure>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer id="contact" class="footer">
+    <!-- ===== Reflection ===== -->
+    <section class="reflection-section">
         <div class="container">
-            <h2 class="footer-heading">Let's Connect!</h2>
-            <ul class="footer-links">
-                <li>
-                    <a href="https://github.com/ChinmayBhansali" target="_blank" rel="noopener">
-                        <svg class="footer-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
-                        </svg>
-                        GitHub
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.linkedin.com/in/chinmay-bhansali" target="_blank" rel="noopener">
-                        <svg class="footer-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                        </svg>
-                        LinkedIn
-                    </a>
-                </li>
-                <li>
-                    <a href="mailto:chinmaybhansali29@gmail.com">
-                        <svg class="footer-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 010 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z" />
-                        </svg>
-                        Email
-                    </a>
-                </li>
-            </ul>
+            <div class="reflection-section__inner reveal">
+                <p class="section-label">Reflection</p>
+                <h2 class="section-title section-title--italic">The balance between features and friction</h2>
+                <div class="content-block">
+                    <p>This project concluded at the Mid Design stage. While we didn't advance to high-fidelity
+                        implementation, the work left me with profound lessons on how to evaluate design critically.</p>
+                    <p><strong>The dangers of the Novelty Effect:</strong> I learned firsthand how subjective
+                        satisfaction surveys can completely contradict objective performance data. If a design is fun to
+                        play with the first time, users will forgive clunky flows, but that forgiveness evaporates by
+                        day five. You must measure what users <em>do</em>, not just what they <em>say</em>.</p>
+                    <p><strong>The friction tax:</strong> Every feature we add to "help" the user (like tracking every
+                        grocery item) comes with a friction tax. If the effort to maintain the system outweighs the pain
+                        of the original problem (wasting food), the design will fail. The next stage of this app would
+                        demand exploring ways to automate that inventory process, radically reducing the effort required
+                        to power the "Factory."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Team Photo ===== -->
+    <section class="team-photo-section">
+        <div class="container">
+            <div class="team-photo reveal" style="text-align: center;">
+                <div class="image-grid__item" onclick="openLightbox(this)" style="max-width: 700px; margin: 0 auto;">
+                    <img src="data/CPSC344_prof_ta_team.jpg" alt="CPSC 344 team with professor and TA"
+                        style="width: 100%; border-radius: var(--radius-lg);">
+                    <p class="image-grid__caption">Our team with Prof. Cang and our TA (click to enlarge)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Lightbox ===== -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <button class="lightbox__close" onclick="closeLightbox()">✕</button>
+        <img class="lightbox__img" id="lightboxImg" src="" alt="">
+    </div>
+
+    <!-- ===== Footer ===== -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer__text">© 2026 Chinmay Bhansali. Designed & built with care.</p>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/charts.js"></script>
+    <script src="js/lightbox.js"></script>
 </body>
 
 </html>

@@ -5,280 +5,448 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PokeMasters | Chinmay Bhansali</title>
-    <meta name="description" content="PokeMasters - A Java game demonstrating object-oriented design principles.">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="styles.css">
+    <meta name="description"
+        content="PokeMasters: a Pokemon RPG built with Java Swing, demonstrating MVC architecture and OOP design patterns. Digitizing a childhood notebook game from boarding school.">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/project.css">
 </head>
 
-<body>
-    <!-- Navigation -->
-    <nav class="nav">
-        <div class="nav-content">
-            <a href="index.html" class="nav-logo">Chinmay Bhansali</a>
-            <ul class="nav-links">
-                <li><a href="about.html">About Me</a></li>
-                <li><a href="#contact">Contact Me</a></li>
-            </ul>
+<body class="theme-pm">
+
+    <!-- ===== Navigation ===== -->
+    <nav class="nav" id="mainNav">
+        <div class="nav__inner">
+            <a href="index.html" class="nav__logo">
+                <span class="nav__logo-icon"></span>
+                Chinmay B.
+            </a>
+            <div class="nav__links" id="navLinks">
+                <a href="about.html" class="nav__link">About</a>
+                <a href="index.html#projects" class="nav__link">Projects</a>
+                <a href="blog.html" class="nav__link">Computers & Society</a>
+                <a href="index.html#contact" class="nav__link">Contact</a>
+                <a href="data/CV.pdf" class="btn btn--primary btn--sm" target="_blank">CV</a>
+            </div>
+            <div class="nav__hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </nav>
 
-    <!-- Project Header -->
-    <main class="container">
-        <header class="project-header">
-            <a href="index.html#projects" class="back-link">← Back to Projects</a>
-            <p class="project-card-type">Software Development</p>
-            <h1>PokeMasters</h1>
-            <p class="hero-tagline">
-                A Java-based game demonstrating object-oriented design principles,
-                built with Swing and rigorously tested using JSON.
-            </p>
-            <div class="project-meta">
-                <p class="project-meta-item">Role: <span>Solo Developer</span></p>
-                <p class="project-meta-item">Tech Stack: <span>Java, Swing, JSON, JUnit</span></p>
-                <p class="project-meta-item">Focus: <span>OOP Design & MVC Architecture</span></p>
-            </div>
-
-            <div class="project-links">
-                <a href="https://github.com/ChinmayBhansali/PokeMasters" class="project-link" target="_blank"
-                    rel="noopener">
-                    <svg class="link-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
-                    </svg>
-                    GitHub
-                </a>
-            </div>
-        </header>
-
-        <!-- Overview -->
-        <section class="project-stage">
-            <h2>Overview</h2>
-            <p>
-                PokeMasters is a single-player Role-Playing Game where you explore the Pokemon universe,
-                catch and train Pokemon, battle wild creatures, and work toward becoming a PokeMaster.
-                Originally created as a physical notebook-based multiplayer game during my grade 9 boarding
-                school days (when electronics were prohibited), this project represents the digitization of
-                that cherished childhood creation.
-            </p>
-            <p>
-                The game features turn-based combat, a progression system where Pokemon gain experience and
-                level up, resource management with PokeDollars, and a full save/load system. Built using
-                Java with a clean Model-View-Controller architecture, it demonstrates core object-oriented
-                design principles including encapsulation, inheritance, polymorphism, and design patterns
-                like Singleton.
-            </p>
-        </section>
-
-        <!-- Development Phases -->
-        <section class="project-stage">
-            <h2>Development Phases</h2>
-
-            <ul class="milestone-list">
-                <li class="milestone-item">
-                    <p class="milestone-number">Phase 0</p>
-                    <h3>Project Planning</h3>
-                    <p>
-                        Defined the project concept and documented user stories. Selected PokeMasters as my term
-                        project - a digital conversion of a physical notebook-based Pokemon game I created in
-                        grade 9 during boarding school when electronics were prohibited.
-                    </p>
-                    <h4>User Stories Defined</h4>
-                    <ul>
-                        <li>Load previous game or start new</li>
-                        <li>Choose starter Pokemon (Squirtle, Charmander, Bulbasaur)</li>
-                        <li>Battle wild Pokemon with attack, switch, bag, and escape options</li>
-                        <li>Catch Pokemon using PokeBalls (higher catch rate when HP < 20%)</li>
-                        <li>Earn PokeDollars, level up, and learn new attacks</li>
-                        <li>Heal Pokemon and buy items at PokeCenter</li>
-                    </ul>
-                </li>
-
-                <li class="milestone-item">
-                    <p class="milestone-number">Phase 1</p>
-                    <h3>Domain Model & Console UI</h3>
-                    <p>
-                        Implemented the core domain model with clean separation between model and UI packages.
-                        Built a working console-based application with all user stories executable.
-                    </p>
-                    <h4>Model Classes</h4>
-                    <ul>
-                        <li><strong>Player</strong> - Inventory, PokeDollars, Pokemon collection management</li>
-                        <li><strong>Pokemon</strong> - Base class with HP, level, experience, attacks, stats</li>
-                        <li><strong>Starter Classes</strong> - Squirtle, Charmander, Bulbasaur with unique stats</li>
-                        <li><strong>Attack</strong> - Attack objects with damage and effects</li>
-                    </ul>
-                    <p>
-                        <em>Design principle: No System.out.println in model code - clean separation of concerns.</em>
-                    </p>
-                    <figure class="phase-screenshot">
-                        <img src="data/pokemasters_console.png" alt="PokeMasters console interface">
-                        <figcaption>Console-based game interface</figcaption>
-                    </figure>
-                </li>
-
-                <li class="milestone-item">
-                    <p class="milestone-number">Phase 2</p>
-                    <h3>Data Persistence</h3>
-                    <p>
-                        Implemented JSON-based save/load system for persistent game state across sessions.
-                    </p>
-                    <h4>Features</h4>
-                    <ul>
-                        <li><strong>Save Game State</strong> - Serialize player data, Pokemon, inventory to JSON</li>
-                        <li><strong>Load Game State</strong> - Restore previous session from file</li>
-                        <li><strong>Data Saved</strong> - PokeDollars, all Pokemon stats, PokeBall count, progress</li>
-                        <li><strong>Error Handling</strong> - Graceful handling of missing/corrupted save files</li>
-                    </ul>
-                </li>
-
-                <li class="milestone-item">
-                    <p class="milestone-number">Phase 3</p>
-                    <h3>Graphical User Interface</h3>
-                    <p>
-                        Replaced console UI with a full Java Swing graphical interface featuring Pokemon sprites.
-                    </p>
-                    <h4>GUI Screens</h4>
-                    <ul>
-                        <li><strong>Main Menu</strong> - Load Game, New Game, Quit buttons</li>
-                        <li><strong>Starter Selection</strong> - Visual Pokemon selection with sprites</li>
-                        <li><strong>Battle Screen</strong> - Pokemon sprites, HP bars, action buttons</li>
-                        <li><strong>PokeCenter</strong> - Heal and Shop interfaces</li>
-                        <li><strong>Statistics Panel</strong> - Detailed Pokemon information display</li>
-                    </ul>
-                    <figure class="phase-screenshot">
-                        <img src="data/pokemasters_gui.png" alt="PokeMasters GUI interface">
-                        <figcaption>Java Swing graphical interface</figcaption>
-                    </figure>
-                </li>
-
-                <li class="milestone-item">
-                    <p class="milestone-number">Phase 4</p>
-                    <h3>Event Logging & Design Reflection</h3>
-                    <p>
-                        Implemented event logging system and conducted design analysis for future improvements.
-                    </p>
-                    <h4>Event Logging</h4>
-                    <ul>
-                        <li>Singleton pattern for EventLog - logs player creation, Pokemon catches, battles</li>
-                        <li>All events logged from model package only (clean architecture)</li>
-                        <li>Console output on quit displays full session history</li>
-                    </ul>
-                    <h4>Design Reflection</h4>
-                    <p>
-                        Identified improvements: consolidate Pokemon classes to data-driven design,
-                        use HashSets for flexible database storage, and decompose GameGraphics for
-                        better single-responsibility adherence.
-                    </p>
-                </li>
-            </ul>
-        </section>
-
-        <!-- OOP Principles -->
-        <section class="project-stage">
-            <h2>Object-Oriented Design</h2>
-            <ul class="tech-highlights-list">
-                <li>
-                    <strong>MVC Architecture</strong> - Clean separation of Model (domain logic),
-                    View (UI components), and Controller (user input handling).
-                </li>
-                <li>
-                    <strong>Inheritance & Polymorphism</strong> - Base Pokemon class with specialized
-                    starter and wild Pokemon subclasses sharing common behaviors.
-                </li>
-                <li>
-                    <strong>Encapsulation</strong> - Private fields with public methods for controlled
-                    access to player inventory, Pokemon stats, and game state.
-                </li>
-                <li>
-                    <strong>Singleton Pattern</strong> - EventLog maintains single instance for
-                    centralized event tracking across all game components.
-                </li>
-                <li>
-                    <strong>Package Organization</strong> - Separate packages for model, ui, and
-                    persistence with clear dependency boundaries.
-                </li>
-            </ul>
-        </section>
-
-        <!-- Testing -->
-        <section class="project-stage">
-            <h2>Testing & Quality</h2>
-            <ul class="tech-highlights-list">
-                <li>
-                    <strong>JUnit Testing</strong> - All model classes have corresponding test classes
-                    validating Pokemon stats, battle mechanics, and player actions.
-                </li>
-                <li>
-                    <strong>JSON Persistence Tests</strong> - Verified save/load integrity by comparing
-                    serialized and deserialized game states.
-                </li>
-                <li>
-                    <strong>Event Logging</strong> - Complete audit trail for debugging and validating
-                    game flow during development.
-                </li>
-                <li>
-                    <strong>Checkstyle Compliance</strong> - Enforced code quality standards throughout
-                    the codebase.
-                </li>
-            </ul>
-        </section>
-
-        <!-- View on GitHub -->
-        <section class="project-stage play-game-cta">
-            <h2>View the Code</h2>
-            <p>Explore the full source code, including domain model, GUI implementation, and test suites.</p>
-            <a href="https://github.com/ChinmayBhansali/PokeMasters" class="project-link cta-button" target="_blank"
-                rel="noopener">
-                <svg class="link-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
-                </svg>
-                View on GitHub
-            </a>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer id="contact" class="footer">
+    <!-- ===== Project Hero ===== -->
+    <section class="project-hero">
         <div class="container">
-            <h2 class="footer-heading">Let's Connect!</h2>
-            <ul class="footer-links">
-                <li>
-                    <a href="https://github.com/ChinmayBhansali" target="_blank" rel="noopener">
-                        <svg class="footer-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
-                        </svg>
-                        GitHub
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.linkedin.com/in/chinmay-bhansali" target="_blank" rel="noopener">
-                        <svg class="footer-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                        </svg>
-                        LinkedIn
-                    </a>
-                </li>
-                <li>
-                    <a href="mailto:chinmaybhansali29@gmail.com">
-                        <svg class="footer-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 010 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z" />
-                        </svg>
-                        Email
-                    </a>
-                </li>
-            </ul>
+            <a href="index.html#projects" class="project-hero__back reveal">← Back to Projects</a>
+            <p class="project-hero__label reveal">Software Development</p>
+            <h1 class="project-hero__title reveal">PokeMasters</h1>
+            <p class="project-hero__subtitle reveal">A Pokemon RPG built with Java Swing, demonstrating MVC architecture
+                and OOP design patterns. Digitizing a childhood notebook game from boarding school into a full desktop
+                application.</p>
+
+            <div class="project-hero__meta reveal">
+                <div class="project-hero__meta-item">
+                    <span class="project-hero__meta-label">Tech Stack</span>
+                    <span class="project-hero__meta-value">Java, Java Swing, JSON</span>
+                </div>
+                <div class="project-hero__meta-item">
+                    <span class="project-hero__meta-label">Architecture</span>
+                    <span class="project-hero__meta-value">MVC Pattern</span>
+                </div>
+                <div class="project-hero__meta-item">
+                    <span class="project-hero__meta-label">Focus</span>
+                    <span class="project-hero__meta-value">OOP, Design Patterns, Data Persistence</span>
+                </div>
+                <div class="project-hero__meta-item">
+                    <span class="project-hero__meta-label">Links</span>
+                    <span class="project-hero__meta-value" style="display: flex; gap: var(--space-3); flex-wrap: wrap;">
+                        <a href="https://github.com/ChinmayBhansali/PokeMasters" target="_blank"
+                            class="btn btn--primary btn--sm">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 2A10 10 0 0 0 8.84 21.5c.5.08.66-.23.66-.5V19.31C6.73 19.91 6.14 18 6.14 18A2.69 2.69 0 0 0 5 16.5c-.91-.62.07-.6.07-.6a2.1 2.1 0 0 1 1.53 1 2.15 2.15 0 0 0 2.91.83 2.16 2.16 0 0 1 .63-1.34C8 16.17 5.62 15.31 5.62 11.5a3.87 3.87 0 0 1 1-2.71 3.58 3.58 0 0 1 .1-2.64s.84-.27 2.75 1a9.63 9.63 0 0 1 5 0c1.91-1.29 2.75-1 2.75-1a3.58 3.58 0 0 1 .1 2.64 3.87 3.87 0 0 1 1 2.71c0 3.82-2.34 4.66-4.57 4.91a2.39 2.39 0 0 1 .69 1.85V21c0 .27.16.59.67.5A10 10 0 0 0 12 2z">
+                                </path>
+                            </svg>
+                            GitHub Repo
+                        </a>
+                    </span>
+                </div>
+            </div>
+
+            <!-- Screenshots -->
+            <div class="image-grid reveal">
+                <div class="image-grid__item" onclick="openLightbox(this)">
+                    <img src="data/pokemasters/pokemasters_gui.png" alt="PokeMasters GUI">
+                    <p class="image-grid__caption">PokeMasters GUI (click to enlarge)</p>
+                </div>
+                <div class="image-grid__item" onclick="openLightbox(this)">
+                    <img src="data/pokemasters/PokeMasters%20(Text-Based).jpg" alt="PokeMasters Console">
+                    <p class="image-grid__caption">Console interface</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Overview ===== -->
+    <!-- ===== Phase 0 ===== -->
+    <section class="stage-section">
+        <div class="container">
+            <div class="stage-section__header reveal">
+                <span class="tag tag--accent">Phase 0</span>
+                <h2 class="stage-section__title">Project Planning</h2>
+                <p class="stage-section__subtitle">The Notebook Origins</p>
+            </div>
+
+            <div class="content-block reveal"
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; align-items: start;">
+                <div>
+                    <p>PokeMasters started as a physical notebook game I created during grade 9 while attending boarding
+                        school. Electronic devices were strictly prohibited in the hostel, prompting this offline, paper
+                        based RPG. I played it endlessly with my dorm mates.</p>
+                    <p>Years later, as a university software development project, I decided to digitize this childhood
+                        creation into a fully fledged Java application. The goal was to build a single player RPG where
+                        players could explore the world, catch wild characters, engage in turn based combat, and save
+                        their game state to return to later.</p>
+
+                    <div class="findings-grid" style="margin-top: 2rem;">
+                        <div class="finding-card">
+                            <div class="finding-card__icon"></div>
+                            <h4 class="finding-card__title">Core Objective</h4>
+                            <p class="finding-card__desc">Translate pen and paper combat mechanics into structured,
+                                object oriented code.</p>
+                        </div>
+                        <div class="finding-card">
+                            <div class="finding-card__icon"></div>
+                            <h4 class="finding-card__title">Player Journey</h4>
+                            <p class="finding-card__desc">Define user stories: start new games, choose starters, battle,
+                                catch, heal, and quit.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="media-block" style="margin-top: 0;">
+                    <div class="media-block__image-wrapper" onclick="openLightbox(this)">
+                        <img src="data/pokemasters/PokeMasterReturns.png" alt="Original PokeMasters Notebook Cover">
+                        <p class="image-grid__caption"
+                            style="text-align: center; margin-top: 0.5rem; color: var(--text-muted); font-size: var(--text-sm);">
+                            The original cover page of the PokeMasters physical notebook game created in boarding
+                            school.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Phase 1 ===== -->
+    <section class="stage-section stage-section--alt">
+        <div class="container">
+            <div class="stage-section__header reveal">
+                <span class="tag tag--accent">Phase 1</span>
+                <h2 class="stage-section__title">Domain Model & Console UI</h2>
+                <p class="stage-section__subtitle">Establishing the functional baseline</p>
+            </div>
+
+            <div class="content-block reveal">
+                <p>Before any graphics were introduced, the core logic needed to be bulletproof. This phase focused on
+                    building the domain model: designing the foundational Java classes like <code>Player</code>,
+                    <code>Pokemon</code>, and <code>Attack</code>. I utilized extensive inheritance hierarchies to
+                    manage the different characters and abilities.
+                </p>
+                <p>To test these mechanics, I developed a functional text based Command Line Interface (CLI). Through
+                    the console, players could navigate menus, engage in battles, calculate health point reductions
+                    based on attack stats, and execute catching logic using PokeBalls.</p>
+            </div>
+
+            <div class="media-block reveal">
+                <div class="media-block__image-wrapper" onclick="openLightbox(this)">
+                    <img src="data/pokemasters/PokeMasters%20(Text-Based).jpg"
+                        alt="IntelliJ Console showing text-based Pokemon battle">
+                    <p class="image-grid__caption"
+                        style="text-align: center; margin-top: 0.5rem; color: var(--text-muted); font-size: var(--text-sm);">
+                        The functional text-based CLI inside the IntelliJ console (click to enlarge).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Phase 2 ===== -->
+    <section class="stage-section">
+        <div class="container">
+            <div class="stage-section__header reveal">
+                <span class="tag tag--accent">Phase 2</span>
+                <h2 class="stage-section__title">Data Persistence</h2>
+                <p class="stage-section__subtitle">Saving and Loading the Game State</p>
+            </div>
+
+            <div class="content-block reveal">
+                <p>An essential feature of any RPG is the ability to save progress and return to it later. I implemented
+                    JSON based data persistence to achieve this. By designing a <code>Writable</code> interface along
+                    with <code>JsonReader</code> and <code>JsonWriter</code> classes, the application could
+                    systematically serialize the entire <code>GameModel</code>.</p>
+                <p>This allowed players to save their exact inventory, current party of active fighters, stored
+                    characters, and financial balance to a local JSON file, ensuring seamless continuation across play
+                    sessions.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Phase 3 ===== -->
+    <section class="stage-section stage-section--alt">
+        <div class="container">
+            <div class="stage-section__header reveal">
+                <span class="tag tag--accent">Phase 3</span>
+                <h2 class="stage-section__title">Graphical User Interface</h2>
+                <p class="stage-section__subtitle">Transitioning to a Visual Desktop Experience</p>
+            </div>
+
+            <div class="content-block reveal">
+                <p>This phase marked a major architectural shift. I transitioned the project from the terminal to a
+                    visual desktop application using Java Swing. To cleanly separate the internal logic from the user
+                    interface, I implemented the <strong>Model View Controller (MVC)</strong> pattern.</p>
+                <p>I also utilized the <strong>Observer Pattern</strong> to handle event driven updates. Whenever the
+                    underlying <code>BattleModel</code> changed (like taking damage or catching a wild creature), it
+                    automatically notified the <code>GameGraphics</code> UI to update health bars, battle logs, and
+                    sprites in real time without convoluted dependencies.</p>
+            </div>
+
+            <div class="media-block reveal">
+                <div class="media-block__image-wrapper" onclick="openLightbox(this)">
+                    <img src="data/pokemasters/pokemasters_gui.png" alt="Java Swing GUI of PokeMasters">
+                    <p class="image-grid__caption"
+                        style="text-align: center; margin-top: 0.5rem; color: var(--text-muted); font-size: var(--text-sm);">
+                        The final Java Swing GUI featuring health bars, battle logs, and action menus (click to
+                        enlarge).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Phase 4 ===== -->
+    <section class="stage-section">
+        <div class="container">
+            <div class="stage-section__header reveal">
+                <span class="tag tag--accent">Phase 4</span>
+                <h2 class="stage-section__title">Event Logging & Design Reflection</h2>
+                <p class="stage-section__subtitle">Refactoring a massive Object-Oriented hierarchy</p>
+            </div>
+
+            <div class="content-block reveal">
+                <p>The final phase focused on implementing a robust event system using the <strong>Singleton
+                        Pattern</strong>. An <code>EventLog</code> tracked all critical in-game actions chronologically
+                    (for example, printing "Pikachu was caught!" with a precise timestamp to the console upon exit).</p>
+                <p>More importantly, this phase required a critical reflection on the software architecture. As visible
+                    in the UML diagram, the project suffered from poor cohesion in certain areas. Creating a distinct
+                    rigid sub-class for every individual creature and attack type resulted in class explosion. My
+                    primary takeaway for future refactoring was to utilize databases or HashSets to store character
+                    stats, drastically improving flexibility over rigid inheritance.</p>
+            </div>
+
+            <!-- Embedded Mermaid UML Diagram -->
+            <!-- Embedded Mermaid UML Diagram -->
+            <div class="media-block__image-wrapper reveal"
+                style="margin-top: 3rem; overflow: hidden; background: var(--white); padding: 2rem; border-radius: var(--radius-md); border: 1px solid var(--border-light); cursor: zoom-in; max-height: 400px; position: relative; margin-bottom: 0;"
+                onclick="openMermaidLightbox()">
+                <pre class="mermaid" id="mermaidSource" style="background: transparent; pointer-events: none;">
+classDiagram
+  class Main
+  class GameGraphics
+  class GameModel
+  class BattleModel
+  class JsonReader
+  class JsonWriter
+  class EventLog
+  class Event
+  class Player
+  class Pokemon {
+    &lt;&lt;abstract&gt;&gt;
+  }
+  class Writable {
+    &lt;&lt;interface&gt;&gt;
+  }
+  class Attack {
+    &lt;&lt;abstract&gt;&gt;
+  }
+
+  Main --> GameGraphics
+  GameGraphics --> GameModel
+  GameGraphics --> BattleModel
+  
+  GameModel --> JsonReader
+  GameModel --> JsonWriter
+  
+  BattleModel --> Player
+  GameModel --> Player
+  
+  Player --> Pokemon : 0..*
+  
+  Pokemon ..|> Writable
+  Player ..|> Writable
+  
+  EventLog --> Event : 0..*
+  
+  Pokemon --> Attack : 1..*
+  
+  Pokemon <|-- Pikachu
+  Pokemon <|-- Meowth
+  Pokemon <|-- Growlithe
+  Pokemon <|-- Psyduck
+  Pokemon <|-- Caterpie
+  Pokemon <|-- Rattata
+  Pokemon <|-- Charmander
+  Pokemon <|-- Mewtwo
+  Pokemon <|-- Spearow
+  Pokemon <|-- Pidgey
+  Pokemon <|-- Weedle
+  Pokemon <|-- Bulbasaur
+  Pokemon <|-- Onix
+  Pokemon <|-- Diglett
+  Pokemon <|-- Slowpoke
+  Pokemon <|-- Squirtle
+
+  Pikachu <|-- PikachuStarter
+  Charmander <|-- CharmanderStarter
+  Bulbasaur <|-- BulbasaurStarter
+  Squirtle <|-- SquirtleStarter
+
+  Attack <|-- Bulldoze
+  Attack <|-- WaterPulse
+  Attack <|-- PsychoCut
+  Attack <|-- PayDay
+  Attack <|-- MudSlap
+  Attack <|-- BugBite
+  Attack <|-- Ember
+  Attack <|-- Spark
+  Attack <|-- ThunderShock
+  Attack <|-- Peck
+  Attack <|-- Tackle
+  Attack <|-- RockThrow
+  Attack <|-- Twister
+  Attack <|-- FireFang
+  Attack <|-- Swift
+  Attack <|-- SmackDown
+  Attack <|-- DragonBreath
+  Attack <|-- FurySwipes
+  Attack <|-- Bite
+  Attack <|-- FuryAttack
+  Attack <|-- Astonish
+  Attack <|-- QuickAttack
+  Attack <|-- AncientPower
+  Attack <|-- Feint
+  Attack <|-- SeedBomb
+  Attack <|-- Assurance
+  Attack <|-- WaterGun
+  Attack <|-- Confusion
+  Attack <|-- Gust
+  Attack <|-- PoisonSting
+  Attack <|-- Bind
+  Attack <|-- FlameWheel
+  Attack <|-- TakeDown
+  Attack <|-- AerialAce
+  Attack <|-- RapidSpin
+  Attack <|-- RazorLeaf
+  Attack <|-- VineWhip
+  Attack <|-- FakeOut
+  Attack <|-- Scratch
+                </pre>
+            </div>
+            <p class="image-grid__caption"
+                style="text-align: center; margin-top: 1rem; color: var(--text-muted); font-size: var(--text-sm);">The
+                massive Object-Oriented UML flowchart demonstrating the extensive inheritance hierarchies prior to
+                refactoring. <strong>(Click diagram to view interactively)</strong></p>
+        </div>
+    </section>
+
+    <!-- ===== Lightbox ===== -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <button class="lightbox__close" onclick="closeLightbox()">✕</button>
+        <img class="lightbox__img" id="lightboxImg" src="" alt="">
+    </div>
+
+    <!-- ===== Mermaid Interactive Lightbox ===== -->
+    <div class="lightbox" id="mermaidLightbox" onclick="if(event.target === this) closeMermaidLightbox()"
+        style="z-index: 9999;">
+        <button class="lightbox__close" onclick="closeMermaidLightbox()" style="z-index: 10001;">✕</button>
+        <div id="mermaidModalContent"
+            style="width: 90vw; height: 90vh; background: var(--white); border-radius: var(--radius-md); overflow: hidden; cursor: grab; position: relative; display: flex; align-items: center; justify-content: center;">
+            <!-- SVG injected here by JS -->
+        </div>
+        <p
+            style="position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); color: white; background: rgba(0,0,0,0.7); padding: 0.5rem 1.5rem; border-radius: 100px; pointer-events: none; z-index: 10000;">
+            Scroll to zoom, drag to pan</p>
+    </div>
+
+    <!-- ===== Footer ===== -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer__text">© 2026 Chinmay Bhansali. Designed & built with care.</p>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/lightbox.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ startOnLoad: false, theme: 'default' });
+
+        async function renderMermaid() {
+            await mermaid.run({
+                querySelector: '.mermaid'
+            });
+        }
+
+        renderMermaid();
+
+        // Export to global scope for the onclick handler
+        window.openMermaidLightbox = function () {
+            const sourceSvg = document.querySelector('#mermaidSource svg');
+            if (!sourceSvg) return;
+
+            const modalContent = document.getElementById('mermaidModalContent');
+            const clonedSvg = sourceSvg.cloneNode(true);
+
+            clonedSvg.style.maxWidth = '100%';
+            clonedSvg.style.height = '100%';
+
+            modalContent.innerHTML = '';
+            modalContent.appendChild(clonedSvg);
+
+            const lightbox = document.getElementById('mermaidLightbox');
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+
+            // D3 Interactivity
+            const svg = d3.select(clonedSvg);
+            const inner = svg.select('g');
+
+            const zoom = d3.zoom().on('zoom', (event) => {
+                inner.attr('transform', event.transform);
+            });
+
+            svg.call(zoom);
+
+            svg.on('mousedown.grab', () => modalContent.style.cursor = 'grabbing')
+                .on('mouseup.grab', () => modalContent.style.cursor = 'grab')
+                .on('mouseleave.grab', () => modalContent.style.cursor = 'grab');
+        };
+
+        window.closeMermaidLightbox = function () {
+            const lightbox = document.getElementById('mermaidLightbox');
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        };
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                if (document.getElementById('mermaidLightbox').classList.contains('active')) {
+                    closeMermaidLightbox();
+                }
+            }
+        });
+    </script>
 </body>
 
 </html>

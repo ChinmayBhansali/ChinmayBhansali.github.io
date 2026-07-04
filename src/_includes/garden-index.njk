@@ -1,0 +1,17 @@
+---
+layout: base.njk
+---
+<main class="container container--garden">
+  <div style="display:flex;flex-direction:column;gap:8px">
+    <h1 class="page-title garden-title">{{ title }}</h1>
+    <p class="page-intro">{{ intro | safe }}</p>
+  </div>
+  <div class="note-list">
+    {%- for note in collections.garden %}
+    <a href="{{ note.url }}" class="note-row">
+      <span class="note-row__title">{{ note.data.title | lower }}</span>
+      <span class="note-row__meta">{{ note.data.stage | upper }} · {{ note.data.planted | monoDate }}</span>
+    </a>
+    {%- endfor %}
+  </div>
+</main>

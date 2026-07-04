@@ -1,0 +1,24 @@
+---
+layout: base.njk
+---
+<main class="container container--about">
+  <div class="about-head">
+    {%- if portrait %}
+    <img src="{{ portrait }}" alt="{{ site.name }}" class="about-portrait">
+    {%- else %}
+    <div class="about-portrait ph">portrait</div>
+    {%- endif %}
+    <div class="about-bio">
+      <h1>{{ title }}</h1>
+      {{ content | safe }}
+    </div>
+  </div>
+  <div class="about-buttons">
+    <a href="{{ site.cvPath }}" class="btn btn--solid" target="_blank" rel="noopener">download CV (pdf)</a>
+    <a href="mailto:{{ site.email }}" class="btn btn--outline">email me</a>
+  </div>
+  <footer class="site-footer">
+    <a href="{{ site.github }}" target="_blank" rel="noopener">github</a>
+    <a href="{{ site.linkedin }}" target="_blank" rel="noopener">linkedin</a>
+  </footer>
+</main>

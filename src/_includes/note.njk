@@ -1,0 +1,43 @@
+---
+layout: base.njk
+---
+<main class="container container--split">
+
+  <aside class="sidebar">
+    <a href="/garden/" class="sidebar__back">← all notes</a>
+    <div class="sidebar__group">
+      <span class="sidebar__label">THE GARDEN</span>
+      {%- for note in collections.garden %}
+      {%- if note.url == page.url %}
+      <span class="sidebar__current sidebar__current--italic">{{ note.data.title | lower }}</span>
+      {%- else %}
+      <a href="{{ note.url }}" class="sidebar__link sidebar__link--italic">{{ note.data.title | lower }}</a>
+      {%- endif %}
+      {%- endfor %}
+    </div>
+  </aside>
+
+  <article class="article article--note">
+    <div class="article__head">
+      <span class="article__meta">NOTE · PLANTED {{ planted | monoDate }} · {{ stage | upper }}</span>
+      <h1 class="article__title article__title--note">{{ title }}</h1>
+    </div>
+
+    <div class="prose prose--note">
+      {{ content | safe }}
+    </div>
+
+    {%- if comments %}
+    {% include "comments.njk" %}
+    {%- endif %}
+
+    {%- set linkers = collections.all | backlinks(page.url) %}
+    {%- if linkers.length %}
+    <div class="backlinks">linked from:
+      {%- for p in linkers %}
+      <a href="{{ p.url }}">{{ p.data.title | lower }}</a>{% if not loop.last %} · {% endif %}
+      {%- endfor %}
+    </div>
+    {%- endif %}
+  </article>
+</main>

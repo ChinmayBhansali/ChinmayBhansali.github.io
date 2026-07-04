@@ -1,0 +1,44 @@
+---
+layout: base.njk
+---
+<main class="container container--home">
+
+  <section class="intro">
+    {{ content | safe }}
+  </section>
+
+  <section class="home-section">
+    <h2 class="section-label">SELECTED WORK</h2>
+    {%- for project in collections.work | sort(false, false, "data.featured") %}
+    {%- if project.data.featured %}
+    <a href="{{ project.url }}" class="work-row">
+      {%- if project.data.cover %}
+      <img src="{{ project.data.cover | replace("./", project.url) }}" alt="" class="work-row__thumb">
+      {%- endif %}
+      <span class="work-row__text">
+        <span class="work-row__title">{{ project.data.title }}</span>
+        <span class="work-row__summary">{{ project.data.summary }}</span>
+      </span>
+      <span class="work-row__tag">{{ project.data.tag }} · {{ project.data.year }}</span>
+    </a>
+    {%- endif %}
+    {%- endfor %}
+  </section>
+
+  <section class="home-section" style="gap:12px">
+    <h2 class="section-label">FROM THE GARDEN</h2>
+    <p class="garden-flow">
+      Notes that are growing:
+      {%- for note in collections.garden %}
+      <a href="{{ note.url }}">{{ note.data.title | lower }}</a>{% if not loop.last %} · {% endif %}
+      {%- endfor %}
+    </p>
+  </section>
+
+  <footer class="site-footer">
+    <a href="mailto:{{ site.email }}">email</a>
+    <a href="{{ site.github }}" target="_blank" rel="noopener">github</a>
+    <a href="{{ site.linkedin }}" target="_blank" rel="noopener">linkedin</a>
+    <span class="footer-right">{{ site.location }}</span>
+  </footer>
+</main>

@@ -1,0 +1,60 @@
+---
+layout: base.njk
+---
+{%- set headings = content | toc %}
+{%- set relatedNoteItems = collections.garden | notesBySlug(related) %}
+<main class="container container--split">
+
+  <aside class="sidebar">
+    <a href="/work/" class="sidebar__back">← all work</a>
+    {%- if headings.length %}
+    <nav class="sidebar__group" aria-label="On this page">
+      <span class="sidebar__label">ON THIS PAGE</span>
+      {%- for h in headings %}
+      <a href="#{{ h.id }}" class="sidebar__link">{{ h.text }}</a>
+      {%- endfor %}
+    </nav>
+    {%- endif %}
+    {%- if links %}
+    <div class="sidebar__group {% if headings.length %}sidebar__group--rule{% endif %}">
+      <span class="sidebar__label">LINKS</span>
+      {%- for link in links %}
+      <a href="{{ link.url }}" class="sidebar__back" target="_blank" rel="noopener">{{ link.label }}</a>
+      {%- endfor %}
+    </div>
+    {%- endif %}
+    {%- if relatedNoteItems.length %}
+    <div class="sidebar__group sidebar__group--rule">
+      <span class="sidebar__label">RELATED NOTES</span>
+      {%- for note in relatedNoteItems %}
+      <a href="{{ note.url }}" class="sidebar__link sidebar__link--italic">{{ note.data.title | lower }}</a>
+      {%- endfor %}
+    </div>
+    {%- endif %}
+  </aside>
+
+  <article class="article">
+    <div class="article__head">
+      <span class="article__meta">{{ meta or (tag + " · " + year) }}</span>
+      <h1 class="article__title">{{ title }}</h1>
+      <p class="article__standfirst">{{ summary }}</p>
+    </div>
+
+    {%- if hero or cover %}
+    <img src="{{ (hero or cover) | replace("./", page.url) }}" alt="{{ heroAlt or title }}" class="article__hero">
+    {%- else %}
+    <div class="article__hero ph">hero image</div>
+    {%- endif %}
+
+    <div class="prose">
+      {{ content | safe }}
+    </div>
+
+    {%- set next = collections.work | nextIn(page.url) %}
+    {%- if next %}
+    <div class="article__footer">
+      <span>next:</span><a href="{{ next.url }}">{{ next.data.title | lower }} →</a>
+    </div>
+    {%- endif %}
+  </article>
+</main>

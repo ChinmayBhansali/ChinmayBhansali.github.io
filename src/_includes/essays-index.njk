@@ -1,0 +1,17 @@
+---
+layout: base.njk
+---
+<main class="container container--garden">
+  <div style="display:flex;flex-direction:column;gap:8px">
+    <h1 class="page-title">{{ title }}</h1>
+    <p class="page-intro">{{ intro | safe }}</p>
+  </div>
+  <div class="note-list">
+    {%- for essay in collections.essays %}
+    <a href="{{ essay.url }}" class="note-row">
+      <span class="note-row__title note-row__title--plain">{{ essay.data.title }}</span>
+      <span class="note-row__meta">{% if essay.data.framework %}{{ essay.data.framework | upper }} · {% endif %}{{ essay.data.date | monoDate }}</span>
+    </a>
+    {%- endfor %}
+  </div>
+</main>

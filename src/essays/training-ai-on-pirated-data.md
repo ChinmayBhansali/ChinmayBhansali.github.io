@@ -1,0 +1,20 @@
+---
+title: "Training AI on Pirated Data: A Kantian Analysis"
+date: 2026-03-20
+framework: Kantianism
+---
+> **Prompt:** The Pile is a massive dataset used for training language models, containing text from ebooks and other copyrighted materials compiled from pirated sources. Is it ethical to train a publicly released language model on this dataset, given that the goal is not to reproduce the copyrighted content verbatim, but to learn generalizable patterns of language and reasoning?
+
+The training of a publicly released language model on "The Pile," a dataset comprised of pirated and copyrighted materials, is unethical under Immanuel Kant's Categorical Imperative. Despite the functional intent to learn generalizable patterns rather than exploit content verbatim, the act violates moral law by undermining the institution of intellectual property and reducing human creators to mere instruments of data utility.
+
+The Pile is a substantial open-source dataset hosted by EleutherAI, known to include the "Books3" component, a collection derived from Bibliotik, a shadow library of pirated ebooks. Companies like Anthropic have faced legal challenges from authors who allege their copyrighted works were ingested without license or consent. The defense often rests on the technical nuance that the model uses this data to understand linguistic probability and logic, not to resell the text itself.
+
+Applying the First Formulation of the Categorical Imperative (Universalizability), we must ask if the maxim "I will use pirated labor to train my product" can be universalized. If every entity were to appropriate the finished work of others without compensation to build their own commercial or public tools, the institution of Intellectual Property would inevitably fall. If creators cannot control the distribution of their work, the incentive and means to produce that work vanish. This creates a logical contradiction: if the maxim is universalized, the production of "books" ceases, meaning the dataset itself would no longer exist. Therefore, the action is self-defeating.
+
+Furthermore, under the Second Formulation (Humanity as an End), developers must treat humanity "never merely as a means to an end, but always at the same time as an end." By scraping pirated content, AI developers treat the authors not as autonomous agents with rights to their own creative output, but merely as raw data sources, a means, to achieve the end of a sophisticated neural network. The authors are stripped of their agency to consent to how their labor is utilized.
+
+A utilitarian or consequentialist might argue that the training is ethical because the resulting language models provide immense societal value: accelerating scientific research, coding, and communication. They might also argue via an analogy to human learning: just as a human student reads a book to learn writing styles without violating copyright, an AI "reading" the text to learn patterns constitutes "fair use" and does not economically compete with the original books.
+
+However, Kantian ethics is strictly deontological; consequences never justify the means. Even if the AI cures diseases, the act of training it on stolen property remains immoral if the initial maxim is flawed. The analogy to human learning fails under the Second Formulation because a human student (ideally) accesses the text through legitimate channels (libraries or purchase), respecting the author's autonomy. The Pile, by relying on pirated sources like Bibliotik, bypasses the author's will entirely. The scale of automation does not sanitize the lack of consent; it merely industrializes the treatment of humans as means rather than ends.
+
+To train a model on The Pile is to engage in a logical contradiction that, if universalized, destroys the very framework of creativity it relies upon. Because it treats authors as data-mining resources rather than autonomous beings and threatens the stability of the institution of copyright, the use of such datasets is ethically impermissible.

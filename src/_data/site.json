@@ -1,0 +1,18 @@
+{
+  "name": "Chinmay Bhansali",
+  "description": "Chinmay Bhansali. Human-AI interaction researcher: work, digital garden, and essays on computers and society.",
+  "url": "https://chinmaybhansali.github.io",
+  "email": "chinmaybhansali29@gmail.com",
+  "github": "https://github.com/ChinmayBhansali",
+  "linkedin": "https://www.linkedin.com/in/chinmay-bhansali",
+  "location": "Bhilwara, RJ → Vancouver, BC → ?",
+  "essaysLabel": "essays",
+  "essaysTitle": "Computers & Society",
+  "cvPath": "/cv.pdf",
+  "giscus": {
+    "repo": "ChinmayBhansali/ChinmayBhansali.github.io",
+    "repoId": "",
+    "category": "Comments",
+    "categoryId": ""
+  }
+}

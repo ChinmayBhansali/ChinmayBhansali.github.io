@@ -1,6 +1,6 @@
 ---
-title: Reducing household food waste
-summary: A mobile app uniting grocery list, pantry, and recipes, designed from field work through two conceptual models to usability testing with 11 participants. People's Choice Award at the CPSC 344 showcase.
+title: Food Manager
+summary: A mobile app for reducing household food waste, uniting grocery list, pantry, and recipes. Field work, two conceptual models, usability testing with 11 participants, and a People's Choice Award.
 tag: HCI
 year: 2025
 date: 2025-12-05

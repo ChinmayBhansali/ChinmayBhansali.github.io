@@ -5,10 +5,20 @@ tag: CODE
 year: 2023
 date: 2023-11-15
 meta: CODE · HACKATHON · NOV 2023
+cover: ./translator.png
+heroAlt: The ASLingo translator page classifying a sign from the webcam in real time
+links:
+  - label: "devpost →"
+    url: "https://devpost.com/software/aslingo-3yi1vd"
 ---
 ## Built in 36 hours
 
-At a hackathon in late 2023, our team built a tool for practising American Sign Language with a webcam and immediate feedback. The pipeline: [MediaPipe](https://developers.google.com/mediapipe) extracts hand landmarks from the video stream, a TensorFlow/Keras classifier decides which sign you made, and a Flask server pushes the verdict back to a Bootstrap front end while you are still holding the sign. You practise, the system responds, you adjust. That loop, not the model, is the product.
+At a hackathon in late 2023, our team of three built a tool for practising American Sign Language with a webcam and immediate feedback. Structured lessons teach the fundamentals, and a translator page closes the loop: [MediaPipe](https://developers.google.com/mediapipe) extracts hand landmarks from the video stream, a TensorFlow/Keras classifier decides which sign you made, and a Flask server pushes the verdict back to a Bootstrap front end while you are still holding the sign. You practise, the system responds, you adjust. That loop, not the model, is the product.
+
+<figure>
+  <img src="./lessons.png" alt="The ASLingo lessons page with three lesson cards: greetings, objects, letters">
+  <figcaption>fig 1: the lessons page</figcaption>
+</figure>
 
 ## Latency is a design variable
 

@@ -9,6 +9,8 @@ featured: 2
 cover: ./conveyor-model.png
 heroAlt: Hand-drawn sketch of the Conveyor conceptual model, with grocery items riding a belt toward their expiry date
 links:
+  - label: "figma prototype →"
+    url: "https://www.figma.com/proto/VWUtOL3T8KMbVbh1pubzDv/CPSC-344-T1H--Copy-?page-id=571%3A9088&node-id=574-8408&p=f&viewport=-372%2C5%2C0.04&t=nyNG2vrArnifRzAO-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=574%3A8408&show-proto-sidebar=1"
   - label: "requirement report (pdf)"
     url: "/work/food-manager/requirement-report.pdf"
   - label: "outcome report (pdf)"

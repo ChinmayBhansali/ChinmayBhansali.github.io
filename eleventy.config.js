@@ -88,8 +88,15 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/garden/**/*.{png,jpg,jpeg,gif,webp,svg}");
   eleventyConfig.addPassthroughCopy("src/essays/**/*.{png,jpg,jpeg,gif,webp,svg}");
   eleventyConfig.addPassthroughCopy("src/about/**/*.{png,jpg,jpeg,gif,webp}");
-  // The CV is read straight from the data archive: replacing data/CV.pdf updates the site
+  // The CV is read straight from the data archive: replacing data/CV.pdf updates the site.
   eleventyConfig.addPassthroughCopy({ "data/CV.pdf": "cv.pdf" });
+  // Also serve it at the old site's /data/CV.pdf path so printed/linked CVs never break
+  // (a second passthrough from the same source would overwrite the first, so copy after build).
+  eleventyConfig.on("eleventy.after", async ({ dir }) => {
+    const { cp, mkdir } = await import("node:fs/promises");
+    await mkdir(`${dir.output}/data`, { recursive: true });
+    await cp("data/CV.pdf", `${dir.output}/data/CV.pdf`);
+  });
 
   return {
     dir: {

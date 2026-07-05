@@ -997,6 +997,10 @@ img.work-card__cover {
   .fig-row--free > * {
     flex-basis: 100%;
   }
+
+  .dropdown {
+    right: -215px;
+  }
 }
 
 /* Touch devices get a persistent clickability cue since there is no hover */

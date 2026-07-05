@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if title and page.url != "/" %}{{ title }} | {{ site.name }}{% else %}{{ site.name }}{% endif %}</title>
+  <meta name="description" content="{{ description or site.description }}">
+  <script>(function(){try{if(localStorage.getItem("theme")==="dark"){document.documentElement.setAttribute("data-theme","dark");}}catch(e){}})();</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500;1,6..72,600&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+
+<header class="site-header" id="top">
+  <a href="/" class="site-name">{{ site.name }}</a>
+  <nav class="site-nav">
+    <span class="nav-item">
+      <a href="/work/" class="nav-link" {% if page.url and "/work/" in page.url %}aria-current="page"{% endif %}>work</a>
+      <span class="dropdown">
+        <span class="dropdown-panel">
+          {%- for project in collections.work %}
+          <a href="{{ project.url }}" class="dropdown-link">{{ project.data.title }}</a>
+          {%- endfor %}
+          <a href="/work/" class="dropdown-all">all work →</a>
+        </span>
+      </span>
+    </span>
+    <span class="nav-item">
+      <a href="/garden/" class="nav-link" {% if page.url and "/garden/" in page.url %}aria-current="page"{% endif %}>garden</a>
+      <span class="dropdown">
+        <span class="dropdown-panel dropdown-panel--wide">
+          {%- for note in collections.garden %}
+          <a href="{{ note.url }}" class="dropdown-link dropdown-link--italic">{{ note.data.title }}</a>
+          {%- endfor %}
+          <a href="/garden/" class="dropdown-all">all notes →</a>
+        </span>
+      </span>
+    </span>
+    <a href="/essays/" class="nav-link" {% if page.url and "/essays/" in page.url %}aria-current="page"{% endif %}>{{ site.essaysLabel }}</a>
+    <a href="/about/" class="nav-link" {% if page.url and "/about/" in page.url %}aria-current="page"{% endif %}>about</a>
+    <a href="{{ site.cvPath }}" class="nav-link" target="_blank" rel="noopener">cv</a>
+    <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">dark</button>
+  </nav>
+</header>
+
+{{ content | safe }}
+
+<script>
+(function () {
+  var btn = document.getElementById("theme-toggle");
+  var root = document.documentElement;
+  function label() {
+    btn.textContent = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+  }
+  label();
+  btn.addEventListener("click", function () {
+    var dark = root.getAttribute("data-theme") === "dark";
+    if (dark) { root.removeAttribute("data-theme"); } else { root.setAttribute("data-theme", "dark"); }
+    try { localStorage.setItem("theme", dark ? "light" : "dark"); } catch (e) {}
+    label();
+  });
+})();
+</script>
+</body>
+</html>

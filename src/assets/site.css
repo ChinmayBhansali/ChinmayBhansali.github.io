@@ -1,0 +1,1012 @@
+/* ============================================================
+   Design tokens (source of truth: design handoff, Portfolio 2a)
+   ============================================================ */
+:root {
+  --accent-base: #4A6FA5; /* ink blue; alternates explored: #37715A moss, #A85B32 terracotta */
+
+  --bg: #f7f4ee;
+  --ink: #1c1a17;
+  --muted: #6b655c;
+  --soft: #3a362f;
+  --faint: #9b948a;
+  --hair: rgba(28, 26, 23, 0.12);
+  --hair2: rgba(28, 26, 23, 0.18);
+  --hover-bg: rgba(28, 26, 23, 0.045);
+  --faint-bg: rgba(28, 26, 23, 0.02);
+  --dash: rgba(28, 26, 23, 0.3);
+  --underline: rgba(28, 26, 23, 0.35);
+  --surface: #fffdf8;
+  --stripe-a: #efece4;
+  --stripe-b: #f7f4ee;
+  --accent: var(--accent-base);
+  --dropdown-shadow: 0 6px 20px rgba(28, 26, 23, 0.1);
+}
+
+[data-theme="dark"] {
+  --bg: #181613;
+  --ink: #e9e4d8;
+  --muted: #a49c8e;
+  --soft: #c7c0b2;
+  --faint: #7c7568;
+  --hair: rgba(233, 228, 216, 0.14);
+  --hair2: rgba(233, 228, 216, 0.24);
+  --hover-bg: rgba(233, 228, 216, 0.06);
+  --faint-bg: rgba(233, 228, 216, 0.035);
+  --dash: rgba(233, 228, 216, 0.3);
+  --underline: rgba(233, 228, 216, 0.4);
+  --surface: #221f1b;
+  --stripe-a: #242019;
+  --stripe-b: #181613;
+  --accent: color-mix(in oklab, var(--accent-base) 62%, #e9e4d8);
+}
+
+/* ============================================================
+   Base
+   ============================================================ */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Newsreader", Georgia, serif;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.mono {
+  font-family: "Spline Sans Mono", monospace;
+}
+
+/* ============================================================
+   Header
+   ============================================================ */
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 12px 28px;
+  padding: clamp(18px, 3vw, 32px) clamp(20px, 5vw, 56px);
+  border-bottom: 1px solid var(--hair);
+}
+
+.site-name {
+  font-size: 19px;
+  font-weight: 600;
+  font-style: italic;
+  color: var(--ink);
+  text-decoration: none;
+  margin-right: auto;
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 22px;
+  font-family: "Spline Sans Mono", monospace;
+  font-size: 12.5px;
+  letter-spacing: 0.04em;
+}
+
+.nav-link {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1.5px solid transparent;
+}
+
+.nav-link:hover,
+.nav-link:focus-visible,
+.nav-link[aria-current="page"] {
+  border-bottom-color: var(--accent);
+}
+
+/* --- Hover dropdowns (work, garden) --- */
+.nav-item {
+  position: relative;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: -12px;
+  padding-top: 10px; /* bridges the gap so hover persists */
+  z-index: 50;
+}
+
+.nav-item:hover .dropdown,
+.nav-item:focus-within .dropdown {
+  display: block;
+}
+
+.dropdown-panel {
+  display: flex;
+  flex-direction: column;
+  min-width: 230px;
+  background: var(--surface);
+  border: 1px solid var(--hair2);
+  border-radius: 6px;
+  box-shadow: var(--dropdown-shadow);
+  padding: 8px;
+  font-family: "Newsreader", Georgia, serif;
+  letter-spacing: 0;
+}
+
+.dropdown-panel--wide {
+  min-width: 250px;
+}
+
+.dropdown-link {
+  font-size: 15.5px;
+  color: var(--ink);
+  text-decoration: none;
+  padding: 7px 10px;
+  border-radius: 4px;
+}
+
+.dropdown-link--italic {
+  font-style: italic;
+}
+
+.dropdown-link:hover,
+.dropdown-link:focus-visible {
+  background: var(--hover-bg);
+}
+
+.dropdown-all {
+  font-family: "Spline Sans Mono", monospace;
+  font-size: 11px;
+  color: var(--muted);
+  text-decoration: none;
+  padding: 8px 10px 4px;
+  border-top: 1px solid var(--hair);
+  margin-top: 5px;
+}
+
+.dropdown-all:hover,
+.dropdown-all:focus-visible {
+  color: var(--accent);
+}
+
+.theme-toggle {
+  font-family: "Spline Sans Mono", monospace;
+  font-size: 12.5px;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  background: none;
+  border: 1px solid var(--hair2);
+  border-radius: 4px;
+  padding: 2px 9px;
+  margin: -3px 0;
+  cursor: pointer;
+}
+
+.theme-toggle:hover,
+.theme-toggle:focus-visible {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+/* ============================================================
+   Page containers
+   ============================================================ */
+.container {
+  margin: 0 auto;
+  padding: clamp(36px, 6vw, 80px) 0 64px;
+  display: flex;
+  flex-direction: column;
+}
+
+.container--home {
+  width: min(100% - clamp(40px, 10vw, 112px), 720px);
+  gap: clamp(36px, 5vw, 56px);
+}
+
+.container--work {
+  width: min(100% - clamp(40px, 10vw, 112px), 900px);
+  gap: 28px;
+}
+
+.container--garden {
+  width: min(100% - clamp(40px, 10vw, 112px), 680px);
+  gap: 26px;
+}
+
+.container--about {
+  width: min(100% - clamp(40px, 10vw, 112px), 720px);
+  gap: 32px;
+}
+
+/* Split layout: sticky sidebar + article (project & note pages) */
+.container--split {
+  width: min(100% - clamp(40px, 10vw, 112px), 1060px);
+  margin: 0 auto;
+  padding: clamp(28px, 5vw, 64px) 0 64px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: clamp(28px, 4vw, 56px);
+  align-items: flex-start;
+}
+
+/* ============================================================
+   Shared bits
+   ============================================================ */
+.section-label {
+  margin: 0;
+  font-family: "Spline Sans Mono", monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  color: var(--accent);
+}
+
+.page-title {
+  margin: 0;
+  font-size: clamp(26px, 4vw, 38px);
+  font-weight: 500;
+}
+
+.page-intro {
+  margin: 0;
+  font-size: 17px;
+  color: var(--muted);
+  line-height: 1.6;
+  text-wrap: pretty;
+}
+
+.inline-link {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--underline);
+}
+
+.inline-link:hover,
+.inline-link:focus-visible {
+  color: var(--accent);
+}
+
+/* Striped placeholder shown when a page has no image yet */
+.ph {
+  border: 1px dashed var(--dash);
+  border-radius: 6px;
+  background: repeating-linear-gradient(45deg, var(--stripe-a), var(--stripe-a) 6px, var(--stripe-b) 6px, var(--stripe-b) 12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Spline Sans Mono", monospace;
+  font-size: 10px;
+  color: var(--faint);
+}
+
+.site-footer {
+  border-top: 1px solid var(--hair);
+  padding-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 24px;
+  font-family: "Spline Sans Mono", monospace;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.site-footer a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--underline);
+}
+
+.site-footer a:hover,
+.site-footer a:focus-visible {
+  color: var(--accent);
+}
+
+.site-footer .footer-right {
+  margin-left: auto;
+}
+
+/* ============================================================
+   Home
+   ============================================================ */
+.intro {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.intro p {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--muted);
+  text-wrap: pretty;
+}
+
+.intro p:first-child {
+  font-size: clamp(22px, 3.2vw, 31px);
+  line-height: 1.45;
+  font-weight: 400;
+  color: var(--ink);
+}
+
+.intro a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--underline);
+}
+
+.intro a:hover {
+  color: var(--accent);
+}
+
+.home-section {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.home-section > .section-label {
+  margin-bottom: 10px;
+}
+
+.work-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 14px;
+  margin: 0 -14px;
+  border-radius: 6px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.work-row:hover,
+.work-row:focus-visible {
+  background: var(--hover-bg);
+}
+
+.work-row__thumb {
+  width: 76px;
+  height: 52px;
+  flex: none;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+/* Unify covers of varying palettes into the site's muted tone */
+img.work-row__thumb,
+img.work-card__cover {
+  border: 1px solid var(--hair);
+  box-sizing: border-box;
+  filter: saturate(0.88);
+  background: #f7f4ee;
+}
+
+.work-row__thumb.ph {
+  border-radius: 4px;
+  font-size: 8px;
+}
+
+.work-row__text {
+  flex: 1 1 240px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.work-row__title {
+  font-size: 21px;
+  font-weight: 500;
+}
+
+.work-row__summary {
+  font-size: 14.5px;
+  color: var(--muted);
+}
+
+.work-row__tag {
+  font-family: "Spline Sans Mono", monospace;
+  font-size: 11.5px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.garden-flow {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.8;
+  color: var(--soft);
+  text-wrap: pretty;
+}
+
+.garden-flow a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--underline);
+  font-style: italic;
+}
+
+.garden-flow a:hover {
+  color: var(--accent);
+}
+
+/* ============================================================
+   Work index
+   ============================================================ */
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 24px;
+}
+
+.work-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: inherit;
+  text-decoration: none;
+  padding: 14px;
+  margin: -14px;
+  border-radius: 8px;
+}
+
+.work-card:hover,
+.work-card:focus-visible {
+  background: var(--hover-bg);
+}
+
+.work-card__cover {
+  aspect-ratio: 16 / 10;
+  border-radius: 6px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.work-card__tag {
+  font-family: "Spline Sans Mono", monospace;
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.work-card__title {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.work-card__summary {
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+/* ============================================================
+   Garden index & essays index
+   ============================================================ */
+.note-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.note-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 16px;
+  padding: 14px;
+  margin: 0 -14px;
+  border-radius: 6px;
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid var(--hair);
+}
+
+.note-row:last-child {
+  border-bottom: none;
+}
+
+.note-row:hover,
+.note-row:focus-visible {
+  background: var(--hover-bg);
+}
+
+.note-row__title {
+  font-size: 19px;
+  font-style: italic;
+  font-weight: 500;
+  flex: 1 1 260px;
+}
+
+.note-row__title--plain {
+  font-style: normal;
+}
+
+.note-row__meta {
+  font-family: "Spline Sans Mono", monospace;
+  font-size: 11px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.garden-title {
+  font-style: italic;
+}
+
+/* ============================================================
+   Sidebar (project & note pages)
+   ============================================================ */
+.sidebar {
+  flex: 1 1 200px;
+  max-width: 260px;
+  min-width: 180px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  position: sticky;
+  top: 24px;
+}
+
+.sidebar__back {
+  font-family: "Spline Sans Mono", monospace;
+  font-size: 12px;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.sidebar__back:hover,
+.sidebar__back:focus-visible {
+  color: var(--accent);
+}
+
+.sidebar__group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sidebar__group--rule {
+  border-top: 1px solid var(--hair);
+  padding-top: 18px;
+}
+
+.sidebar__label {
+  font-family: "Spline Sans Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  color: var(--accent);
+}
+
+.sidebar__link {
+  font-size: 15px;
+  color: var(--soft);
+  text-decoration: none;
+}
+
+.sidebar__link:hover,
+.sidebar__link:focus-visible {
+  color: var(--accent);
+}
+
+.sidebar__link--italic,
+.sidebar__current--italic {
+  font-style: italic;
+}
+
+.sidebar__current {
+  font-size: 15px;
+  color: var(--ink);
+}
+
+/* ============================================================
+   Article (project & note pages)
+   ============================================================ */
+.article {
+  flex: 999 1 420px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  max-width: 660px;
+}
+
+.article--note {
+  gap: 20px;
+  max-width: 620px;
+}
+
+.article__head {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.article--note .article__head {
+  gap: 10px;
+}
+
+.article__meta {
+  font-family: "Spline Sans Mono", monospace;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.meta-link {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--underline);
+}
+
+.meta-link:hover,
+.meta-link:focus-visible {
+  color: var(--accent);
+}
+
+.page-intro a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--underline);
+}
+
+.page-intro a:hover,
+.page-intro a:focus-visible {
+  color: var(--accent);
+}
+
+.article__title {
+  margin: 0;
+  font-size: clamp(28px, 4.5vw, 42px);
+  font-weight: 500;
+  line-height: 1.15;
+  text-wrap: pretty;
+}
+
+.article__title--note {
+  font-size: clamp(26px, 4vw, 38px);
+  font-style: italic;
+  line-height: 1.2;
+}
+
+.article__standfirst {
+  margin: 0;
+  font-size: 19px;
+  line-height: 1.55;
+  color: var(--muted);
+  text-wrap: pretty;
+}
+
+.article__hero {
+  aspect-ratio: 16 / 8.5;
+  border-radius: 6px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.article__hero.ph {
+  font-size: 12px;
+}
+
+/* Markdown-rendered prose */
+.prose {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 17.5px;
+  line-height: 1.7;
+}
+
+.prose--note {
+  font-size: 18px;
+  line-height: 1.75;
+}
+
+.prose > * {
+  margin: 0;
+}
+
+.prose h2 {
+  font-size: 24px;
+  font-weight: 500;
+  margin-top: 14px;
+  scroll-margin-top: 24px;
+}
+
+.prose h3 {
+  font-size: 19px;
+  font-weight: 500;
+  margin-top: 6px;
+}
+
+.prose p,
+.prose li {
+  text-wrap: pretty;
+}
+
+.prose ul,
+.prose ol {
+  padding-left: 1.3em;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.prose a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--underline);
+}
+
+.prose a:hover {
+  color: var(--accent);
+}
+
+.prose img {
+  max-width: 100%;
+  border-radius: 6px;
+}
+
+.prose figure {
+  margin: 0;
+}
+
+.prose figcaption {
+  font-family: "Spline Sans Mono", monospace;
+  font-size: 11px;
+  color: var(--muted);
+  padding-top: 6px;
+}
+
+.prose blockquote {
+  margin: 0;
+  padding-left: 18px;
+  border-left: 2px solid var(--hair2);
+  color: var(--soft);
+  font-style: italic;
+}
+
+.prose hr {
+  border: none;
+  border-top: 1px solid var(--hair);
+  margin: 14px 0;
+}
+
+/* Figures side by side: wrap images in <div class="fig-row"> in markdown */
+.fig-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.fig-row > * {
+  flex: 1 1 220px;
+  min-width: 0;
+}
+
+.fig-row img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+/* For charts and diagrams that must not be cropped */
+.fig-row--free img {
+  aspect-ratio: auto;
+  object-fit: initial;
+}
+
+.article__footer {
+  border-top: 1px solid var(--hair);
+  padding-top: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-family: "Spline Sans Mono", monospace;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.article__footer a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--underline);
+}
+
+.article__footer a:hover,
+.article__footer a:focus-visible {
+  color: var(--accent);
+}
+
+.article__footer .to-top {
+  margin-left: auto;
+}
+
+.backlinks {
+  border-top: 1px solid var(--hair);
+  padding-top: 16px;
+  font-family: "Spline Sans Mono", monospace;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.backlinks a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--underline);
+}
+
+.backlinks a:hover {
+  color: var(--accent);
+}
+
+/* ============================================================
+   Comments (Giscus)
+   ============================================================ */
+.comments {
+  border: 1px solid var(--hair);
+  border-radius: 6px;
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: var(--faint-bg);
+}
+
+.comments__label {
+  font-family: "Spline Sans Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  color: var(--faint);
+}
+
+.comments__placeholder {
+  font-size: 15px;
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* ============================================================
+   About
+   ============================================================ */
+.about-head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+  align-items: flex-start;
+}
+
+.about-portrait {
+  width: 150px;
+  aspect-ratio: 1;
+  flex: none;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.about-portrait.ph {
+  font-size: 11px;
+}
+
+.about-bio {
+  flex: 1 1 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.about-bio h1 {
+  margin: 0;
+  font-size: clamp(26px, 4vw, 36px);
+  font-weight: 500;
+}
+
+.about-bio p {
+  margin: 0;
+  font-size: 17.5px;
+  line-height: 1.7;
+  text-wrap: pretty;
+}
+
+.about-bio p + p:last-of-type {
+  color: var(--muted);
+}
+
+.about-bio a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--underline);
+}
+
+.about-bio a:hover {
+  color: var(--accent);
+}
+
+.about-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.btn {
+  font-family: "Spline Sans Mono", monospace;
+  font-size: 13px;
+  text-decoration: none;
+  padding: 10px 18px;
+  border-radius: 5px;
+}
+
+.btn--solid {
+  color: var(--bg);
+  background: var(--ink);
+}
+
+.btn--solid:hover,
+.btn--solid:focus-visible {
+  background: var(--accent);
+}
+
+.btn--outline {
+  color: var(--ink);
+  border: 1px solid var(--dash);
+}
+
+.btn--outline:hover,
+.btn--outline:focus-visible {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* ============================================================
+   Responsive: the single breakpoint. Below ~760px the sidebar
+   stops being sticky and moves BELOW the article, so the title
+   and content come first on a phone.
+   ============================================================ */
+@media (max-width: 760px) {
+  .sidebar {
+    position: static;
+    max-width: 100%;
+    flex-basis: 100%;
+    order: 2;
+    border-top: 1px solid var(--hair);
+    padding-top: 22px;
+  }
+
+  .article {
+    order: 1;
+  }
+
+  /* Work rows: the tag becomes an eyebrow label above the row
+     instead of wrapping loosely below the summary */
+  .work-row__tag {
+    order: -1;
+    flex-basis: 100%;
+  }
+
+  /* Comfortable tap targets for the wrapped nav row */
+  .nav-link {
+    padding: 10px 4px;
+    margin: -10px -4px;
+  }
+
+  /* Charts stack full-width instead of shrinking side by side */
+  .fig-row--free > * {
+    flex-basis: 100%;
+  }
+}
+
+/* Touch devices get a persistent clickability cue since there is no hover */
+@media (hover: none) {
+  .work-row__title,
+  .work-card__title,
+  .note-row__title {
+    text-decoration: underline;
+    text-decoration-color: var(--underline);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+  }
+}

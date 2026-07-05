@@ -1,0 +1,24 @@
+---
+layout: base.njk
+---
+<main class="container container--work">
+  <div style="display:flex;flex-direction:column;gap:8px">
+    <h1 class="page-title">{{ title }}</h1>
+    <p class="page-intro">{{ intro | safe }}</p>
+  </div>
+  <div class="work-grid">
+    {%- for project in collections.work %}
+    <a href="{{ project.url }}" class="work-card">
+      {%- if project.data.cover %}
+      <img src="{{ project.data.cover | replace("./", project.url) }}" alt="" class="work-card__cover">
+      {%- else %}
+      <div class="work-card__cover ph">cover</div>
+      {%- endif %}
+      <span class="work-card__tag">{{ project.data.tag }} · {{ project.data.year }}</span>
+      <span class="work-card__title">{{ project.data.title }}</span>
+      <span class="work-card__summary">{{ project.data.summary }}</span>
+    </a>
+    {%- endfor %}
+  </div>
+  {% include "footer.njk" %}
+</main>

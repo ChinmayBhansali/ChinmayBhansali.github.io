@@ -1,0 +1,20 @@
+[
+  { "from": "/about.html", "to": "/about/" },
+  { "from": "/who-am-i.html", "to": "/about/" },
+  { "from": "/project-food-manager.html", "to": "/work/food-manager/" },
+  { "from": "/project-bnuuys-ship.html", "to": "/work/bnuuys-ship/" },
+  { "from": "/project-pokemasters.html", "to": "/work/pokemasters/" },
+  { "from": "/project-aslingo.html", "to": "/work/aslingo/" },
+  { "from": "/blog.html", "to": "/essays/" },
+  { "from": "/blog-ai-training-data.html", "to": "/essays/training-ai-on-pirated-data/" },
+  { "from": "/blog-ai-courtrooms.html", "to": "/essays/ai-courtrooms/" },
+  { "from": "/blog-apple-censorship.html", "to": "/essays/apple-censorship/" },
+  { "from": "/blog-categorical-imperative.html", "to": "/essays/categorical-imperative/" },
+  { "from": "/blog-ethical-egoism.html", "to": "/essays/ethical-egoism/" },
+  { "from": "/blog-loyalty-cards.html", "to": "/essays/loyalty-cards/" },
+  { "from": "/blog-nurse-dilemma.html", "to": "/essays/nurse-dilemma/" },
+  { "from": "/blog-open-source-ethics.html", "to": "/essays/open-source-ethics/" },
+  { "from": "/blog-police-phones.html", "to": "/essays/police-phones/" },
+  { "from": "/blog-software-piracy.html", "to": "/essays/software-piracy/" },
+  { "from": "/blog-wifi-ethics.html", "to": "/essays/wifi-ethics/" }
+]

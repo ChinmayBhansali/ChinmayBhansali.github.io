@@ -1,0 +1,9 @@
+# Private materials: never commit (application documents, transcripts, unpublished essays)
+private/
+
+# Build output and dependencies
+_site/
+node_modules/
+
+# IDE
+.idea/

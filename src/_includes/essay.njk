@@ -1,0 +1,34 @@
+---
+layout: base.njk
+---
+<main class="container container--split">
+
+  <aside class="sidebar">
+    <a href="/essays/" class="sidebar__back">← all essays</a>
+    <div class="sidebar__group">
+      <span class="sidebar__label">{{ site.essaysTitle | upper }}</span>
+      {%- for essay in collections.essays %}
+      {%- if essay.url == page.url %}
+      <span class="sidebar__current">{{ essay.data.title }}</span>
+      {%- else %}
+      <a href="{{ essay.url }}" class="sidebar__link">{{ essay.data.title }}</a>
+      {%- endif %}
+      {%- endfor %}
+    </div>
+  </aside>
+
+  <article class="article article--note">
+    <div class="article__head">
+      <span class="article__meta">ESSAY{% if framework %} · {% if frameworks[framework] %}<a href="{{ frameworks[framework] }}" class="meta-link" target="_blank" rel="noopener" title="What is {{ framework }}?">{{ framework | upper }}</a>{% else %}{{ framework | upper }}{% endif %}{% endif %} · {{ date | monoDate }}</span>
+      <h1 class="article__title article__title--note" style="font-style:normal">{{ title }}</h1>
+    </div>
+
+    <div class="prose prose--note">
+      {{ content | safe }}
+    </div>
+
+    {%- if comments %}
+    {% include "comments.njk" %}
+    {%- endif %}
+  </article>
+</main>

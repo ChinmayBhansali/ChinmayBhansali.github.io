@@ -5,8 +5,8 @@ tag: CODE
 year: 2023
 date: 2023-04-16
 meta: CODE · SOLO · 2022–2023
-cover: ./pokemasters-text-based.jpg
-heroAlt: The original notebook version of PokeMasters, hand-drawn on paper
+cover: ./pokemaster-returns-cover.png
+heroAlt: "PokéMaster Returns: a hand-lettered title page from the original notebook version"
 links:
   - label: "source code →"
     url: "https://github.com/ChinmayBhansali/PokeMasters"
@@ -17,14 +17,14 @@ The first version of this game had no code at all. I designed it in a school in 
 
 Years later at UBC, I rebuilt it as a desktop application in Java: first as a text-based game, then with a full Swing interface. The point was never to ship a Pokémon clone. It was to find out whether the system that lived on paper could survive the move to software with its feel intact.
 
-<div class="fig-row">
+<div class="fig-row fig-row--free">
   <figure>
-    <img src="./pokemasters_gui.png" alt="The Java Swing graphical interface">
-    <figcaption>fig 1: the Java Swing GUI</figcaption>
+    <img src="./pokemasters-text-based.jpg" alt="The text-based version running in the IDE console, mid battle">
+    <figcaption>fig 1: the text-based version, mid battle</figcaption>
   </figure>
   <figure>
-    <img src="./pokemaster-returns.png" alt="A later scene from the game">
-    <figcaption>fig 2: PokeMaster returns</figcaption>
+    <img src="./pokemasters_gui.png" alt="The Java Swing interface showing the starter selection">
+    <figcaption>fig 2: the Java Swing GUI</figcaption>
   </figure>
 </div>
 

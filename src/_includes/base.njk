@@ -60,6 +60,13 @@
     if (dark) { root.removeAttribute("data-theme"); } else { root.setAttribute("data-theme", "dark"); }
     try { localStorage.setItem("theme", dark ? "light" : "dark"); } catch (e) {}
     label();
+    var giscus = document.querySelector("iframe.giscus-frame");
+    if (giscus) {
+      giscus.contentWindow.postMessage(
+        { giscus: { setConfig: { theme: dark ? "noborder_light" : "noborder_dark" } } },
+        "https://giscus.app"
+      );
+    }
   });
 })();
 </script>

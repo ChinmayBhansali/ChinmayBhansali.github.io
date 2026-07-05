@@ -5,8 +5,8 @@ tag: CODE
 year: 2023
 date: 2023-04-16
 meta: CODE · SOLO · 2022–2023
-cover: ./pokemasters_gui.png
-heroAlt: The PokeMasters graphical interface
+cover: ./pokemasters-text-based.jpg
+heroAlt: The original notebook version of PokeMasters, hand-drawn on paper
 links:
   - label: "source code →"
     url: "https://github.com/ChinmayBhansali/PokeMasters"
@@ -19,8 +19,8 @@ Years later at UBC, I rebuilt it as a desktop application in Java: first as a te
 
 <div class="fig-row">
   <figure>
-    <img src="./pokemasters-text-based.jpg" alt="The text-based version running in a terminal">
-    <figcaption>fig 1: the text-based version</figcaption>
+    <img src="./pokemasters_gui.png" alt="The Java Swing graphical interface">
+    <figcaption>fig 1: the Java Swing GUI</figcaption>
   </figure>
   <figure>
     <img src="./pokemaster-returns.png" alt="A later scene from the game">

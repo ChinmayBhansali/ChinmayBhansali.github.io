@@ -17,8 +17,5 @@ layout: base.njk
     <a href="{{ site.cvPath }}" class="btn btn--solid" target="_blank" rel="noopener">download CV (pdf)</a>
     <a href="mailto:{{ site.email }}" class="btn btn--outline">email me</a>
   </div>
-  <footer class="site-footer">
-    <a href="{{ site.github }}" target="_blank" rel="noopener">github</a>
-    <a href="{{ site.linkedin }}" target="_blank" rel="noopener">linkedin</a>
-  </footer>
+  {% include "footer.njk" %}
 </main>

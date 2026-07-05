@@ -44,14 +44,14 @@ The headline: planning with GoodTimers carried significantly less cognitive load
 
 The humbling part: our custom map took 2.4 seconds longer to read than Google Maps (p = .007, Hedge's g = -1.04, also a large effect). We had predicted the opposite. Participants have spent years reading Google Maps, and familiarity turned out to be a design material we forgot to account for.
 
-<div class="fig-row">
+<div class="fig-row fig-row--free">
   <figure>
-    <img src="./cognitive-load-by-planning-approach.png" alt="Boxplot: self-rated cognitive load, Google Maps baseline vs GoodTimers">
-    <figcaption>fig 1: self-rated cognitive load, baseline vs GoodTimers (p = .010)</figcaption>
+    <a href="./cognitive-load-by-planning-approach.png" target="_blank" rel="noopener"><img src="./cognitive-load-by-planning-approach.png" alt="Boxplot: self-rated cognitive load, Google Maps baseline vs GoodTimers"></a>
+    <figcaption>fig 1: self-rated cognitive load, baseline vs GoodTimers (p = .010) · click to enlarge</figcaption>
   </figure>
   <figure>
-    <img src="./planning-time-by-dca.png" alt="Boxplot: planning time across drag, survey, and swipe">
-    <figcaption>fig 2: planning time by input interface; note the drag condition's variance (p = .926)</figcaption>
+    <a href="./planning-time-by-dca.png" target="_blank" rel="noopener"><img src="./planning-time-by-dca.png" alt="Boxplot: planning time across drag, survey, and swipe"></a>
+    <figcaption>fig 2: planning time by input interface; note the drag condition's variance (p = .926) · click to enlarge</figcaption>
   </figure>
 </div>
 

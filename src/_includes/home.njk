@@ -35,10 +35,5 @@ layout: base.njk
     </p>
   </section>
 
-  <footer class="site-footer">
-    <a href="mailto:{{ site.email }}">email</a>
-    <a href="{{ site.github }}" target="_blank" rel="noopener">github</a>
-    <a href="{{ site.linkedin }}" target="_blank" rel="noopener">linkedin</a>
-    <span class="footer-right">{{ site.location }}</span>
-  </footer>
+  {% include "footer.njk" %}
 </main>

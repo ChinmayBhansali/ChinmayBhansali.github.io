@@ -51,10 +51,11 @@ layout: base.njk
     </div>
 
     {%- set next = collections.work | nextIn(page.url) %}
-    {%- if next %}
     <div class="article__footer">
+      {%- if next %}
       <span>next:</span><a href="{{ next.url }}">{{ next.data.title | lower }} →</a>
+      {%- endif %}
+      <a href="#top" class="to-top">↑ top</a>
     </div>
-    {%- endif %}
   </article>
 </main>

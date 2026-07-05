@@ -13,11 +13,11 @@
 </head>
 <body>
 
-<header class="site-header">
+<header class="site-header" id="top">
   <a href="/" class="site-name">{{ site.name }}</a>
   <nav class="site-nav">
     <span class="nav-item">
-      <a href="/work/" class="nav-link">work</a>
+      <a href="/work/" class="nav-link" {% if page.url and "/work/" in page.url %}aria-current="true"{% endif %}>work</a>
       <span class="dropdown">
         <span class="dropdown-panel">
           {%- for project in collections.work %}
@@ -28,7 +28,7 @@
       </span>
     </span>
     <span class="nav-item">
-      <a href="/garden/" class="nav-link">garden</a>
+      <a href="/garden/" class="nav-link" {% if page.url and "/garden/" in page.url %}aria-current="true"{% endif %}>garden</a>
       <span class="dropdown">
         <span class="dropdown-panel dropdown-panel--wide">
           {%- for note in collections.garden %}
@@ -38,8 +38,8 @@
         </span>
       </span>
     </span>
-    <a href="/essays/" class="nav-link">{{ site.essaysLabel }}</a>
-    <a href="/about/" class="nav-link">about</a>
+    <a href="/essays/" class="nav-link" {% if page.url and "/essays/" in page.url %}aria-current="true"{% endif %}>{{ site.essaysLabel }}</a>
+    <a href="/about/" class="nav-link" {% if page.url and "/about/" in page.url %}aria-current="true"{% endif %}>about</a>
     <a href="{{ site.cvPath }}" class="nav-link" target="_blank" rel="noopener">cv</a>
     <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">dark</button>
   </nav>

@@ -1,6 +1,7 @@
 ---
 title: "AI in the Courtroom: Justice or Bias Amplified?"
 date: 2026-01-20
+framework: AI Ethics
 ---
 > **Prompt:** Pick a specific AI application described in [the article](https://www.washingtonpost.com/opinions/2021/07/21/ai-we-should-fear-is-already-here/) and argue either that it will be beneficial or harmful overall.
 

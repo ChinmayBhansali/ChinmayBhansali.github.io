@@ -43,12 +43,12 @@ The finding I still think about is the one where our two data sources disagreed.
 
 <div class="fig-row fig-row--free">
   <figure>
-    <img src="./clicks-recipe-search.png" alt="Bar chart of clicks per participant for the recipe search task, averaging 8.9">
-    <figcaption>fig 2: what people did (8.9 clicks on average)</figcaption>
+    <a href="./clicks-recipe-search.png" target="_blank" rel="noopener"><img src="./clicks-recipe-search.png" alt="Bar chart of clicks per participant for the recipe search task, averaging 8.9"></a>
+    <figcaption>fig 2: what people did (8.9 clicks on average) · click to enlarge</figcaption>
   </figure>
   <figure>
-    <img src="./efficiency-notes.png" alt="Affinity diagram of questionnaire responses describing the design as efficient">
-    <figcaption>fig 3: what people said</figcaption>
+    <a href="./efficiency-notes.png" target="_blank" rel="noopener"><img src="./efficiency-notes.png" alt="Affinity diagram of questionnaire responses describing the design as efficient"></a>
+    <figcaption>fig 3: what people said · click to enlarge</figcaption>
   </figure>
 </div>
 
